@@ -1,5 +1,74 @@
-DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pappan Rich Skills</title><style>body{margin:0;font-family:sans-serif;background:#f6f3ff}.top{padding:12px 5%;background:#fff;display:flex;justify-content:space-between}.hero{padding:25px 5%;background:linear-gradient(135deg,#ddd6fe,#fecdd3,#fde68a)}h1{font-size:28px}.btn{padding:12px 20px;border-radius:30px;font-weight:700;text-decoration:none;display:inline-block;background:linear-gradient(90deg,#6d28d9,#ec4899);color:#fff}.box{background:#fff;border-radius:15px;padding:15px;margin:15px 5%;box-shadow:0 5px 15px #0001}.price{color:#059669;font-weight:800;font-size:22px}</style></head><body>
-<div class="top"><b>📚 Pappan Rich Skills</b></div>
-<div class="hero"><h1>Course Becho <span style="color:#6d28d9">Paisa Kamao</span></h1><p>Course ₹199 me becho - Paisa bank me ayega!</p><br><a href="#c" class="btn">Course Dekho</a></div>
-<div id="c" class="box"><h3>Meta Ads Course</h3><p>FB Ads sikh lo.</p><p><span class="price">₹199</span></p><a href="https://rzp.io/l/YOUR-LINK" class="btn" style="width:100%;text-align:center">BUY NOW ₹199</a></div>
-</body></html>
+<!DOCTYPE html>
+<html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pappan Rich Skills - Dashboard</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui;background:#f5f7ff;color:#111;overflow-x:hidden}
+.top{position:sticky;top:0;z-index:20;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:10px 4%;box-shadow:0 2px 10px #0001}
+.logo{display:flex;align-items:center;gap:8px;font-weight:900;font-size:18px}
+.btn{padding:10px 18px;border-radius:30px;border:none;font-weight:800;cursor:pointer}
+.btn-p{background:#111;color:#fff;width:100%;padding:12px}
+.drawer{position:fixed;inset:0 30% 0 0;max-width:320px;background:#f6f6fb;z-index:30;transform:translateX(-100%);transition:.3s;overflow:auto;padding:18px 12px;border-right:1px solid #e5e7eb}
+.drawer.open{transform:translateX(0)}
+.overlay{position:fixed;inset:0;background:#0006;z-index:25;display:none}
+.item{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:12px;cursor:pointer;font-size:14px;font-weight:600;margin-bottom:4px}
+.item.active{background:#e0e7ff;color:#3730a3}
+.item.vip{color:#7c3aed;font-weight:800}
+.main{padding:12px 4%}
+.card{background:#fff;border-radius:16px;padding:14px;box-shadow:0 8px 24px #0000000d;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.price{color:#059669;font-weight:900}
+.blur{filter:blur(4px);pointer-events:none;opacity:.5}
+.modal{position:fixed;inset:0;background:#0008;z-index:40;display:none;place-items:center;padding:14px}
+.box{background:#fff;border-radius:20px;padding:20px;width:100%;max-width:400px}
+.input{width:100%;padding:12px;border-radius:12px;border:1px solid #ddd;margin-top:8px}
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+</style></head><body>
+<div class="top"><div class="logo"><span onclick="toggle()" style="cursor:pointer">☰</span> 📚 Pappan Rich Skills</div><div><span id="uName" style="font-size:12px;font-weight:800">Guest</span> <button onclick="openLogin()" class="btn">Login</button></div></div>
+<div style="display:grid;grid-template-columns:300px 1fr">
+<div class="drawer open" id="drawer">
+<div style="font-weight:900">TheRichSkills<br><small style="font-weight:400;font-size:11px">Unlock Your Potential</small></div>
+<div style="font-size:11px;color:#888;margin:10px 0">Navigation</div>
+<div class="item active" onclick="nav('dash',this)">🏠 Dashboard</div>
+<div class="item" onclick="nav('team',this)">👥 My Team</div>
+<div class="item" onclick="nav('aff',this)">🔗 Affiliate Links</div>
+<div class="item" onclick="nav('upgrade',this)">↗️ Upgrade Course</div>
+<div class="item" onclick="nav('leader',this)">🏆 Leaderboard</div>
+<div class="item" onclick="nav('train',this)">⚡ Trainings</div>
+<div class="item" onclick="nav('courses',this)">📖 My Courses</div>
+<div class="item vip" onclick="nav('vip',this)">⭐ VIP Dashboard</div>
+<div class="item" onclick="nav('comm',this)">🌐 Community Links</div>
+<div class="item" onclick="nav('qual',this)">🎖️ Qualification</div>
+<div style="margin-top:30px;display:flex;gap:10px;align-items:center;border-top:1px solid #ddd;padding-top:12px"><img src="https://i.pravatar.cc/100?img=12" style="width:32px;border-radius:50%"><div style="font-size:12px"><b id="sideName">Pappan Kumar</b><br><small id="sideEmail">Login karo</small></div></div>
+</div>
+<div class="overlay" id="over" onclick="toggle()"></div>
+<div class="main">
+<div id="sec-dash">
+<div class="stats"><div class="card" style="text-align:center"><small>Earnings</small><br><b id="earn">₹0</b></div><div class="card" style="text-align:center"><small>Today</small><br><b>₹0</b></div><div class="card" style="text-align:center"><small>Team</small><br><b id="teamC">0</b></div></div>
+<div class="card" id="payCard" style="border:2px dashed #6d28d9;background:#fdf4ff;text-align:center"><h3>🔒 Unlock ₹199</h3><p style="font-size:13px">Pay karo fir sab features khulenge</p><button class="btn-p" onclick="payNow()">💳 Pay ₹199 & Unlock</button></div>
+<div class="grid" id="dashCourses"></div>
+</div>
+<div id="sec-team" style="display:none"><div class="card"><h3>👥 My Team</h3><p>Aapne <b id="teamCount">0</b> log join karaye</p><div id="teamList"><small>Link share karo</small></div></div></div>
+<div id="sec-aff" style="display:none"><div class="card"><h3>🔗 Affiliate Links</h3><div style="background:#f3f4f6;padding:10px;border-radius:10px;font-size:12px" id="affLink">Login ke baad link</div><button class="btn-p" style="margin-top:10px" onclick="copyAff()">Copy Link</button></div></div>
+<div id="sec-upgrade" style="display:none"><div class="card"><h3>↗️ Upgrade</h3><div class="grid"><div class="card"><b>Silver ₹199</b><button class="btn-p" onclick="payNow()">Buy</button></div><div class="card" style="border:2px solid #7c3aed"><b>Gold ₹499 ⭐</b><button class="btn-p" style="background:#7c3aed" onclick="payNow()">Buy Gold</button></div></div></div></div>
+<div id="sec-leader" style="display:none"><div class="card"><h3>🏆 Leaderboard</h3><div id="lb"></div></div></div>
+<div id="sec-train" style="display:none"><div class="card"><h3>⚡ Trainings</h3><p>📹 How to Sell Course? <button class="btn-p" onclick="alert('Video')">Play</button></p></div></div>
+<div id="sec-courses" style="display:none"><div class="card"><h3>📖 My Courses</h3><div id="myCourses"><small>Unlock ke baad</small></div></div></div>
+<div id="sec-vip" style="display:none"><div class="card" style="background:linear-gradient(135deg,#1e1b4b,#7c3aed);color:#fff"><h3>⭐ VIP Dashboard</h3><button class="btn-p" style="background:#fff;color:#111" onclick="payNow()">Upgrade VIP ₹999</button></div></div>
+<div id="sec-comm" style="display:none"><div class="card"><h3>🌐 Community</h3><p>💬 WhatsApp Group<br>📢 Telegram</p></div></div>
+<div id="sec-qual" style="display:none"><div class="card"><h3>🎖️ Qualification</h3><p>10 sales=Silver, 25=Gold</p><div>Your Sales: <b id="qSales">0</b></div></div></div>
+</div>
+</div>
+<div class="modal" id="loginM"><div class="box"><h3>Login ₹199</h3><input id="ln" class="input" placeholder="Naam"><input id="lp" class="input" placeholder="Mobile"><button class="btn-p" style="margin-top:12px" onclick="doLogin()">Login & Pay ₹199 →</button><button class="btn" style="width:100%;margin-top:8px;background:#fff;border:1px solid #ddd" onclick="closeLogin()">Cancel</button></div></div>
+<script>
+let unlocked=localStorage.getItem('paid')==='yes';
+const COURSES=[{t:"Meta Ads Mastery",d:"FB Ads",p:199},{t:"AI Tools Pack",d:"ChatGPT",p:299},{t:"Insta Growth",d:"0-100k",p:149},{t:"YouTube",d:"No face",p:249},{t:"Affiliate",d:"Link",p:199},{t:"Canva Pro",d:"Design",p:99}];
+function toggle(){let d=document.getElementById('drawer'),o=document.getElementById('over');d.classList.toggle('open');o.style.display=d.classList.contains('open')?'block':'none';}
+function nav(id,el){document.querySelectorAll('.item').forEach(i=>i.classList.remove('active'));el.classList.add('active');document.querySelectorAll('[id^=sec-]').forEach(s=>s.style.display='none');document.getElementById('sec-'+id).style.display='block';}
+function renderDash(){let g=document.getElementById('dashCourses');g.innerHTML='';COURSES.forEach(c=>{g.innerHTML+=`<div class="card ${!unlocked?'blur':''}"><b>${c.t}</b><br><small>${c.d}</small><br><span class="price">₹${c.p}</span><br><button class="btn-p" style="margin-top:8px" onclick="openCourse()">${unlocked?'▶️ Dekho':'🔒 Locked'}</button></div>`});let lb=[{n:"Rohan",e:12450},{n:"Priya",e:10200},{n:localStorage.getItem('pr_name')||"You",e:parseInt(localStorage.getItem('earn')||0),me:true}];lb.sort((a,b)=>b.e-a.e);let h='';lb.forEach((u,i)=>{h+=`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #eee;${u.me?'background:#fef08a;border-radius:8px':''}"><span>${i+1}. ${u.n}</span><b>₹${u.e}</b></div>`});document.getElementById('lb').innerHTML=h;document.getElementById('payCard').style.display=unlocked?'none':'block';}
+function openLogin(){document.getElementById('loginM').style.display='grid'}function closeLogin(){document.getElementById('loginM').style.display='none'}
+function doLogin(){let n=document.getElementById('ln').value||'Pappan Kumar';localStorage.setItem('pr_name',n);document.getElementById('uName').innerText=n;document.getElementById('sideName').innerText=n;document.getElementById('sideEmail').innerText=n.toLowerCase().replace(/\s+/g,'')+'@gmail.com';document.getElementById('affLink').innerText='https://kingtheskils-sketch.github.io/Pappan-rich-skills/?ref='+n.toLowerCase();closeLogin();if(!unlocked)payNow();else renderDash();}
+function payNow(){if(!localStorage.getItem('pr_name')){openLogin();return;}if(confirm('Demo Pay ₹199? OK to Unlock')){localStorage.setItem('paid','yes');unlocked=true;localStorage.setItem('earn','150');document.getElementById('earn').innerText='₹150';document.getElementById('teamC').innerText='2';document.getElementById('teamCount').innerText='2';document.getElementById('qSales').innerText='2';document.getElementById('teamList').innerHTML='<div>1. Rahul - ₹199</div><div>2. Amit</div>';document.getElementById('myCourses').innerHTML=COURSES.map(c=>`<div style="padding:6px;background:#eef2ff;margin-top:6px;border-radius:8px">✅ ${c.t}</div>`).join('');renderDash();alert('Unlock ho gaya Bapu! 🎉');}}
+function openCourse(){if(!unlocked){payNow();return;}alert('Course video!');}
+function copyAff(){navigator.clipboard.writeText(document.getElementById('affLink').innerText);alert('Copy!');}
+(function(){let n=localStorage.getItem('pr_name');if(n){document.getElementById('uName').innerText=n;document.getElementById('sideName').innerText=n;if(unlocked){document.getElementById('earn').innerText='₹150';}}renderDash();})();
+</script></body></html>
