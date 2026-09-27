@@ -1,74 +1,154 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Pappan Rich Skills - The Rich Skills Clone</title>
-<style>*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}body{background:#fff}header{position:sticky;top:0;z-index:99;background:white;display:flex;justify-content:space-between;padding:12px 18px;box-shadow:0 1px 0 #eee}
-.drawer{position:fixed;right:-340px;top:0;width:310px;height:100%;background:white;z-index:200;transition:.35s;padding:20px;box-shadow:-10px 0 20px rgba(0,0,0,.2)}.drawer.open{right:0}
-.hero{background:linear-gradient(180deg,#6366f1,#4f46e5);color:white;text-align:center;padding:50px 20px 36px}
-.btn-w{background:white;color:#111;border:none;padding:14px;border-radius:14px;width:100%;font-weight:800;cursor:pointer}.btn-o{background:transparent;border:1.8px solid white;color:white;padding:14px;border-radius:14px;width:100%;font-weight:700;margin-top:10px;cursor:pointer}
-.stats{display:flex;flex-direction:column;gap:12px;padding:16px;background:linear-gradient(180deg,#5b5fd7,#6366f1);margin-top:-20px;border-radius:24px 24px 0 0}.stat{background:white;border-radius:18px;padding:18px;display:flex;gap:14px;align-items:center}
-.vip-wrap{overflow:hidden;position:relative}.vip-track{display:flex;transition:.5s}.vip-slide{min-width:100%;padding:0 16px;box-sizing:border-box}.vip-card{border-radius:22px;overflow:hidden;position:relative;height:440px;background:#111}.vip-card img{width:100%;height:100%;object-fit:cover}.crown{position:absolute;top:12px;right:12px;width:34px;height:34px;background:#facc15;border-radius:50%;display:grid;place-items:center}.vip-name{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(0deg,rgba(0,0,0,.9),transparent);color:white;padding:50px 16px 16px;text-align:center;font-weight:800;font-size:17px}
-.dots{display:flex;justify-content:center;gap:6px;margin:14px 0}.dot{width:8px;height:8px;background:#e2e8f0;border-radius:50%}.dot.active{background:#6366f1;width:20px}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:400;padding:18px}.modal.show{display:flex}.box{background:white;border-radius:24px;padding:20px;width:100%;max-width:400px;max-height:90vh;overflow-y:auto}.input{width:100%;padding:12px;border:1.5px solid #e2e8f0;border-radius:12px;margin-top:8px}
-.toast{position:fixed;bottom:70px;left:50%;transform:translateX(-50%);background:#111;color:white;padding:12px 20px;border-radius:30px;z-index:999;display:none}.toast.show{display:block}
-</style></head><body>
-<div id="toast" class="toast"></div>
-<header><div style="font-weight:800">📘 Pappan Rich Skills</div><div style="font-size:26px;cursor:pointer" onclick="document.getElementById('drawer').classList.toggle('open')">☰</div></header>
-<div id="drawer" class="drawer"><div style="display:flex;justify-content:space-between"><b>Menu</b><span onclick="document.getElementById('drawer').classList.remove('open')" style="cursor:pointer">✕</span></div><hr><p style="padding:10px;background:#eef2ff;border-radius:10px;margin-top:12px" onclick="openReg();document.getElementById('drawer').classList.remove('open')"><b>📝 Register - Pappan kumar</b></p><p style="padding:10px" onclick="openLogin();document.getElementById('drawer').classList.remove('open')">🔐 Login - Bina Paise Ke</p></div>
-<div id="landing">
-<div class="hero"><div style="background:rgba(255,255,255,.18);padding:8px 16px;border-radius:24px;font-size:13px;display:inline-block">⭐ Rated 4.9/5 by 10,000+ students</div><h1 style="font-size:34px;font-weight:800;margin:16px 0;line-height:1.1">Learn Skills That Matter for Your Career</h1><button class="btn-w" onclick="openReg()">Explore Courses →</button><button class="btn-o" onclick="openLogin()">Login - Bina Error Ke ✅</button></div>
-<div class="stats"><div class="stat">👤 <div><b>85+</b> Exclusive Courses</div></div><div class="stat">🎯 <div><b>24/7</b> Practical Skills</div></div><div class="stat">⚡ <div><b>98%</b> Result Focused</div></div></div>
-<div style="padding:20px"><div style="background:#eef2ff;color:#6366f1;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;display:inline-block">👑 Elite Community</div><h2 style="font-size:26px;font-weight:800;margin-top:10px">Meet Our VIP Members</h2><p style="opacity:.6;font-size:13px">Aapki 6 photos - naam ke saath slider</p></div>
-<div class="vip-wrap"><div id="track" class="vip-track">
-<div class="vip-slide"><div class="vip-card"><img src="pappan.jpg"><div class="crown">👑</div><div class="vip-name">Pappan Kohli [STAR ⭐]</div></div></div>
-<div class="vip-slide"><div class="vip-card"><img src="rohit.jpg"><div class="crown">👑</div><div class="vip-name">Rohit Kumar [STAR ⭐]</div></div></div>
-<div class="vip-slide"><div class="vip-card"><img src="bhubhnesh.jpg"><div class="crown">👑</div><div class="vip-name">Bhubhnesh Mahor [STAR ⭐]</div></div></div>
-<div class="vip-slide"><div class="vip-card"><img src="pavan.jpg"><div class="crown">👑</div><div class="vip-name">Pavan Kumar [STAR ⭐]</div></div></div>
-<div class="vip-slide"><div class="vip-card"><img src="abhay.jpg"><div class="crown">👑</div><div class="vip-name">Abhay Singh [STAR ⭐]</div></div></div>
-<div class="vip-slide"><div class="vip-card"><img src="yogita.jpg"><div class="crown">👑</div><div class="vip-name">Yogita Kumari [STAR ⭐]</div></div></div>
-</div><div class="dots" id="dots"><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
-<div style="background:#0f172a;color:white;padding:24px 18px"><b>The RichSkills - Pappan Rich Skills</b><p style="opacity:.6;font-size:13px;margin-top:8px">UPI: 9068720373@ybl | Admin: 9068720373 = Full Free</p></div>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pappan Rich Skills</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#eef0ff}
+nav{background:#fff;padding:12px 15px;display:flex;justify-content:space-between;position:sticky;top:0;z-index:10;box-shadow:0 2px 5px rgba(0,0,0,.1)}
+.hero{background:#5d5dff;color:#fff;padding:45px 18px;text-align:center;border-radius:0 0 25px 25px}
+.hero h1{font-size:30px;margin:12px 0}
+.btn{padding:13px 20px;border-radius:12px;border:none;font-weight:bold}
+.btn-w{background:#fff;color:#000;width:90%;margin:8px 0}
+.btn-o{border:2px solid #fff;color:#fff;background:transparent;width:90%}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px}
+.s{background:#fff;padding:16px;border-radius:14px;text-align:center}
+.card{background:#fff;border-radius:15px;padding:14px;margin:12px}
+.blue{background:#5d5dff;color:#fff}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.earn{background:#1a1a4e;color:#fff;border-radius:14px;padding:14px}
+.menu{position:fixed;left:-300px;top:0;width:275px;height:100%;background:#fff;z-index:30;padding:18px;transition:.3s;overflow:auto}
+.menu.on{left:0}
+.ov{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);z-index:20;display:none}
+.ov.on{display:block}
+.sec{display:none}.sec.on{display:block}
+.mitem{display:block;padding:11px;border-radius:10px;text-decoration:none;color:#333;margin:4px 0}
+.mitem.active{background:#eef0ff;color:#5d5dff;font-weight:bold}
+.pro{display:flex;gap:10px;align-items:center}
+.pro img{width:50px;height:50px;border-radius:50%}
+.b{width:100%;padding:11px;background:#5d5dff;color:#fff;border:none;border-radius:10px;font-weight:bold;margin-top:8px}
+.linkbox{border:1px dashed #5d5dff;background:#f3f3ff;padding:10px;border-radius:10px;word-break:break-all}
+#landing{display:block}
+#dashboard{display:none}
+input{width:100%;padding:12px;margin:6px 0;border-radius:10px;border:1px solid #ccc}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav>
+<b id="navTitle">📘 Pappan Rich Skills</b>
+<span id="navBtn" onclick="openLogin()">Login</span>
+</nav>
+
+<!-- OVERLAY + MENU -->
+<div class="ov" id="ov" onclick="toggleMenu()"></div>
+<div class="menu" id="menu">
+<b>📘 Pappan Rich Skills</b><br><br>
+<a class="mitem active" onclick="showSec('d')">📊 Dashboard</a>
+<a class="mitem" onclick="showSec('team')">👥 My Team</a>
+<a class="mitem" onclick="showSec('aff')">🔗 Affiliate Links</a>
+<a class="mitem" onclick="showSec('up')">🚀 Upgrade Course</a>
+<a class="mitem" onclick="showSec('lead')">🏆 Leaderboard</a>
+<a class="mitem" onclick="showSec('train')">🎥 Trainings</a>
+<a class="mitem" onclick="showSec('myco')">📚 My Courses</a>
+<a class="mitem" onclick="showSec('vip')">⭐ VIP Dashboard</a>
+<a class="mitem" onclick="showSec('comm')">🔗 Community Links</a>
+<a class="mitem" onclick="showSec('qual')">🎖️ Qualification</a>
+<hr style="margin:12px 0">
+<div class="pro"><img src="https://i.pravatar.cc/100?img=12"><div><b id="uName">Pappan kumar</b><br><small>mastivideos...</small></div></div><br>
+<a class="mitem">💳 My Wallet - ₹0</a>
+<a class="mitem" style="color:red" onclick="logout()">🚪 Log out</a>
 </div>
-<div id="regModal" class="modal"><div class="box"><h2 style="text-align:center">Create Account</h2><input id="rEmail" class="input" placeholder="you@example.com"><input id="rPass" class="input" placeholder="At least 6 characters" type="password"><div style="display:flex;gap:8px"><input id="rRef" class="input" value="TRS-ZV3LQL6WS3" style="flex:1;margin-top:0"><button style="margin-top:0;background:#8b8dbd;color:white;border:none;border-radius:12px;padding:0 18px;font-weight:700">Verified</button></div><div style="color:#22c55e;font-size:12px;font-weight:600;margin-top:4px">Pappan kumar</div><select id="rPkg" class="input"><option>Marketing mastery - Gold Pack - ₹4999</option><option>Diamond Pack - ₹9999</option></select><select class="input"><option>Payment Link</option><option>UPI - 9068720373@ybl</option></select><button style="background:#2d2d6b;color:white;border:none;padding:14px;border-radius:14px;width:100%;font-weight:700;margin-top:14px" onclick="createAcc()">Create Account</button></div></div>
-<div id="loginModal" class="modal"><div class="box"><h3>Login - FIXED No Error ✅</h3><input id="ln" class="input" placeholder="Apna Naam - Pappan Kohli"><input id="lm" class="input" placeholder="Mobile - 9068720373"><input id="lp" class="input" placeholder="Password" type="password"><div style="background:#eef2ff;padding:8px;border-radius:10px;margin-top:8px;font-size:11px">✅ Ab koi error nahi! Direct login!<br>Admin 9068720373 = Full Free</div><button style="background:#111;color:white;border:none;padding:14px;border-radius:14px;width:100%;font-weight:700;margin-top:10px" onclick="doLogin()">Login ✅</button></div></div>
-<div id="dash" style="display:none;padding-bottom:80px"><div class="hero"><h2 id="welcome"></h2><p id="packInfo"></p></div><div style="padding:16px"><div style="background:white;border-radius:18px;padding:16px;margin:12px"><h3>🔗 My Referral Link - Pappan kumar wala</h3><input id="myRef" readonly class="input"><button style="background:#111;color:white;border:none;padding:12px;border-radius:12px;width:100%;margin-top:8px" onclick="navigator.clipboard.writeText(document.getElementById('myRef').value);toast('Copy!')">Copy Link</button></div><div id="adminPanel" style="display:none;background:white;border-radius:18px;padding:16px;margin:12px"><h3>👑 Admin 9068720373</h3><input id="freeMob" class="input" placeholder="Free mobile"><button style="background:#111;color:white;border:none;padding:12px;border-radius:12px;width:100%;margin-top:8px" onclick="makeFree()">Free Link Banao</button><input id="freeOut" readonly class="input" style="margin-top:8px"></div><button onclick="logout()" style="display:block;margin:20px auto;background:none;border:none;opacity:.5">Logout</button></div></div>
+
+<!-- LANDING PAGE - BAHAR SE -->
+<div id="landing">
+<div class="hero">
+<div style="background:rgba(255,255,255,.2);display:inline-block;padding:6px 14px;border-radius:20px;font-size:12px">⭐ Rated 4.9/5 by 10,000+ students</div>
+<h1>Learn Skills That Matter for Your Career</h1>
+<p style="font-size:14px">Access thousands of courses from industry experts. Build real projects.</p><br>
+<button class="btn btn-w" onclick="openLogin()">Explore Courses →</button><br>
+<button class="btn btn-o" onclick="openLogin()">Get Started Today</button>
+</div>
+<div class="stats">
+<div class="s"><h2>98%</h2><small>Growth Focused</small></div>
+<div class="s"><h2>85+</h2><small>Exclusive Courses</small></div>
+<div class="s"><h2>98%</h2><small>World Results</small></div>
+<div class="s"><h2>24/7</h2><small>Practical Skills</small></div>
+</div>
+<div class="card"><h3>Our Courses for Professional Growth.</h3><br>
+<div style="border:1px solid #eee;padding:12px;border-radius:12px;margin-bottom:10px"><b>💰 Finance Mastery</b><p style="font-size:12px">85.7k+ Students ⭐ 5 Rating</p><button class="b" onclick="openLogin()">Enroll Now →</button></div>
+<div style="background:#ff4d6a;color:#fff;padding:12px;border-radius:12px;margin-bottom:10px"><b>🎨 Branding Mastery</b><p style="font-size:12px">2.9k+ Students</p><button class="b" style="background:#fff;color:#000" onclick="openLogin()">Enroll Now →</button></div>
+<div style="background:#4d7aff;color:#fff;padding:12px;border-radius:12px"><b>📈 Marketing Mastery - ₹2,499</b><p style="font-size:12px">1.6k+ Students | Your Package</p><button class="b" style="background:#fff;color:#000" onclick="openLogin()">Enroll Now →</button></div>
+</div>
+<div style="background:#0e0e2a;color:#fff;padding:20px;border-radius:20px 20px 0 0;margin-top:15px"><b>Packages</b><br>Finance | Branding | Sales | AI Tools<br><br>📞 9068720373 - Gaon Dadisra Road</div>
+</div>
+
+<!-- DASHBOARD PAGE - BHITAR SE UNLOCK KE BAAD -->
+<div id="dashboard">
+<div class="sec on" id="d">
+<div class="card blue"><h4>🔔 Join Our WhatsApp Channel</h4><p style="font-size:12px">Stay updated with latest announcements</p><button class="b" style="background:#fff;color:#5d5dff;width:auto">💬 Join Now</button></div>
+<div class="card pro"><img src="https://i.pravatar.cc/100?img=12"><div><h3 id="uName2">Pappan kumar</h3><p style="color:gray;font-size:13px">Marketing mastery</p></div></div>
+<div class="grid2"><div class="earn"><small>Today's Earning</small><h2>₹0</h2></div><div class="earn"><small>7 Days</small><h2>₹0</h2></div><div class="earn"><small>30 Days</small><h2>₹0</h2></div><div class="earn"><small>All Time</small><h2>₹0</h2></div></div>
+<div class="card" style="background:#1a1a4e;color:#fff;display:flex;justify-content:space-between"><div><small>Industrial Income</small><h2>₹0</h2></div><div style="font-size:30px">🎁</div></div>
+</div>
+
+<div class="sec" id="aff"><div class="card"><h3>Refer Karo, Earn Karo 💸</h3><br><select style="width:100%;padding:10px;border-radius:8px"><option>Marketing Mastery ₹2499</option></select><br><br><div class="linkbox">https://pappanrichskills.github.io/?ref=PAPPAN123</div><button class="b" onclick="alert('Link Copied ✅')">Copy Link</button></div><div class="grid2"><div class="card"><h2>0</h2><small>Total Referrals</small></div><div class="card"><h2>₹0</h2><small>Total Earnings</small></div></div></div>
+
+<div class="sec" id="team"><div class="card"><input placeholder="Search by name"><br><br><center>👥<br><b>No team members found</b></center></div></div>
+
+<div class="sec" id="up"><div class="card"><h3>Finance Mastery - ₹14,999</h3><p>✅ STOCK ✅ FOREX ✅ CRYPTO</p><button class="b">Upgrade Now</button></div><div class="card"><h3>INFLUENCE MASTERY - ₹9,999</h3><p>✅ YOUTUBE ✅ INSTAGRAM</p><button class="b">Upgrade Now</button></div><div class="card"><h3>Branding Mastery - ₹2,499</h3><p>✅ VIDEO EDITING ✅ CANVA</p><button class="b">Upgrade Now</button></div></div>
+
+<div class="sec" id="lead"><div class="card"><h3>Today's Leaderboard</h3><br>1. Sonu [STAR] - ₹7,592<br>2. Nandani Godfire - ₹7,525<br>3. VISHNU LIONS - ₹7,122<br>4. PRINCE - ₹7,055</div></div>
+
+<div class="sec" id="train"><div class="card"><b>THE RICH SKILLS TRAINING - DAY 1 OF 7</b><br><button class="b">WATCH VIDEO ▶️</button></div><div class="card"><b>DAY 2 OF 7</b><br><button class="b">WATCH VIDEO ▶️</button></div><div class="card"><b>DAY 3 OF 7</b><br><button class="b">WATCH VIDEO ▶️</button></div></div>
+
+<div class="sec" id="myco"><div class="card"><h3>My Courses - 1 package - 3 courses</h3><br><div style="background:#111;color:#fff;padding:20px;border-radius:15px"><h2>AFFILIATE MARKETING</h2></div><button class="b">Start Learning →</button></div></div>
+
+<div class="sec" id="comm"><div class="card" style="text-align:center"><h1>📸</h1>Instagram<br><button class="b">Visit Link</button></div><div class="card" style="text-align:center"><h1>💬</h1>WhatsApp Channel<br><button class="b">Visit Link</button></div><div class="card" style="text-align:center"><h1>✈️</h1>Telegram<br><button class="b">Visit Link</button></div></div>
+
+<div class="sec" id="qual"><div class="card" style="text-align:center"><br>🏅<br><b>No qualifications found</b></div></div>
+<div class="sec" id="vip"><div class="card" style="text-align:center"><br>⭐<br><b>VIP Dashboard - Coming Soon</b></div></div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div id="loginBox" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:50;justify-content:center;align-items:center;padding:20px">
+<div style="background:#fff;padding:22px;border-radius:18px;width:100%;max-width:350px">
+<h3>Login | Pappan Rich Skills</h3><br>
+<input id="inpName" placeholder="Name - Pappan kumar">
+<input id="inpEmail" placeholder="Email">
+<input id="inpPass" type="password" placeholder="Password">
+<button class="b" onclick="doLogin()">Login Karke Unlock Karo →</button>
+<button style="width:100%;background:none;border:none;margin-top:10px;color:gray" onclick="closeLogin()">Cancel</button>
+</div>
+</div>
+
 <script>
-function toast(m){let t=document.getElementById('toast');t.innerText=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
-function openReg(){let p=new URLSearchParams(location.search);let ref=p.get('ref')||p.get('ref_code')||'';if(ref)document.getElementById('rRef').value=ref.includes('TRS-')?ref:'TRS-'+ref.slice(-10).toUpperCase();document.getElementById('regModal').classList.add('show')}
-function openLogin(){document.getElementById('loginModal').classList.add('show')}
-let idx=0;function autoSlide(){const tr=document.getElementById('track');const d=document.getElementById('dots');if(!tr)return;idx=(idx+1)%6;tr.style.transform=`translateX(-${idx*100}%)`;for(let i=0;i<d.children.length;i++)d.children[i].classList.toggle('active',i===idx);}setInterval(autoSlide,2800);
-function isAdmin(m){return String(m).trim()==='9068720373'}function getFree(){try{return JSON.parse(localStorage.getItem('prs_free')||'[]')}catch(e){return []}}
-function doLogin(){let n=document.getElementById('ln').value.trim();let m=document.getElementById('lm').value.trim();if(!n||!m){toast('Naam aur Mobile likho');return}localStorage.setItem('prs_login','1');localStorage.setItem('prs_name',n);localStorage.setItem('prs_mobile',m);localStorage.setItem('prs_paid','1');document.getElementById('loginModal').classList.remove('show');document.getElementById('loginModal').style.display='none';if(isAdmin(m)){localStorage.setItem('prs_pack','Diamond Admin');toast('Admin Full Free ✅')}else if(getFree().includes(m)){localStorage.setItem('prs_pack','Free by Admin');toast('Free by Admin ✅')}else{localStorage.setItem('prs_pack','Diamond');toast('Login ✅')}showDash();}
-function createAcc(){let e=document.getElementById('rEmail').value.trim();let p=document.getElementById('rPass').value.trim();if(!e||p.length<6){toast('Email aur 6 char');return}let name=e.split('@')[0];let mob=e.replace(/[^0-9]/g,'').slice(-10)||'9'+Date.now().toString().slice(-9);localStorage.setItem('prs_login','1');localStorage.setItem('prs_name',name);localStorage.setItem('prs_mobile',mob);localStorage.setItem('prs_paid','1');localStorage.setItem('prs_pack',document.getElementById('rPkg').value);document.getElementById('regModal').classList.remove('show');toast('Account ban gaya!');showDash();}
-function showDash(){let n=localStorage.getItem('prs_name')||'User';let m=localStorage.getItem('prs_mobile')||'';let p=localStorage.getItem('prs_pack')||'Diamond';document.getElementById('landing').style.display='none';document.getElementById('dash').style.display='block';document.getElementById('welcome').innerText='Welcome '+n+'! 🎉';document.getElementById('packInfo').innerText=p;document.getElementById('myRef').value=location.origin+location.pathname+'?ref_code=TRS-'+String(m).slice(-10).toUpperCase()+'&ref='+m;if(isAdmin(m))document.getElementById('adminPanel').style.display='block';}
-function makeFree(){let m=document.getElementById('freeMob').value.trim();if(!m){toast('Mobile likho');return}let l=getFree();if(!l.includes(m)){l.push(m);localStorage.setItem('prs_free',JSON.stringify(l))}let link=location.origin+location.pathname+'?free='+m;document.getElementById('freeOut').value=link;toast('Free link ban gaya!');}
+function openLogin(){document.getElementById('loginBox').style.display='flex'}
+function closeLogin(){document.getElementById('loginBox').style.display='none'}
+function doLogin(){
+ let n=document.getElementById('inpName').value||'Pappan kumar';
+ localStorage.setItem('pappan_login','yes');
+ localStorage.setItem('pappan_name',n);
+ location.reload();
+}
+function checkLogin(){
+ if(localStorage.getItem('pappan_login')=='yes'){
+   document.getElementById('landing').style.display='none';
+   document.getElementById('dashboard').style.display='block';
+   document.getElementById('navTitle').innerHTML='☰ Dashboard | PappanRichSkills';
+   document.getElementById('navTitle').onclick=function(){toggleMenu()};
+   document.getElementById('navBtn').innerHTML='🔔';
+   let nm=localStorage.getItem('pappan_name')||'Pappan kumar';
+   document.getElementById('uName').innerText=nm;
+   document.getElementById('uName2').innerText=nm;
+ }
+}
+function toggleMenu(){document.getElementById('menu').classList.toggle('on');document.getElementById('ov').classList.toggle('on')}
+function showSec(id){document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));document.getElementById(id).classList.add('on');toggleMenu();window.scrollTo(0,0)}
 function logout(){localStorage.clear();location.reload()}
-(function(){let p=new URLSearchParams(location.search);let f=p.get('free');if(f){let l=getFree();if(!l.includes(f)){l.push(f);localStorage.setItem('prs_free',JSON.stringify(l))}localStorage.setItem('prs_login','1');localStorage.setItem('prs_name','User '+f.slice(-4));localStorage.setItem('prs_mobile',f);localStorage.setItem('prs_paid','1');localStorage.setItem('prs_pack','Free by Admin');history.replaceState({},'',location.pathname);}if(localStorage.getItem('prs_paid'))showDash();})();
-</script></body></html><!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Pappan Rich Skills</title>
-<style>*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}body{background:#fff}header{position:sticky;top:0;z-index:99;background:#fff;display:flex;justify-content:space-between;padding:12px 18px;box-shadow:0 1px 0 #eee}.drawer{position:fixed;right:-340px;top:0;width:310px;height:100%;background:#fff;z-index:200;transition:.35s;padding:20px}.drawer.open{right:0}.hero{background:linear-gradient(180deg,#6366f1,#4f46e5);color:#fff;text-align:center;padding:50px 20px 36px}.btn-w{background:#fff;color:#111;border:none;padding:14px;border-radius:14px;width:100%;font-weight:800}.btn-o{background:transparent;border:1.8px solid #fff;color:#fff;padding:14px;border-radius:14px;width:100%;font-weight:700;margin-top:10px}.vip-wrap{overflow:hidden}.vip-track{display:flex;transition:.5s}.vip-slide{min-width:100%;padding:0 16px}.vip-card{border-radius:22px;overflow:hidden;position:relative;height:420px;background:#111}.vip-card img{width:100%;height:100%;object-fit:cover}.crown{position:absolute;top:12px;right:12px;width:34px;height:34px;background:#facc15;border-radius:50%;display:grid;place-items:center}.vip-name{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(0deg,rgba(0,0,0,.9),transparent);color:#fff;padding:50px 16px 16px;text-align:center;font-weight:800}.dots{display:flex;justify-content:center;gap:6px;margin:14px 0}.dot{width:8px;height:8px;background:#e2e8f0;border-radius:50%}.dot.active{background:#6366f1;width:20px}.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:400;padding:18px}.modal.show{display:flex}.box{background:#fff;border-radius:24px;padding:20px;width:100%;max-width:400px}.input{width:100%;padding:12px;border:1.5px solid #e2e8f0;border-radius:12px;margin-top:8px}.toast{position:fixed;bottom:70px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:12px 20px;border-radius:30px;display:none}.toast.show{display:block}</style></head><body>
-<div id="toast" class="toast"></div>
-<header><div style="font-weight:800">📘 Pappan Rich Skills</div><div style="font-size:26px" onclick="document.getElementById('drawer').classList.toggle('open')">☰</div></header>
-<div id="drawer" class="drawer"><div style="display:flex;justify-content:space-between"><b>Menu</b><span onclick="this.parentElement.parentElement.classList.remove('open')" style="cursor:pointer">✕</span></div><hr><p style="padding:10px;background:#eef2ff;border-radius:10px;margin-top:12px" onclick="openReg()"><b>📝 Register</b></p><p style="padding:10px" onclick="openLogin()">🔐 Login FIXED</p></div>
-<div id="landing">
-<div class="hero"><div style="background:rgba(255,255,255,.18);padding:8px 16px;border-radius:24px;font-size:13px">⭐ Rated 4.9/5 by 10,000+ students</div><h1 style="font-size:34px;font-weight:800;margin:16px 0">Learn Skills That Matter for Your Career</h1><button class="btn-w" onclick="openReg()">Explore Courses →</button><button class="btn-o" onclick="openLogin()">Login - Bina Error Ke ✅</button></div>
-<div style="padding:20px"><div style="background:#eef2ff;color:#6366f1;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;display:inline-block">👑 Elite Community</div><h2 style="font-size:26px;font-weight:800;margin-top:10px">Meet Our VIP Members</h2></div>
-<div class="vip-wrap"><div id="track" class="vip-track">
-<div class="vip-slide"><div class="vip-card"><img src="pappan.jpg"><div class="crown">👑</div><div class="vip-name">Pappan Kohli [STAR ⭐]</div></div></div>
-<div class="vip-slide"><div class="vip-card"><img src="rohit.jpg"><div class="crown">👑</div><div class="vip-name">Rohit Kumar [STAR ⭐]</div></div></div>
-<div class="vip-slide"><div class="vip-card"><img src="bhubhnesh.jpg"><div class="crown">👑</div><div class="vip-name">Bhubhnesh Mahor [STAR ⭐]</div></div></div>
-<div class="vip-slide"><div class="vip-card"><img src="pavan.jpg"><div class="crown">👑</div><div class="vip-name">Pavan Kumar [STAR ⭐]</div></div></div>
-<div class="vip-slide"><div class="vip-card"><img src="abhay.jpg"><div class="crown">👑</div><div class="vip-name">Abhay Singh [STAR ⭐]</div></div></div>
-<div class="vip-slide"><div class="vip-card"><img src="yogita.jpg"><div class="crown">👑</div><div class="vip-name">Yogita Kumari [STAR ⭐]</div></div></div>
-</div><div class="dots" id="dots"><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
-</div>
-<div id="regModal" class="modal"><div class="box"><h2 style="text-align:center">Create Account</h2><input id="rEmail" class="input" placeholder="you@example.com"><input id="rPass" class="input" placeholder="At least 6 characters" type="password"><div style="display:flex;gap:8px"><input id="rRef" class="input" value="TRS-ZV3LQL6WS3" style="flex:1;margin-top:0"><button style="background:#8b8dbd;color:#fff;border:none;border-radius:12px;padding:0 18px">Verified</button></div><div style="color:#22c55e;font-size:12px">Pappan kumar</div><select id="rPkg" class="input"><option>Marketing mastery - Gold Pack - ₹4999</option><option>Diamond Pack - ₹9999</option></select><button style="background:#2d2d6b;color:#fff;border:none;padding:14px;border-radius:14px;width:100%;font-weight:700;margin-top:14px" onclick="createAcc()">Create Account</button></div></div>
-<div id="loginModal" class="modal"><div class="box"><h3>Login - FIXED ✅</h3><input id="ln" class="input" placeholder="Naam - Pappan Kohli"><input id="lm" class="input" placeholder="Mobile - 9068720373"><input id="lp" class="input" placeholder="Password" type="password"><button style="background:#111;color:#fff;border:none;padding:14px;border-radius:14px;width:100%;margin-top:10px" onclick="doLogin()">Login ✅</button></div></div>
-<div id="dash" style="display:none"><div class="hero"><h2 id="welcome"></h2></div><div style="padding:16px"><input id="myRef" readonly class="input"><button style="background:#111;color:#fff;border:none;padding:12px;border-radius:12px;width:100%;margin-top:8px" onclick="navigator.clipboard.writeText(document.getElementById('myRef').value)">Copy Referral</button><div id="adminPanel" style="display:none"><input id="freeMob" class="input" placeholder="Free mobile"><button style="background:#111;color:#fff;border:none;padding:12px;border-radius:12px;width:100%;margin-top:8px" onclick="makeFree()">Free Link Banao</button><input id="freeOut" readonly class="input"></div><button onclick="localStorage.clear();location.reload()" style="margin:20px auto;display:block">Logout</button></div></div>
-<script>
-function toast(m){let t=document.getElementById('toast');t.innerText=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
-function openReg(){document.getElementById('regModal').classList.add('show')}function openLogin(){document.getElementById('loginModal').classList.add('show')}
-let idx=0;function autoSlide(){const tr=document.getElementById('track');const d=document.getElementById('dots');idx=(idx+1)%6;tr.style.transform=`translateX(-${idx*100}%)`;for(let i=0;i<d.children.length;i++)d.children[i].classList.toggle('active',i===idx);}setInterval(autoSlide,2800);
-function isAdmin(m){return String(m).trim()==='9068720373'}function getFree(){try{return JSON.parse(localStorage.getItem('prs_free')||'[]')}catch(e){return []}}
-function doLogin(){let n=document.getElementById('ln').value.trim();let m=document.getElementById('lm').value.trim();if(!n||!m){toast('Naam Mobile likho');return}localStorage.setItem('prs_login','1');localStorage.setItem('prs_name',n);localStorage.setItem('prs_mobile',m);localStorage.setItem('prs_paid','1');document.getElementById('loginModal').classList.remove('show');document.getElementById('loginModal').style.display='none';localStorage.setItem('prs_pack',isAdmin(m)?'Diamond Admin':'Free');showDash();toast('Login ✅ '+n)}
-function createAcc(){let e=document.getElementById('rEmail').value.trim();let p=document.getElementById('rPass').value.trim();if(!e||p.length<6){toast('Email 6 char');return}let name=e.split('@')[0];let mob=e.replace(/[^0-9]/g,'').slice(-10)||'9'+Date.now().toString().slice(-9);localStorage.setItem('prs_login','1');localStorage.setItem('prs_name',name);localStorage.setItem('prs_mobile',mob);localStorage.setItem('prs_paid','1');localStorage.setItem('prs_pack','Diamond');document.getElementById('regModal').classList.remove('show');showDash();}
-function showDash(){let n=localStorage.getItem('prs_name')||'User';let m=localStorage.getItem('prs_mobile')||'';document.getElementById('landing').style.display='none';document.getElementById('dash').style.display='block';document.getElementById('welcome').innerText='Welcome '+n+'! 🎉';document.getElementById('myRef').value=location.origin+location.pathname+'?ref_code=TRS-'+String(m).slice(-10).toUpperCase();if(isAdmin(m))document.getElementById('adminPanel').style.display='block';}
-function makeFree(){let m=document.getElementById('freeMob').value.trim();if(!m){toast('Mobile likho');return}let l=getFree();if(!l.includes(m)){l.push(m);localStorage.setItem('prs_free',JSON.stringify(l))}document.getElementById('freeOut').value=location.origin+location.pathname+'?free='+m;toast('Free link ban gaya!');}
-(function(){let p=new URLSearchParams(location.search);let f=p.get('free');if(f){let l=getFree();if(!l.includes(f)){l.push(f);localStorage.setItem('prs_free',JSON.stringify(l))}localStorage.setItem('prs_login','1');localStorage.setItem('prs_name','User '+f.slice(-4));localStorage.setItem('prs_mobile',f);localStorage.setItem('prs_paid','1');localStorage.setItem('prs_pack','Free by Admin');history.replaceState({},'',location.pathname);}if(localStorage.getItem('prs_paid'))showDash();})();
-</script></body></html>
+checkLogin();
+</script>
+</body>
+</html>
