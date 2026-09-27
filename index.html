@@ -1,215 +1,264 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Rich Skills Clone - Pappan Rich Skills</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pappan Rich Skills - Learn Skills & Earn</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',Arial}
-body{background:#1a1a5e;color:#fff}
-nav{background:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:99}
-.logo{display:flex;align-items:center;gap:6px;color:#1a1a5e;font-weight:800;font-size:20px}
-.hero{padding:30px 20px 20px 20px;text-align:left}
-.badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:8px 14px;border-radius:20px;font-size:12px;display:inline-flex;align-items:center;gap:6px;color:#ffd700}
-.hero h1{font-size:38px;line-height:1.1;font-weight:800;margin:18px 0 12px 0;letter-spacing:-1px}
-.hero p{font-size:15px;line-height:1.5;color:rgba(255,255,255,.8)}
-.btn{width:100%;padding:16px;border-radius:12px;border:none;font-size:15px;font-weight:600;margin:8px 0}
-.btn-w{background:#fff;color:#000}
-.btn-o{background:transparent;border:1.5px solid rgba(255,255,255,.6);color:#fff}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:10px 16px}
-.stat{background:rgba(255,255,255,.9);color:#000;border-radius:16px;padding:16px;display:flex;align-items:center;gap:12px}
-.stat .icon{width:42px;height:42px;background:#eef0ff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}
-.stat h3{font-size:16px} .stat small{font-size:11px;color:#666}
-.whiteSec{background:#f5f5ff;color:#000;border-radius:28px 28px 0 0;padding:22px 16px;margin-top:10px}
-.whiteSec h2{font-size:24px;font-weight:800;line-height:1.2}
-.courseCard{background:#fff;border-radius:18px;padding:16px;margin:14px 0;box-shadow:0 4px 15px rgba(0,0,0,.08);border:1px solid #eee}
-.courseCard.orange{background:#ff8c2a;color:#fff;border:none}
-.courseTop{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
-.priceRow{display:flex;gap:12px;margin:10px 0;font-size:12px;color:#666}
-.courseCard.orange .priceRow{color:rgba(255,255,255,.9)}
-.enrollBtn{width:100%;padding:13px;border:none;border-radius:10px;background:#1a1a5e;color:#fff;font-weight:700;margin-top:10px}
-.courseCard.orange .enrollBtn{background:#fff;color:#000}
-.whyCard{background:#fff;border:1px solid #eee;border-radius:16px;padding:16px;margin:10px 0;display:flex;gap:12px}
-.whyCard .ic{width:40px;height:40px;background:#eef0ff;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.darkCard{background:#1a1a5e;color:#fff;border-radius:20px;padding:20px;margin:14px 0}
-.benefitGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
-.benefit{background:rgba(255,255,255,.1);border-radius:12px;padding:14px;text-align:center;font-size:13px}
-.vipCard{background:#fff;border-radius:20px;overflow:hidden;margin:12px 0;color:#000}
-.faq{background:#fff;border-radius:12px;padding:14px;margin:8px 0;display:flex;justify-content:space-between;border:1px solid #eee}
-footer{background:#0a0a1a;color:#fff;padding:24px 16px}
-footer h4{margin:16px 0 8px 0;font-size:14px} footer p,footer a{font-size:13px;color:rgba(255,255,255,.7);line-height:1.8;text-decoration:none;display:block}
-.sideSocial{position:fixed;left:10px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:10px}
-.sideSocial div{width:36px;height:36px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.2);color:#000}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif}
+html,body{width:100%;overflow-x:hidden;background:#f2f4ff}
+a{text-decoration:none}
+
+/* TOP BAR */
+.topbar{width:100%;background:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:99;border-bottom:1px solid #eee}
+.topbar b{color:#2222a0;font-size:19px}
+
+/* LANDING */
+#landing{display:block;width:100%}
+#dashboard{display:none;width:100%;background:#f2f4ff;min-height:100vh}
+.hero{width:100%;background:#5f5bff;color:#fff;padding:45px 20px 50px 20px;text-align:center;border-radius:0 0 32px 32px}
+.hero .badge{background:rgba(255,255,255,0.22);padding:8px 14px;border-radius:20px;font-size:12px;display:inline-block}
+.hero h1{font-size:34px;font-weight:800;line-height:1.2;margin:14px 0}
+.hero p{font-size:14px;line-height:1.5;opacity:0.9}
+.btn{width:100%;max-width:340px;padding:15px;border-radius:14px;border:none;font-size:15px;font-weight:700;margin:8px auto;display:block}
+.btn-w{background:#fff;color:#000}.btn-o{background:transparent;border:2px solid #fff;color:#fff}
+
+/* 4 STATS */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px}
+.stat{background:#fff;border-radius:16px;padding:20px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+.stat h2{font-size:22px}.stat small{font-size:12px;color:#666}
+
+/* WHITE SECTION */
+.white{width:100%;background:#fff;border-radius:28px 28px 0 0;padding:22px 16px;margin-top:12px}
+.white h2{font-size:23px;font-weight:800;color:#111;line-height:1.25}
+.white p.desc{font-size:13px;color:#666;margin:8px 0}
+
+/* COURSE CARDS */
+.course-card{background:#fff;border:1.5px solid #eee;border-radius:18px;padding:16px;margin:12px 0;width:100%}
+.course-card h3{font-size:16px;color:#111}
+.course-card small{font-size:12px;color:#666}
+.course-card button{width:100%;padding:13px;border-radius:11px;border:none;background:#1a1a6e;color:#fff;font-weight:700;margin-top:12px}
+.c-red{background:#ff4d6e;color:#fff;border:none}.c-red small{color:#fff}.c-red button{background:#fff;color:#000}
+.c-blue{background:#4e6bff;color:#fff;border:none}.c-blue small{color:#fff}.c-blue button{background:#fff;color:#000}
+.c-green{background:#10b981;color:#fff;border:none}.c-green small{color:#fff}.c-green button{background:#fff;color:#000}
+.c-orange{background:#f59e0b;color:#fff;border:none}.c-orange small{color:#fff}.c-orange button{background:#fff;color:#000}
+
+/* WHY US */
+.why{background:#fff;border:1px solid #eee;border-radius:16px;padding:16px;margin:10px 0;display:flex;gap:12px;width:100%}
+.why .ic{width:42px;height:42px;background:#eef0ff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+
+/* BENEFIT */
+.dark{width:100%;background:#1a1a6e;color:#fff;border-radius:22px;padding:22px;margin:16px 0}
+.benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.benefit-box{background:rgba(255,255,255,0.12);border-radius:14px;padding:16px;text-align:center;font-size:13px}
+
+/* FAQ */
+.faq-item{background:#fff;border:1px solid #eee;border-radius:12px;padding:14px;margin:8px 0;display:flex;justify-content:space-between;font-size:14px;width:100%}
+
+/* FOOTER - NO RICH SKILLS NAME */
+footer{width:100%;background:#0c0c2a;color:#fff;padding:26px 18px}
+footer h4{margin:18px 0 8px 0;font-size:14px}
+footer a{color:rgba(255,255,255,0.6);font-size:13px;display:block;margin:5px 0}
+footer p{color:rgba(255,255,255,0.7);font-size:13px;line-height:1.6}
+
+/* DASHBOARD - AFTER LOGIN */
+.dash-top{background:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+.dash-card{background:#fff;border-radius:16px;padding:16px;margin:10px 12px;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+.dash-purple{background:#5f5bff;color:#fff;border-radius:16px;padding:16px;margin:10px 12px;display:flex;justify-content:space-between;align-items:center}
+.earn-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 12px}
+.earn-box{background:#1a1a4e;color:#fff;border-radius:14px;padding:14px}
+.menu{position:fixed;left:-300px;top:0;width:280px;height:100%;background:#fff;z-index:200;padding:18px;transition:0.3s;overflow-y:auto}
+.menu.open{left:0}
+.overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:150;display:none}
+.overlay.open{display:block}
+.mlink{display:block;padding:11px;border-radius:10px;color:#333;margin:4px 0;font-size:14px}
+.mlink.active{background:#eef0ff;color:#5f5bff;font-weight:700}
+.link-box{border:1.5px dashed #5f5bff;background:#f3f3ff;padding:12px;border-radius:12px;font-size:13px;word-break:break-all;margin:10px 0}
 </style>
 </head>
 <body>
-<nav><div class="logo">📘 Pappan Rich Skills</div><div style="font-size:22px" onclick="location.href='login.html'">☰</div></nav>
 
-<div class="sideSocial"><div>📷</div><div>▶️</div></div>
+<!-- LANDING PAGE -->
+<div id="landing">
+<div class="topbar"><b>📘 Pappan Rich Skills</b><a href="#" onclick="openLogin()" style="color:#000;font-weight:700">Login</a></div>
 
 <div class="hero">
 <div class="badge">⭐ Rated 4.9/5 by 10,000+ students</div>
 <h1>Learn Skills That Matter for Your Career</h1>
-<p>Access thousands of courses from industry experts. Build real-world projects and earn certificates recognized by top companies worldwide.</p>
+<p>Access thousands of courses from industry experts. Build real-world projects and earn certificates recognized by top companies.</p>
 <br>
-<button class="btn btn-w" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">Explore Courses →</button>
-<button class="btn btn-o" onclick="location.href='login.html'">Login</button>
-<div style="margin-top:14px;font-size:12px;color:#4ade80">● Announcement From The Rich Skills.</div>
+<button class="btn btn-w" onclick="document.getElementById('allcourses').scrollIntoView({behavior:'smooth'})">Explore Courses →</button>
+<button class="btn btn-o" onclick="openLogin()">Get Started Today</button>
+<p style="margin-top:16px;font-size:12px;color:#7dff9e">● Live - Pappan Rich Skills Announcement</p>
 </div>
 
 <div class="stats">
-<div class="stat"><div class="icon">👥</div><div><h3>85+</h3><small>Exclusive Courses</small></div></div>
-<div class="stat"><div class="icon">⏰</div><div><h3>24/7</h3><small>Practical Skills</small></div></div>
-<div class="stat"><div class="icon">📈</div><div><h3>98%</h3><small>Growth Focused</small></div></div>
-<div class="stat"><div class="icon">⚡</div><div><h3>98%</h3><small>World Results</small></div></div>
+<div class="stat"><h2>85+</h2><small>Exclusive Courses</small></div>
+<div class="stat"><h2>24/7</h2><small>Practical Skills</small></div>
+<div class="stat"><h2>98%</h2><small>Growth Focused</small></div>
+<div class="stat"><h2>98%</h2><small>Success Results</small></div>
 </div>
 
-<div class="whiteSec" id="courses">
-<div style="text-align:center;margin-bottom:10px"><small style="background:#eef0ff;padding:6px 12px;border-radius:20px;font-size:11px">Our Core Offerings</small></div>
-<h2>Our Courses for Precision Learning for Professional Growth.</h2>
-<p style="font-size:13px;color:#666;margin:8px 0">Comprehensive training programs designed to give you practical skills you can immediately apply</p>
+<div class="white" id="allcourses">
+<h2>Our Courses for Professional Growth.</h2>
+<p class="desc">Comprehensive training programs designed to give you practical skills you can apply immediately.</p>
 
-<!-- 5 PACKAGES -->
-<div class="courseCard"><div class="courseTop"><div><small>FINANCE MASTERY - Build Wealth in the Digital Era</small><h3 style="margin-top:6px">Finance Mastery</h3></div><div style="font-size:22px">$</div></div><div class="priceRow"><span>⭐ 5 Rating</span><span>• 42.6k+ Students</span></div><button class="enrollBtn" onclick="location.href='login.html'">Enroll Now →</button></div>
-
-<div class="courseCard orange"><div class="courseTop"><div><small>INFLUENCE MASTERY - Become a Powerful Digital Influencer</small><h3 style="margin-top:6px">Influence Mastery</h3></div></div><div class="priceRow"><span>⭐ 5 Rating</span><span>• 35k+ Students</span></div><button class="enrollBtn" onclick="location.href='login.html'">Enroll Now →</button></div>
-
-<div class="courseCard"><div class="courseTop"><div><small>TRAFFIC MASTERY - Master Digital Marketing</small><h3 style="margin-top:6px">Traffic Mastery - ₹3,999</h3></div><div>📈</div></div><div class="priceRow"><span>⭐ 4.9 Rating</span><span>• 28k+ Students</span></div><button class="enrollBtn" onclick="location.href='login.html'">Enroll Now →</button></div>
-
-<div class="courseCard"><div class="courseTop"><div><small>BRANDING MASTERY - Build Your Brand</small><h3 style="margin-top:6px">Branding Mastery - ₹2,499</h3></div><div>🎨</div></div><div class="priceRow"><span>⭐ 4.8 Rating</span><span>• 18k+ Students</span></div><button class="enrollBtn" onclick="location.href='login.html'">Enroll Now →</button></div>
-
-<div class="courseCard"><div class="courseTop"><div><small>MARKETING MASTERY - Your Main Package</small><h3 style="margin-top:6px">Marketing Mastery - ₹2,499</h3></div><div>🚀</div></div><div class="priceRow"><span>⭐ 5 Rating</span><span>• 1.6k+ Students</span></div><button class="enrollBtn" onclick="location.href='login.html'">Enroll Now →</button></div>
+<div class="course-card"><h3>💰 Finance Mastery</h3><small>⭐ 5.0 | 42.6k+ Students</small><button onclick="openLogin()">Enroll Now →</button></div>
+<div class="course-card c-red"><h3>🎨 Branding Mastery - ₹2,499</h3><small>⭐ 4.8 | 18.5k+ Students</small><button onclick="openLogin()">Enroll Now →</button></div>
+<div class="course-card c-blue"><h3>📈 Marketing Mastery - ₹2,499</h3><small>⭐ 5.0 | 1.6k+ Students - Your Package</small><button onclick="openLogin()">Enroll Now →</button></div>
+<div class="course-card c-green"><h3>🚀 Sales Mastery - ₹3,999</h3><small>⭐ 4.9 | 9.2k+ Students</small><button onclick="openLogin()">Enroll Now →</button></div>
+<div class="course-card c-orange"><h3>🌟 Influence Mastery - ₹9,999</h3><small>⭐ 4.9 | 5.4k+ Students</small><button onclick="openLogin()">Enroll Now →</button></div>
 
 <br>
-<div style="text-align:center"><small style="background:#eef0ff;padding:6px 12px;border-radius:20px">Why Choose Us</small><h2 style="margin-top:10px">Why The Rich Skills?</h2><p style="font-size:13px;color:#666">We bridge the gap between traditional education and real-world success.</p></div>
+<h2>Why Pappan Rich Skills?</h2>
+<p class="desc">We bridge the gap between traditional education and real-world success.</p>
 
-<div class="whyCard"><div class="ic">📘</div><div><b>Practical Skill-Based Learning</b><p style="font-size:12px;color:#666">No fluff, only actionable skills you can apply immediately in real-world scenarios</p></div></div>
-<div class="whyCard"><div class="ic">👨‍🏫</div><div><b>Real-World Knowledge</b><p style="font-size:12px;color:#666">Learn from industry experts with proven track records and practical experience</p></div></div>
-<div class="whyCard"><div class="ic">📈</div><div><b>Financial Literacy</b><p style="font-size:12px;color:#666">Understand money management, investing, and building sustainable income streams</p></div></div>
-<div class="whyCard"><div class="ic">🎨</div><div><b>Creative & Marketing Skills</b><p style="font-size:12px;color:#666">Master the art of branding, design, and marketing to stand out in the digital world</p></div></div>
+<div class="why"><div class="ic">📘</div><div><b>Practical Skill-Based Learning</b><br><small style="color:#666">No fluff, only actionable skills you can apply immediately.</small></div></div>
+<div class="why"><div class="ic">👨‍🏫</div><div><b>Real-World Knowledge</b><br><small style="color:#666">Learn from Pappan Kumar with proven track record.</small></div></div>
+<div class="why"><div class="ic">📈</div><div><b>Financial Literacy</b><br><small style="color:#666">Understand money management and building income.</small></div></div>
+<div class="why"><div class="ic">🎨</div><div><b>Creative & Marketing Skills</b><br><small style="color:#666">Master branding, design and marketing to stand out.</small></div></div>
 
-<div class="darkCard">
-<h3>Who Can Benefit from The Rich Skills?</h3>
-<p style="font-size:12px;opacity:.8;margin:8px 0">Whether you want to earn, grow, or succeed in the digital world, The Rich Skills provides the practical knowledge.</p>
-<div class="benefitGrid">
-<div class="benefit">🎓<br><b>Students</b><br><small>Learn & grow</small></div>
-<div class="benefit">🎥<br><b>Creators</b><br><small>Monetize content</small></div>
-<div class="benefit">💼<br><b>Business Owners</b><br><small>Digital marketing</small></div>
-<div class="benefit">💰<br><b>Individuals</b><br><small>Finance & earning</small></div>
+<div class="dark">
+<h2>Who Can Benefit from Pappan Rich Skills?</h2>
+<p style="font-size:12px;opacity:0.8;margin:8px 0">Whether you want to earn, grow or succeed in digital world, we provide practical knowledge.</p>
+<div class="benefit-grid">
+<div class="benefit-box">🎓<br><b>Students</b><br>Learn & grow</div>
+<div class="benefit-box">🎥<br><b>Creators</b><br>Monetize content</div>
+<div class="benefit-box">💼<br><b>Business Owners</b><br>Digital marketing</div>
+<div class="benefit-box">💰<br><b>Individuals</b><br>Finance & earning</div>
 </div>
-<button class="btn btn-w" style="margin-top:10px" onclick="location.href='login.html'">Start Your Journey Today</button>
-</div>
-
-<div style="text-align:center;margin:20px 0"><small style="background:#eef0ff;padding:6px 12px;border-radius:20px">Elite Community</small><h2 style="margin-top:8px">Meet Our VIP Members</h2><p style="font-size:12px;color:#666">Join a community of successful entrepreneurs, creators, and professionals</p></div>
-<div class="vipCard"><div style="height:200px;background:linear-gradient(#ddd,#aaa);display:flex;align-items:center;justify-content:center;font-size:40px">🏆</div><div style="padding:14px;text-align:center"><b>RAJ YADAV [GODFIRE 🔥]</b><br><small>Success Story - VIP Member</small></div></div>
-
-<div style="margin:20px 0"><h2>What Our Students Say</h2><p style="font-size:12px;color:#666">Real results from real people who transformed their lives</p>
-<div class="courseCard"><p style="font-size:13px">My name is Rishika, and I am a college student. Joining The Rich Skills Learn & Earn was one of the best decisions...</p><br><div style="display:flex;align-items:center;gap:10px"><div style="width:36px;height:36px;background:#ddd;border-radius:50%"></div><div><b>Rishika</b><br><small>Student</small></div></div></div>
+<button class="btn btn-w" onclick="openLogin()">Start Your Journey Today</button>
 </div>
 
-<div class="darkCard" style="text-align:center"><h2>Ready to Write Your Success Story?</h2><p style="font-size:12px;opacity:.8">Join thousands of students who have already transformed their careers and lives</p><button class="btn btn-w" style="margin-top:12px" onclick="location.href='login.html'">Start Learning Today</button></div>
+<br>
+<h2>Meet Our VIP Members</h2>
+<p class="desc">Join a community of successful entrepreneurs and professionals from Pappan Rich Skills.</p>
+<div style="background:#fff;border-radius:20px;overflow:hidden;border:1px solid #eee;text-align:center"><div style="height:200px;background:#ddd;display:flex;align-items:center;justify-content:center;font-size:50px">🏆</div><div style="padding:14px"><b>Pappan Kumar - Top Earner</b><br><small style="color:#666">Success Story - Pappan Rich Skills</small></div></div>
 
-<div style="text-align:center;margin:18px 0"><small style="background:#eef0ff;padding:6px 12px;border-radius:20px">Got Questions?</small><h2>Frequently Asked Questions</h2><p style="font-size:12px;color:#666">Everything you need to know about The Rich Skills platform</p></div>
-<div class="faq"><span>What is The Rich Skills ?</span><span>▼</span></div>
-<div class="faq"><span>What about packages?</span><span>▼</span></div>
-<div class="faq"><span>What happens after I buy?</span><span>▼</span></div>
-<div class="faq"><span>Can I actually learn and earn with this, or is it just statement?</span><span>▼</span></div>
+<br><br>
+<h2>What Our Students Say</h2>
+<p class="desc">Real results from real people.</p>
+<div class="course-card"><p style="font-size:13px;line-height:1.5">My name is Rishika, and I am a college student. Joining Pappan Rich Skills was one of the best decisions of my life. I learned practical skills!</p><br><div style="display:flex;gap:10px;align-items:center"><div style="width:36px;height:36px;background:#ddd;border-radius:50%"></div><div><b>Rishika</b><br><small>Student</small></div></div></div>
 
-<div class="darkCard"><h3>Still Have Questions?</h3><p style="font-size:12px;opacity:.8">Our team is here to help you find the right course for your goals</p><button class="btn btn-w" style="margin-top:10px">Contact Support</button></div>
+<div class="dark" style="text-align:center"><h2>Ready to Write Your Success Story?</h2><p style="font-size:13px;opacity:0.8;margin:8px 0">Join thousands of students who transformed their careers with Pappan Rich Skills</p><button class="btn btn-w" onclick="openLogin()">Start Learning Today</button></div>
+
+<br>
+<h2>Frequently Asked Questions</h2>
+<p class="desc">Everything you need to know about Pappan Rich Skills platform</p>
+<div class="faq-item"><span>What is Pappan Rich Skills?</span><span>▼</span></div>
+<div class="faq-item"><span>What about packages?</span><span>▼</span></div>
+<div class="faq-item"><span>What happens after I buy?</span><span>▼</span></div>
+<div class="faq-item"><span>Can I learn and earn with this?</span><span>▼</span></div>
+
+<div class="dark"><h3>Still Have Questions?</h3><p style="font-size:12px;opacity:0.8;margin:6px 0">Our team is here to help you find the right course.</p><button class="btn btn-w" style="margin-top:10px">Contact Support</button></div>
+
 </div>
 
 <footer>
-<div style="font-size:22px;font-weight:800">📘 Pappan Rich Skills</div>
-<p style="margin:8px 0">Empowering individuals worldwide with practical skills and knowledge to achieve financial freedom and personal success.</p>
+<div style="font-size:20px;font-weight:800">📘 Pappan Rich Skills</div>
+<p>Empowering individuals worldwide with practical skills and knowledge to achieve financial freedom and personal success.</p>
 <h4>Packages</h4>
-<a>Finance Mastery</a><a>Influence Mastery</a><a>Traffic Mastery</a><a>Branding Mastery</a><a>Marketing mastery</a>
+<a>Finance Mastery</a><a>Branding Mastery</a><a>Marketing Mastery</a><a>Sales Mastery</a><a>Influence Mastery</a>
 <h4>Quick Links</h4>
 <a>Disclaimer</a><a>Terms and Conditions</a><a>Privacy Policy</a><a>Refund Policy</a>
 <h4>Get In Touch</h4>
-<a>📧 support@therichskills.com</a><a>📍 Noida, Uttar Pradesh - 9068720373</a>
+<a>📧 support@pappanrichskills.com</a>
+<a>📍 Gaon Dadisra Road, Karahari - 9068720373</a>
 <br>
-<center style="font-size:11px;opacity:.5">© 2026 The Rich Skills. All rights reserved.<br>Made With ❤️ By Bizfunnel</center>
+<center style="font-size:11px;color:rgba(255,255,255,0.4)">© 2026 Pappan Rich Skills. All rights reserved.<br>Made with ❤️ by Pappan Kumar</center>
 </footer>
+</div>
+
+<!-- DASHBOARD - AFTER UNLOCK -->
+<div id="dashboard">
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+<div class="menu" id="sidemenu">
+<b>📘 Pappan Rich Skills</b><br><br>
+<a class="mlink active" onclick="showDash('dash1')">📊 Dashboard</a>
+<a class="mlink" onclick="showDash('dash2')">👥 My Team</a>
+<a class="mlink" onclick="showDash('dash3')">🔗 Affiliate Links</a>
+<a class="mlink" onclick="showDash('dash4')">🚀 Upgrade Course</a>
+<a class="mlink" onclick="showDash('dash5')">🏆 Leaderboard</a>
+<a class="mlink" onclick="showDash('dash6')">🎥 Trainings</a>
+<a class="mlink" onclick="showDash('dash7')">📚 My Courses</a>
+<a class="mlink" onclick="showDash('dash8')">🔗 Community Links</a>
+<hr style="margin:12px 0">
+<div style="display:flex;gap:10px;align-items:center"><img src="https://i.pravatar.cc/100?img=12" style="width:44px;height:44px;border-radius:50%"><div><b id="uname">Pappan Kumar</b><br><small>Marketing Mastery</small></div></div>
+<br><a class="mlink" style="color:red" onclick="logout()">🚪 Log out</a>
+</div>
+
+<div class="dash-top"><b onclick="toggleMenu()">☰ Dashboard | PappanRichSkills</b><span>🔔</span></div>
+
+<div id="dash1">
+<div class="dash-purple"><div><h4>🔔 Join Our WhatsApp Channel</h4><small>Stay updated with latest announcements</small></div><button style="background:#fff;color:#5f5bff;border:none;padding:8px 12px;border-radius:8px;font-weight:700">Join</button></div>
+<div class="dash-card" style="display:flex;gap:12px;align-items:center"><img src="https://i.pravatar.cc/100?img=12" style="width:50px;height:50px;border-radius:50%"><div><h3 id="uname2">Pappan Kumar</h3><small>Marketing Mastery - 3 courses</small></div></div>
+<div class="earn-grid">
+<div class="earn-box"><small>Today's Earning</small><h2>₹0</h2></div>
+<div class="earn-box"><small>7 Days</small><h2>₹0</h2></div>
+<div class="earn-box"><small>30 Days</small><h2>₹0</h2></div>
+<div class="earn-box"><small>All Time</small><h2>₹0</h2></div>
+</div>
+<div class="dash-card" style="background:#1a1a4e;color:#fff;display:flex;justify-content:space-between"><div><small>Industrial Income</small><h2>₹0</h2></div><div style="font-size:32px">🎁</div></div>
+</div>
+
+<div id="dash2" style="display:none"><div class="dash-card"><input placeholder="Search team" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd"><br><br><center>👥<br><b>No team members found</b></center></div></div>
+
+<div id="dash3" style="display:none"><div class="dash-card"><h3>Refer Karo, Earn Karo 💸</h3><br><div class="link-box">https://kingtheskils-sketch.github.io/Pappan-rich-skills/?ref=PAPPAN123</div><button style="width:100%;padding:12px;background:#5f5bff;color:#fff;border:none;border-radius:10px;font-weight:700" onclick="alert('Copied ✅')">Copy Link</button></div></div>
+
+<div id="dash4" style="display:none">
+<div class="dash-card"><h3>Finance Mastery - ₹14,999</h3><small>✅ STOCK ✅ FOREX ✅ CRYPTO</small><button style="width:100%;margin-top:8px;padding:12px;background:#1a1a6e;color:#fff;border:none;border-radius:10px">Upgrade Now</button></div>
+<div class="dash-card"><h3>Influence Mastery - ₹9,999</h3><small>✅ YOUTUBE ✅ INSTAGRAM</small><button style="width:100%;margin-top:8px;padding:12px;background:#1a1a6e;color:#fff;border:none;border-radius:10px">Upgrade Now</button></div>
+</div>
+
+<div id="dash5" style="display:none"><div class="dash-card"><h3>Today's Leaderboard - Pappan Rich Skills</h3><br>1. Sonu [STAR] - ₹7,592<br>2. Nandani - ₹7,525<br>3. VISHNU - ₹7,122<br>4. PRINCE - ₹7,055</div></div>
+
+<div id="dash6" style="display:none"><div class="dash-card"><b>Pappan Rich Skills Training - DAY 1</b><br><button style="width:100%;margin-top:8px;padding:10px;background:#5f5bff;color:#fff;border:none;border-radius:8px">WATCH VIDEO ▶️</button></div><div class="dash-card"><b>DAY 2</b><br><button style="width:100%;margin-top:8px;padding:10px;background:#5f5bff;color:#fff;border:none;border-radius:8px">WATCH VIDEO ▶️</button></div><div class="dash-card"><b>DAY 3</b><br><button style="width:100%;margin-top:8px;padding:10px;background:#5f5bff;color:#fff;border:none;border-radius:8px">WATCH VIDEO ▶️</button></div></div>
+
+<div id="dash7" style="display:none"><div class="dash-card"><h3>My Courses - 1 Package - 3 Courses</h3><br><div style="background:#111;color:#fff;padding:30px;border-radius:16px;text-align:center"><h2>AFFILIATE MARKETING</h2></div><button style="width:100%;margin-top:10px;padding:12px;background:#5f5bff;color:#fff;border:none;border-radius:10px">Start Learning →</button></div></div>
+
+<div id="dash8" style="display:none"><div class="dash-card" style="text-align:center"><h1>📸</h1>Instagram<br><button style="width:100%;margin-top:8px;padding:10px;background:#5f5bff;color:#fff;border:none;border-radius:8px">Visit Link</button></div><div class="dash-card" style="text-align:center"><h1>💬</h1>WhatsApp Channel<br><button style="width:100%;margin-top:8px;padding:10px;background:#5f5bff;color:#fff;border:none;border-radius:8px">Join Now</button></div></div>
+
+</div>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:500;justify-content:center;align-items:center;padding:20px">
+<div style="background:#fff;padding:26px;border-radius:20px;width:100%;max-width:360px">
+<h2>Pappan Rich Skills Login</h2><p style="font-size:13px;color:#666;margin:6px 0 12px 0">Unlock your dashboard</p>
+<input id="loginName" placeholder="Name - Pappan Kumar" style="width:100%;padding:13px;margin:6px 0;border-radius:10px;border:1px solid #ddd">
+<input placeholder="Email" style="width:100%;padding:13px;margin:6px 0;border-radius:10px;border:1px solid #ddd">
+<input type="password" placeholder="Password" style="width:100%;padding:13px;margin:6px 0;border-radius:10px;border:1px solid #ddd">
+<button onclick="doLogin()" style="width:100%;padding:14px;background:#5f5bff;color:#fff;border:none;border-radius:12px;font-weight:700;margin-top:10px">Login & Unlock Dashboard →</button>
+<button onclick="closeLogin()" style="width:100%;background:none;border:none;margin-top:10px;color:#666">Cancel</button>
+</div>
+</div>
 
 <script>
-// Login check - agar login hai to dashboard dikhao
-if(localStorage.getItem('login')=='yes'){
- // auto redirect to dashboard after 1 sec if needed
+function openLogin(){document.getElementById('loginModal').style.display='flex'}
+function closeLogin(){document.getElementById('loginModal').style.display='none'}
+function doLogin(){
+  let n=document.getElementById('loginName').value||'Pappan Kumar';
+  localStorage.setItem('pappan_login','yes');
+  localStorage.setItem('pappan_name',n);
+  location.reload();
 }
+function checkLogin(){
+  if(localStorage.getItem('pappan_login')=='yes'){
+    document.getElementById('landing').style.display='none';
+    document.getElementById('dashboard').style.display='block';
+    let nm=localStorage.getItem('pappan_name')||'Pappan Kumar';
+    document.getElementById('uname').innerText=nm;
+    document.getElementById('uname2').innerText=nm;
+  }
+}
+function toggleMenu(){document.getElementById('sidemenu').classList.toggle('open');document.getElementById('overlay').classList.toggle('open')}
+function showDash(id){
+  ['dash1','dash2','dash3','dash4','dash5','dash6','dash7','dash8'].forEach(d=>document.getElementById(d).style.display='none');
+  document.getElementById(id).style.display='block';
+  toggleMenu();
+}
+function logout(){localStorage.clear();location.reload()}
+checkLogin();
 </script>
+
 </body>
-</html><!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pappan Rich Skills</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial}
-body{background:#eef2ff}
-nav{background:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
-nav b{font-size:18px}
-.hero{background:#6366f1;color:#fff;padding:75px 22px 65px 22px;text-align:center;border-radius:0 0 32px 32px}
-.badge{background:rgba(255,255,255,.25);padding:8px 16px;border-radius:22px;font-size:13px;display:inline-block;margin-bottom:18px}
-.hero h1{font-size:36px;line-height:1.15;font-weight:800;margin-bottom:14px}
-.hero p{font-size:16px;opacity:.9;line-height:1.4}
-.btn{width:100%;max-width:340px;padding:16px;border-radius:14px;border:none;font-size:16px;font-weight:700;margin:8px auto;display:block}
-.btn-w{background:#fff;color:#000}
-.btn-o{background:transparent;border:2px solid #fff;color:#fff}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:18px 14px}
-.s{background:#fff;border-radius:16px;padding:22px 10px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.05)}
-.s h2{font-size:26px}
-.s small{color:#666;font-size:12px}
-.sec{background:#fff;margin:14px;border-radius:22px;padding:18px}
-.course{border-radius:18px;padding:16px;margin:14px 0;position:relative}
-.course h3{font-size:18px;margin-bottom:4px}
-.course p{font-size:13px;opacity:.8}
-.enroll{width:100%;padding:14px;border:none;border-radius:12px;font-weight:700;margin-top:12px;font-size:15px}
-.c1{background:#fff;border:1px solid #eee}.c1 .enroll{background:#1e1b4b;color:#fff}
-.c2{background:#ff4d6a;color:#fff}.c2 .enroll{background:#fff;color:#000}
-.c3{background:#4f6ef7;color:#fff}.c3 .enroll{background:#fff;color:#000}
-.c4{background:#10b981;color:#fff}.c4 .enroll{background:#fff;color:#000}
-.c5{background:#f59e0b;color:#fff}.c5 .enroll{background:#fff;color:#000}
-footer{background:#0f0f2d;color:#fff;padding:28px 18px;border-radius:22px 22px 0 0;margin-top:20px}
-</style>
-</head>
-<body>
-<nav><b>📘 Pappan Rich Skills</b><a href="login.html" style="text-decoration:none;color:#000;font-weight:600">Login</a></nav>
-
-<div class="hero">
-<div class="badge">⭐ Rated 4.9/5 by 10,000+ students</div>
-<h1>Learn Skills That Matter for Your Career</h1>
-<p>Access thousands of courses from industry experts. Build real-world projects and earn certificates.</p><br>
-<button class="btn btn-w" onclick="location.href='#courses'">Explore Courses →</button>
-<button class="btn btn-o" onclick="location.href='login.html'">Get Started Today</button>
-</div>
-
-<div class="stats">
-<div class="s"><h2>98%</h2><small>Growth Focused</small></div>
-<div class="s"><h2>85+</h2><small>Exclusive Courses</small></div>
-<div class="s"><h2>98%</h2><small>World Results</small></div>
-<div class="s"><h2>24/7</h2><small>Practical Skills</small></div>
-</div>
-
-<div class="sec" id="courses">
-<h2 style="font-size:22px">Our Courses for<br>Professional Growth.</h2>
-
-<div class="course c1"><h3>💰 Finance Mastery</h3><p>85.7k+ Students | ⭐ 5 Rating</p><button class="enroll" onclick="location.href='login.html'">Enroll Now →</button></div>
-
-<div class="course c2"><h3>🎨 Branding Mastery</h3><p>12.5k+ Students | ⭐ 4.8 Rating</p><button class="enroll" onclick="location.href='login.html'">Enroll Now →</button></div>
-
-<div class="course c3"><h3>📈 Marketing Mastery - ₹2,499</h3><p>1.6k+ Students | ⭐ 5 - Your Package</p><button class="enroll" onclick="location.href='login.html'">Enroll Now →</button></div>
-
-<div class="course c4"><h3>🚀 Sales Mastery - ₹3,999</h3><p>9.2k+ Students | ⭐ 4.9 Rating</p><button class="enroll" onclick="location.href='login.html'">Enroll Now →</button></div>
-
-<div class="course c5"><h3>🌟 Influence Mastery - ₹9,999</h3><p>5.4k+ Students | ⭐ 4.9 Rating</p><button class="enroll" onclick="location.href='login.html'">Enroll Now →</button></div>
-
-</div>
-
-<footer>
-<h3>Packages</h3>
-<p style="font-size:13px;margin-top:6px">Finance | Branding | Marketing | Sales | Influence</p><br>
-<p style="font-size:13px">📞 9068720373 - Gaon Dadisra Road, Karahari</p><br>
-<p style="font-size:12px;opacity:.6">© 2026 Pappan Rich Skills</p>
-</footer>
-</body>
-</html><!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{background:#eef2ff;font-family:Arial;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}.box{background:#fff;padding:28px;border-radius:20px;width:100%;max-width:380px;box-shadow:0 10px 30px rgba(0,0,0,.1)}input{width:100%;padding:14px;margin:8px 0;border-radius:12px;border:1px solid #ddd;font-size:15px}button{width:100%;padding:14px;background:#6366f1;color:#fff;border:none;border-radius:12px;font-weight:700;font-size:16px;margin-top:10px}</style></head><body><div class="box"><h2>Login</h2><p style="color:gray;font-size:13px;margin:6px 0 15px 0">Pappan Rich Skills Dashboard</p><input placeholder="Name - Pappan kumar" id="n"><input placeholder="Email" id="e"><input placeholder="Password" type="password"><button onclick="localStorage.setItem('login','yes');localStorage.setItem('name',document.getElementById('n').value||'Pappan kumar');location.href='dashboard.html'">Login →</button></div></body></html>
+</html>
