@@ -1,218 +1,203 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Pappan Rich Skills - Pappan Kumar 9068720373 - Learn Skills That Matter</title>
-<meta name="description" content="Pappan Rich Skills by Pappan Kumar 9068720373 - 85+ Courses">
+<title>Pappan Rich Skills - Pappan Kumar 9068720373</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial}
 body{background:#fff;overflow-x:hidden}
 .top{position:sticky;top:0;z-index:1000;background:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee}
+.btn{width:100%;max-width:360px;padding:13px;border-radius:12px;border:none;font-weight:800;cursor:pointer;display:block;margin:8px auto}
+.btn-b{background:#1e1b4b;color:#fff}.btn-w{background:#fff;color:#000}.btn-line{background:transparent;border:1.5px solid #fff;color:#fff}
 .hero{background:linear-gradient(180deg,#5b5bd6,#3f3fa0);color:#fff;padding:40px 18px 80px;text-align:center}
-.btn{width:100%;max-width:340px;padding:13px;border-radius:12px;border:none;font-weight:800;cursor:pointer;display:block;margin:8px auto}
-.btn-w{background:#fff;color:#000}.btn-line{background:transparent;border:1.5px solid #fff;color:#fff}.btn-b{background:#1e1b4b;color:#fff}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 14px;margin-top:-50px;position:relative;z-index:10}
-.stat{background:#fff;border-radius:14px;padding:14px;box-shadow:0 6px 18px rgba(0,0,0,.1);border:1px solid #eee}
 .sec{padding:20px 16px;background:#fff}
-.cCard{background:#fff;border:1px solid #eee;border-radius:16px;padding:14px;margin:12px 0;box-shadow:0 4px 12px rgba(0,0,0,.05)}
-.dark{background:#1e1b4b;color:#fff;border-radius:20px;padding:20px;text-align:center;margin:16px 0}
-.grid4{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.box4{background:rgba(255,255,255,.12);border-radius:12px;padding:12px;text-align:center}
-.faq{border:1px solid #eee;border-radius:10px;padding:12px;margin:8px 0;display:flex;justify-content:space-between;font-weight:600;font-size:13px;background:#fff}
-footer{background:#0a0a2e;color:#aaa;padding:20px 16px;font-size:12px;line-height:1.8}footer b{color:#fff}
+.cCard{background:#fff;border:1px solid #eee;border-radius:16px;padding:14px;margin:12px 0}
 .modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.75);z-index:9999;display:none;justify-content:center;align-items:center;padding:16px}.modal.open{display:flex}
-.mbox{background:#fff;border-radius:16px;width:100%;max-width:400px;overflow:hidden;max-height:90vh;overflow-y:auto}
+.mbox{background:#fff;border-radius:16px;width:100%;max-width:420px;overflow:hidden;max-height:92vh;overflow-y:auto}
 .input{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin:6px 0}
 .err{background:#fee2e2;color:#991b1b;padding:10px;border-radius:8px;font-size:12px;display:none;margin:6px 0}.err.show{display:block}
-.dashWrap{background:#f5f6fb;min-height:100vh}.dTop{position:sticky;top:0;z-index:900;background:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee}
-.dBody{padding:12px}.eGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}.eC{background:#fff;border-radius:12px;padding:12px;border:1px solid #eee;display:flex;justify-content:space-between;align-items:center}
-.chart{background:#fff;border-radius:12px;padding:14px;border:1px solid #eee;margin:10px 0;text-align:center}
-.commCard{display:block;background:#fff;border-radius:14px;padding:18px;border:1px solid #eee;margin:10px 0;text-align:center;text-decoration:none;color:#000}
-.commCircle{width:64px;height:64px;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;font-weight:900}
+.hidden{display:none!important}
+.view{display:none;min-height:100vh;background:#fff}.view.active{display:block}
+.cInput{width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:10px;margin:6px 0 14px;background:#f9fafb}
+.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0;padding:10px 16px;border-radius:10px;font-size:13px;z-index:10000;display:none}.toast.show{display:block}
+.payBox{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:12px;margin:10px 0}
+.upiGrid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;text-align:center;margin:12px 0}
+.upiIcon{width:54px;height:54px;background:#fff;border:1px solid #eee;border-radius:12px;margin:0 auto;display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer}
+.timerCircle{width:92px;height:92px;border:5px solid #22c55e;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;margin:20px auto}
 .drawer{position:fixed;top:0;left:-310px;width:290px;height:100%;background:#fff;z-index:2000;padding:18px;transition:.3s;overflow-y:auto;box-shadow:10px 0 30px rgba(0,0,0,.2)}.drawer.open{left:0}
 .overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);z-index:1500;display:none}.overlay.open{display:block}
-.navI{padding:11px 10px;border-radius:8px;margin:4px 0;font-size:13px;font-weight:600;cursor:pointer;display:flex;gap:10px}.navI.active{background:#eef2ff;color:#4338ca}
-.hidden{display:none!important}
-.createBg{position:fixed;top:0;left:0;width:100%;height:100%;background:#f5f6fb;z-index:10000;display:none;overflow-y:auto}.createBg.open{display:block}
-.cInput{width:100%;padding:12px 14px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px;background:#fff}.cLabel{font-size:12px;font-weight:600;color:#333}
+.navI{padding:11px 10px;border-radius:8px;margin:4px 0;font-size:13px;font-weight:600;cursor:pointer;display:flex;gap:10px}
 @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
+<div class="toast" id="toast">✅ Order created successfully - Pappan Rich Skills 9068720373</div>
 <div class="overlay" id="over" onclick="closeAll()"></div>
-<div class="drawer" id="drawerL"><div style="display:flex;justify-content:space-between"><b>📘 Pappan Rich Skills<br><small style="font-size:9px">Unlock Your Potential - 9068720373</small></b><span onclick="closeAll()" style="font-size:22px">✕</span></div><br>
-<div class="navI" onclick="goHome()">🏠 Home</div><div class="navI" onclick="goCourses()">📚 Courses - 85+</div><div class="navI" onclick="goAbout()">ℹ️ About Us - Pappan Kumar</div><div class="navI" onclick="goContact()">📞 Contact: 9068720373</div><div class="navI" onclick="openLogin()">🔐 Login</div><button class="btn btn-b" style="margin-top:10px" onclick="goCourses()">Get Started - 9068720373</button></div>
-<div class="drawer" id="drawerD"><div style="display:flex;justify-content:space-between"><b>📘 Pappan Rich Skills</b><span onclick="closeAll()" style="font-size:22px">✕</span></div><br>
-<div class="navI active" onclick="showDash('dashHome')">📊 Dashboard - Pappan</div>
-<div class="navI" onclick="showDash('myTeam')">👥 My Team</div>
-<div class="navI" onclick="showDash('affLinks')">🔗 Affiliate Links - 70%</div>
-<div class="navI" onclick="showDash('upgrade')">⬆️ Upgrade Course</div>
-<div class="navI" onclick="showDash('leader')">🏆 Leaderboard</div>
-<div class="navI" onclick="showDash('train')">📚 Trainings</div>
-<div class="navI" onclick="showDash('myCourses')">🎓 My Courses - Pappan</div>
-<div class="navI" style="color:#b45309" onclick="showDash('vip')">👑 VIP Dashboard</div>
-<div class="navI" onclick="showDash('community')">🔗 Community Links - Pappan</div>
-<div class="navI" onclick="showDash('qual')">🎖️ Qualification</div>
+<div class="drawer" id="drawerL"><div style="display:flex;justify-content:space-between"><b>📘 Pappan Rich Skills<br><small style="font-size:9px">UNLOCK YOUR POTENTIAL - 9068720373</small></b><span onclick="closeAll()" style="font-size:22px">✕</span></div><br>
+<div class="navI" onclick="showView('landingView')">🏠 Home - Pappan Rich Skills</div><div class="navI" onclick="showView('landingView');setTimeout(()=>document.getElementById('coursesSec').scrollIntoView({behavior:'smooth'}),100)">📚 Courses - 85+ - Pappan</div><div class="navI" onclick="openLogin()">🔐 Login - Pappan 9068720373</div></div>
+
+<div class="drawer" id="drawerD"><div style="display:flex;justify-content:space-between"><b>📘 Pappan Rich Skills - 9068720373</b><span onclick="closeAll()" style="font-size:22px">✕</span></div><br>
+<div class="navI" onclick="showView('dashboardView')">📊 Dashboard - Pappan</div>
+<div class="navI" onclick="showView('communityView')">🔗 Community Links - Pappan</div>
+<div class="navI" onclick="logout()">🚪 Logout - 9068720373</div>
 </div>
 
-<div class="top" id="topLanding"><b>📘 Pappan Rich Skills<br><small style="font-size:8px">UNLOCK YOUR POTENTIAL - 9068720373</small></b><div style="font-size:26px;cursor:pointer" onclick="openL()">☰</div></div>
-
-<div id="landing">
-<div class="hero"><div style="background:rgba(255,255,255,.18);padding:6px 12px;border-radius:999px;font-size:11px;display:inline-block">⭐ Rated 4.9/5 by 10,000+ students - Pappan Kumar</div><h1 style="font-size:32px;font-weight:900;margin:14px 0">Learn Skills That Matter for Your Career - Pappan Rich Skills</h1><p style="font-size:13px;opacity:.9">Access thousands of courses from Pappan Kumar 9068720373. Build real-world projects and earn certificates.</p><button class="btn btn-w" onclick="goCourses()">Explore Courses → 85+ Courses</button><button class="btn btn-line" onclick="openLogin()">Login - Pappan Rich Skills</button></div>
-<div class="stats"><div class="stat"><b>85+</b><br><small>Exclusive Courses - Pappan</small></div><div class="stat"><b>24/7</b><br><small>Practical Skills</small></div><div class="stat"><b>98%</b><br><small>World Results</small></div><div class="stat"><b>98%</b><br><small>Growth Focused - Pappan</small></div></div>
-<div class="sec" id="coursesSec"><h2 style="font-size:22px;font-weight:900">Our Courses for Precision Learning - Pappan Rich Skills 9068720373</h2>
-<div class="cCard"><b>💰 Finance Mastery - Pappan Rich Skills - ₹14,999 - BESTSELLER - 85.7k+ Students</b><br><small>FINANCE MASTERY - Build Wealth in Digital Era - Pappan Kumar 9068720373 - ⭐ 5</small><br><button class="btn btn-b" style="margin-top:8px" onclick="openCreate('Finance Mastery',14999)">Enroll Now → Pay ₹14,999 - Pappan</button></div>
-<div class="cCard"><b>📈 Traffic Mastery - Leads & Sales - ₹2,499 - Pappan Rich Skills</b><br><button class="btn btn-b" style="margin-top:8px" onclick="openCreate('Traffic Mastery',2499)">Enroll Now → Pay ₹2,499</button></div>
-<div class="cCard"><b>🎨 Branding Mastery - ₹2,499 - Pappan Rich Skills</b><br><small>Branding Mastery - Pappan Kumar 9068720373</small><br><button class="btn btn-b" style="margin-top:8px" onclick="openCreate('Branding Mastery',2499)">Enroll Now → Pay ₹2,499 - Pappan</button></div>
-<div class="cCard"><b>📈 Marketing Mastery - ₹999 - MAIN - 70% Commission - Pappan Rich Skills 9068720373</b><br><button class="btn btn-b" style="margin-top:8px" onclick="openCreate('Marketing Mastery',999)">Enroll Now → Pay ₹999 - 70% - Pappan</button></div>
-<div class="cCard"><b>🚀 Sales Mastery - ₹3,999 - Pappan Rich Skills</b><br><button class="btn btn-b" onclick="openCreate('Sales Mastery',3999)">Enroll Now → Pay ₹3,999</button></div>
-<div class="cCard"><b>🌟 Influence Mastery - ₹9,999 - Pappan Rich Skills</b><br><button class="btn btn-b" onclick="openCreate('Influence Mastery',9999)">Enroll Now → Pay ₹9,999</button></div>
-</div>
-<div class="sec" id="aboutSec"><h2 style="font-size:22px;font-weight:900">Why Pappan Rich Skills? - Pappan Kumar 9068720373</h2><p style="font-size:12px;color:#666">We bridge gap between education and real-world success - Pappan Rich Skills.</p><div class="dark"><h2>Who Can Benefit from Pappan Rich Skills?</h2><div class="grid4"><div class="box4">🎓 Students - Pappan</div><div class="box4">👑 Creators - Pappan</div><div class="box4">💼 Business Owners - 9068720373</div><div class="box4">👤 Individuals - Pappan</div></div></div>
-<h2 style="font-size:20px;font-weight:900;margin-top:16px">Frequently Asked Questions - Pappan Rich Skills</h2>
-<div class="faq">What is Pappan Rich Skills? <span>∨</span></div>
-<div class="faq">What about packages? Finance 14999, Marketing 999 <span>∨</span></div>
-</div>
-<footer id="contactSec"><b style="color:#fff">📘 Pappan Rich Skills - Unlock Your Potential - Pappan Kumar 9068720373</b><br>Empowering individuals worldwide with practical skills to achieve financial freedom - Pappan Rich Skills.<br><br><b>Packages - Pappan Rich Skills</b><br>Finance Mastery - ₹14,999 - 90% OFF - 85695 students - Pappan 9068720373<br>Marketing mastery - ₹999 - MAIN - 70% - Pappan<br><br><b>Get in Touch - Pappan Kumar</b><br>support@pappanrichskills.com<br>📞 9068720373<br>📍 Noida, UP - Pappan Rich Skills<br><br>© 2026 Pappan Rich Skills. All rights reserved.<br>Made With ❤️ By Pappan Kumar - 9068720373 - Pappan Rich Skills</footer>
-</div>
-
-<!-- CREATE ACCOUNT - NO UTR - PACKAGE DYNAMIC -->
-<div class="createBg" id="createAcc">
-<div style="background:#fff;padding:12px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0"><div style="display:flex;gap:10px;align-items:center"><span onclick="closeM('createAcc')" style="font-size:22px;cursor:pointer">✕</span><b>📘 Pappan Rich Skills - 9068720373</b></div><span style="font-size:22px">☰</span></div>
-<div style="padding:18px;text-align:center">
-<div style="width:52px;height:52px;background:#eef2ff;border-radius:12px;margin:0 auto;display:flex;align-items:center;justify-content:center">👤+</div>
-<h2 style="margin:10px 0">Create Your Account - Pappan Rich Skills</h2><p style="font-size:12px;color:#666">Join thousands of learners achieving mastery - Pappan Kumar 9068720373</p>
-<div style="text-align:left;margin-top:16px">
-<div class="cLabel">Full Name - Pappan Kumar</div><input id="cName" class="cInput" placeholder="John Doe - Pappan Kumar" value="Pappan Kumar">
-<div class="cLabel">Phone Number - 9068720373</div><input id="cPhone" class="cInput" placeholder="9068720373" value="9068720373">
-<div class="cLabel">Email Address</div><input id="cEmail" class="cInput" placeholder="you@example.com" value="pappan.rich.skills@gmail.com">
-<div class="cLabel">Password - At least 6 characters</div><input id="cPass" type="password" class="cInput" placeholder="At least 6 characters" value="123456">
-<div class="cLabel">Referral Code - Optional</div><div style="display:flex;gap:8px"><input class="cInput" style="flex:1" placeholder="Enter referral code - Pappan Team"><button style="padding:12px 16px;background:#1e1b4b;color:#fff;border:none;border-radius:10px" onclick="alert('Referral Verified - Pappan Rich Skills 9068720373')">Verify</button></div>
-<div class="cLabel">Package - Selected</div><select id="cPkgSel" class="cInput"><option value="Finance Mastery|14999">Finance Mastery - ₹14,999 - 90% OFF - 85695 students</option><option value="Marketing Mastery|999">Marketing Mastery - ₹999 - MAIN - 70% - Pappan 9068720373</option><option value="Branding Mastery|2499">Branding Mastery - ₹2,499 - Pappan</option><option value="Traffic Mastery|2499">Traffic Mastery - ₹2,499 - Pappan</option><option value="Influence Mastery|9999">Influence Mastery - ₹9,999</option><option value="Sales Mastery|3999">Sales Mastery - ₹3,999</option></select>
-<div class="cLabel">Payment Method - Pappan Rich Skills</div><select class="cInput"><option>Payment Link - Secured by Cashfree - 9068720373@upi - 90K+ orders</option></select>
-<button onclick="doCreateAcc()" style="width:100%;padding:14px;background:#1e1b4b;color:#fff;border:none;border-radius:12px;font-weight:800;margin-top:10px">Create Account - Pay ₹<span id="cAmtShow">2499</span> - <span id="cPkgShow">Branding Mastery</span> - Pappan Rich Skills</button>
-<p style="text-align:center;font-size:12px;margin-top:10px">Already have an account? <b style="color:#1e1b4b;cursor:pointer" onclick="closeM('createAcc');openLogin()">Sign in - Pappan 9068720373</b></p>
-</div>
-</div>
+<!-- LANDING + COURSE DETAIL PAGE - EXACT VIDEO 1st PART -->
+<div class="view active" id="landingView">
+<div class="top"><b>📘 Pappan Rich Skills<br><small style="font-size:8px">UNLOCK YOUR POTENTIAL - PAPPAN KUMAR 9068720373</small></b><div style="font-size:26px" onclick="openL()">☰</div></div>
+<div class="hero"><div style="background:rgba(255,255,255,.18);padding:6px 12px;border-radius:999px;font-size:11px;display:inline-block">⭐ Rated 4.9/5 by 10,000+ students - Pappan Kumar 9068720373</div><h1 style="font-size:30px;font-weight:900;margin:14px 0">Learn Skills That Matter for Your Career - Pappan Rich Skills</h1><p style="font-size:13px;opacity:.9">Pappan Rich Skills by Pappan Kumar 9068720373</p><button class="btn btn-w" onclick="document.getElementById('coursesSec').scrollIntoView({behavior:'smooth'})">Explore Courses →</button><button class="btn btn-line" onclick="openLogin()">Login - Pappan Rich Skills</button></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 14px;margin-top:-50px;position:relative;z-index:10"><div style="background:#fff;border-radius:14px;padding:14px;box-shadow:0 6px 18px rgba(0,0,0,.1);border:1px solid #eee"><b>85+</b><br><small>Exclusive Courses - Pappan</small></div><div style="background:#fff;border-radius:14px;padding:14px;box-shadow:0 6px 18px rgba(0,0,0,.1);border:1px solid #eee"><b>24/7</b><br><small>Practical Skills</small></div><div style="background:#fff;border-radius:14px;padding:14px;box-shadow:0 6px 18px rgba(0,0,0,.1);border:1px solid #eee"><b>98%</b><br><small>World Results</small></div><div style="background:#fff;border-radius:14px;padding:14px;box-shadow:0 6px 18px rgba(0,0,0,.1);border:1px solid #eee"><b>98%</b><br><small>Growth Focused</small></div></div>
+<div class="sec" id="coursesSec"><h2 style="font-size:20px;font-weight:900">Our Courses for Precision Learning - Pappan Rich Skills 9068720373</h2>
+<div class="cCard"><b>💰 Finance Mastery - Pappan Rich Skills - ₹14,999 - BESTSELLER - 85.7k+ Students</b><br><button class="btn btn-b" style="margin-top:8px" onclick="selectCourse('Finance Mastery',14999)">View Course Details →</button></div>
+<div class="cCard"><b>🎨 Branding Mastery - ₹2,499 - Pappan 9068720373</b><br><button class="btn btn-b" style="margin-top:8px" onclick="selectCourse('Branding Mastery',2499)">View Course Details →</button></div>
+<div class="cCard"><b>📈 Marketing Mastery - ₹999 - MAIN - 70% - Pappan Rich Skills</b><br><button class="btn btn-b" style="margin-top:8px" onclick="selectCourse('Marketing Mastery',999)">View Course Details →</button></div>
 </div>
 </div>
 
-<!-- DASHBOARD - PAPPAN RICH SKILLS ONLY -->
-<div id="dashboard" class="hidden dashWrap">
-<div class="dTop"><div style="display:flex;gap:10px;align-items:center"><span style="font-size:24px;cursor:pointer" onclick="openD()">☰</span><b>📘 Pappan Rich Skills</b></div><div><span style="border:1px solid #ddd;padding:6px 10px;border-radius:8px;font-size:12px">Old Dashboard</span></div></div>
-<div class="dBody" id="dashHome"><div style="background:#fff;border-radius:12px;padding:12px;border:1px solid #eee;display:flex;gap:10px;align-items:center"><img src="https://i.pravatar.cc/50?img=12" style="width:50px;height:50px;border-radius:50%"><div><b>Pappan kumar</b><br><small id="dashPkgInfo">Marketing mastery - Pappan 9068720373 - <span id="dashPkgShow">Branding Mastery</span> - ₹<span id="dashPriceShow">2499</span></small></div></div>
-<div class="eGrid"><div class="eC"><div><small>Today's Earning</small><br><b>₹0</b></div><span>🏆</span></div><div class="eC"><div><small>7 Days</small><br><b>₹0</b></div><span>🎁</span></div><div class="eC"><div><small>30 Days</small><br><b>₹0</b></div><span>📅</span></div><div class="eC"><div><small>All Time</small><br><b>₹0</b></div><span>⏰</span></div><div class="eC"><div><small>Industrial Income</small><br><b>₹0</b></div><span>🎁</span></div><div class="eC"><div><small>Wallet Balance</small><br><b>₹0</b></div><span>👛</span></div></div>
-<div class="chart"><b>Earnings Chart - Pappan Rich Skills</b><div style="padding:20px"><div style="width:28px;height:28px;border:3px solid #eee;border-top-color:#4338ca;border-radius:50%;margin:0 auto;animation:spin 1s linear infinite"></div><br><small>Loading chart data... - Pappan Rich Skills 9068720373</small></div></div>
-<div class="chart"><b>Your Recent Team - Pappan Rich Skills</b><div style="padding:20px"><small>No team members found - Pappan Team - 9068720373</small><br><small style="color:#4338ca">View All - Pappan Rich Skills</small></div></div></div>
-
-<div class="dBody hidden" id="communityPage">
-<a href="https://wa.me/919068720373?text=Hi%20Pappan%20Bhai%20WhatsApp%20Channel%20Join%20Karna%20Hai" target="_blank" class="commCard"><div class="commCircle" style="background:#22c55e">W</div><b>WhatsApp Channel - Pappan Rich Skills - private channel</b><br><small style="color:#4338ca;font-weight:700">Visit Link → Pappan Rich Skills - 9068720373 - Online earnig</small><br><small>Subscribers 1 - Admin 1 - Pappan Rich Skills</small></a>
-<a href="https://t.me/skills_king_bhai" target="_blank" class="commCard"><div class="commCircle" style="background:#0ea5e9">T</div><b>Telegram channel - skills_king_bhai - Pappan Rich Skills</b><br><small style="color:#0ea5e9;font-weight:700">Visit Link → Telegram - Pappan Rich Skills</small></a>
-<a href="https://www.youtube.com/@TheskilsKing" target="_blank" class="commCard"><div class="commCircle" style="background:#ef4444">Y</div><b>YouTube channel - The skils King - @TheskilsKing - Pappan Rich Skills</b><br><small style="color:#ef4444;font-weight:700">Visit Link → YouTube - https://www.youtube.com/@TheskilsKing - 1000-2000 kamana</small></a>
-<a href="https://www.instagram.com/skills_king_bhai/" target="_blank" class="commCard"><div class="commCircle" style="background:linear-gradient(45deg,#feda75,#d62976)">I</div><b>Instagram - skills_king_bhai - pappan rich skills - Pappan Rich Skills</b><br><small style="color:#d62976;font-weight:700">Visit Link → Instagram - Content banta hai</small><br><small>Life ko vlog kar raha hu - Pappan Rich Skills</small></a>
+<!-- COURSE DETAIL - VIDEO ME JO ₹14999 WALA PAGE HAI -->
+<div class="view" id="courseDetailView">
+<div style="background:#fff;padding:12px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0"><div style="display:flex;gap:10px;align-items:center"><span style="font-size:20px" onclick="showView('landingView')">‹</span><b>📘 Pappan Rich Skills - 9068720373</b></div><span style="font-size:22px" onclick="openL()">☰</span></div>
+<div style="padding:16px;background:#fff;padding-bottom:100px">
+<div style="border:1px solid #eee;border-radius:12px;padding:14px;margin:10px 0"><div style="display:flex;gap:10px"><div style="width:36px;height:36px;background:#eef2ff;border-radius:8px;display:flex;align-items:center;justify-content:center">▶</div><div><b>Live Sessions - Pappan Rich Skills</b><br><small style="color:#666">Interactive live sessions with expert instructors - Pappan Kumar 9068720373</small></div></div></div>
+<div style="border:1px solid #eee;border-radius:12px;padding:14px;margin:10px 0"><div style="display:flex;gap:10px"><div style="width:36px;height:36px;background:#eef2ff;border-radius:8px;display:flex;align-items:center;justify-content:center">📄</div><div><b>Certificate - Pappan Rich Skills</b><br><small style="color:#666">Earn certificate upon completion - Pappan 9068720373</small></div></div></div>
+<div style="text-align:center;margin-top:20px;padding:20px;background:#fff;border-radius:16px;border:1px solid #eee">
+<div style="background:#eef2ff;color:#4338ca;padding:6px 12px;border-radius:999px;font-size:11px;display:inline-block">Limited Time Offer - Pappan Rich Skills 9068720373</div>
+<h1 style="font-size:36px;font-weight:900;margin:12px 0">₹<span id="detailPrice">14999</span> <span style="font-size:16px;color:#999;text-decoration:line-through">₹149999</span></h1><small>One-time payment - Pappan Rich Skills</small><br><br>
+<button class="btn btn-b" style="background:#1e1b4b" onclick="openCreateAccount()">Enroll Now - Pay ₹<span id="enrollBtnPrice">14999</span> - Pappan Rich Skills</button>
+<div style="text-align:left;margin-top:14px;font-size:13px;line-height:2.2"><span style="color:#22c55e">✓</span> Lifetime access - Pappan Rich Skills<br><span style="color:#22c55e">✓</span> Live Q&A Sessions - Pappan Kumar<br><span style="color:#22c55e">✓</span> Certificate of completion - 9068720373<br><span style="color:#22c55e">✓</span> Access of Premium Community - Pappan Rich Skills</div>
+</div>
+</div>
+<div style="background:#eef2ff;padding:10px;text-align:center;font-size:11px;position:fixed;bottom:0;left:0;width:100%">● Announcement From Pappan Rich Skills - 9068720373</div>
 </div>
 
-<div class="dBody hidden" id="otherPage"><div class="chart"><div style="padding:30px"><div style="width:28px;height:28px;border:3px solid #eee;border-top-color:#4338ca;border-radius:50%;margin:0 auto;animation:spin 1s linear infinite"></div><br><small>Loading... Pappan Rich Skills</small></div></div></div>
+<!-- CREATE YOUR ACCOUNT - EXACT VIDEO -->
+<div class="view" id="createAccountView">
+<div style="background:#fff;padding:12px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0"><div style="display:flex;gap:10px;align-items:center"><span style="font-size:20px" onclick="showView('courseDetailView')">✕</span><b>📘 Pappan Rich Skills</b></div><span style="font-size:22px">☰</span></div>
+<div style="padding:20px;text-align:center;background:#fff;min-height:100vh;padding-bottom:100px">
+<div style="width:56px;height:56px;background:#eef2ff;border-radius:14px;margin:0 auto;display:flex;align-items:center;justify-content:center">👤+</div>
+<h2 style="font-size:22px;font-weight:900;margin:12px 0">Create Your Account - Pappan Rich Skills</h2><p style="font-size:13px;color:#666">Join thousands of learners achieving mastery - 9068720373</p>
+<div style="text-align:left;margin-top:20px">
+<div style="font-size:13px;font-weight:600">Full Name - Pappan Kumar</div><input id="caName" class="cInput" placeholder="John Doe - Pappan Kumar" value="Pappan">
+<div style="font-size:13px;font-weight:600">Phone Number - 9068720373</div><input id="caPhone" class="cInput" placeholder="1234567890" value="9068720373">
+<div style="font-size:13px;font-weight:600">Email Address - Pappan Rich Skills</div><input id="caEmail" class="cInput" placeholder="you@example.com" value="pappancreator@gmail.com">
+<div style="font-size:13px;font-weight:600">Password - At least 6 characters</div><input id="caPass" class="cInput" placeholder="At least 6 characters" type="password" value="123456">
+<div style="font-size:13px;font-weight:600">Referral Code</div><div style="display:flex;gap:8px"><input class="cInput" style="flex:1" placeholder="Enter referral code - Pappan"><button style="height:44px;padding:0 18px;background:#1e1b4b;color:#fff;border:none;border-radius:10px" onclick="showToast('Referral Verified - Pappan 9068720373')">Verify</button></div>
+<div style="font-size:13px;font-weight:600">Package - Selected - Pappan Rich Skills</div><select id="caPkg" class="cInput"><option value="Finance Mastery|14999">Finance Mastery - ₹14,999 - 90% OFF - 85695 students</option><option value="Branding Mastery|2499">Branding Mastery - ₹2,499 - Pappan</option><option value="Marketing Mastery|999">Marketing Mastery - ₹999 - 70%</option></select>
+<div style="font-size:13px;font-weight:600">Payment Method - Pappan Rich Skills</div><select class="cInput"><option>Payment Link - Secured by Cashfree - 9068720373@upi</option></select>
+<button onclick="createAccountSubmit()" style="width:100%;padding:14px;background:#1e1b4b;color:#fff;border:none;border-radius:12px;font-weight:800;margin-top:8px">Create Account - Pay ₹<span id="caPayAmt">14999</span> - Pappan Rich Skills</button>
+</div>
+</div>
 </div>
 
-<div class="modal" id="loginModal"><div class="mbox"><div style="padding:14px;border-bottom:1px solid #eee;display:flex;justify-content:space-between"><b>📘 Pappan Rich Skills Login - 9068720373</b><span onclick="closeM('loginModal')" style="font-size:20px">✕</span></div><div style="padding:14px"><div id="loginErr" class="err">❌ User is not active - Pehle Payment Karo - Pappan Rich Skills 9068720373</div><input id="lEmail" class="input" placeholder="Email - Pappan Rich Skills" value="pappan.rich.skills@gmail.com"><input id="lPass" type="password" class="input" placeholder="Password" value="123456"><button onclick="doLogin()" class="btn btn-b">Sign In - Pappan Rich Skills - Paise do pehle</button><p style="font-size:10px;color:#666;text-align:center;margin-top:8px">Pappan Rich Skills - Bina paise ke login nahi hoga - User is not active</p></div></div></div>
+<!-- CREATORFEED + UPI TIMER + FINAL PAY - VIDEO JAISA -->
+<div class="view" id="creatorFeedView" style="background:#f6f7fb">
+<div style="background:#fff;padding:10px;border-bottom:1px solid #eee;display:flex;justify-content:space-between"><b style="font-size:13px">CreatorFeed - Digital Product - Pappan Rich Skills<br><small style="font-size:10px">creatorfeed.in - 385K+ customers served Secured by Cashfree</small></b><span onclick="showView('createAccountView')">✕</span></div>
+<div style="padding:0">
+<div style="background:#fffdf0;border:1px solid #fde68a;padding:12px;margin:12px;border-radius:10px;text-align:center"><b>CREATORFEED TECHNOLOGIES - Pappan Rich Skills</b><br><b style="font-size:20px">₹<span id="cfPrice">14,999</span></b><br><small>Payment Options for +91 9068720373 - Pappan</small></div>
+<div class="payBox"><b>Pay Via UPI - Pappan Rich Skills</b><div class="upiGrid"><div onclick="goToUpiTimer('Any UPI')"><div class="upiIcon">UPI</div><small style="font-size:10px">Any UPI</small></div><div onclick="goToUpiTimer('Paytm')"><div class="upiIcon">Paytm</div><small>Paytm</small></div><div onclick="goToUpiTimer('Google Pay')"><div class="upiIcon">GPay</div><small>Google Pay</small></div><div onclick="goToUpiTimer('PhonePe')"><div class="upiIcon">PhonePe</div><small>PhonePe</small></div></div></div>
+</div>
+</div>
 
-<div class="modal" id="gatewayModal"><div class="mbox" style="padding:0"><div style="padding:16px;text-align:center;border-bottom:1px solid #eee"><b>Select Payment Gateway - Pappan Rich Skills</b><br><small><b id="gwPkg">Branding Mastery</b> - ₹<span id="gwAmt">2499</span> - To: 9068720373@upi - Pappan Kumar</small></div><div style="padding:14px"><div style="border:1.5px solid #4338ca;border-radius:10px;padding:12px;margin:8px 0;background:#f5f3ff"><b>Payment Link - Pappan Rich Skills</b><br><small>Pay via upi, cards, netbanking - Secured by Cashfree - 90K+ orders - Pappan 9068720373</small></div><div style="border:1px solid #eee;border-radius:10px;padding:12px;margin:8px 0"><b>Wallet - Pappan Rich Skills wallet</b><br><small>Pay via Pappan wallet - 9068720373</small></div><div style="display:flex;gap:10px;margin-top:14px"><button onclick="closeM('gatewayModal')" style="flex:1;padding:10px;background:#f3f4f6;border:none;border-radius:8px">Cancel</button><button onclick="proceedPay()" style="flex:1;padding:10px;background:#6d28d9;color:#fff;border:none;border-radius:8px">Proceed to Payment - Pay ₹<span id="gwAmt2">2499</span> - <span id="gwPkg2">Branding Mastery</span></button></div></div></div></div>
+<div class="view" id="upiTimerView" style="background:#fff">
+<div style="padding:12px;border-bottom:1px solid #eee"><small>Payment by <b id="payBy">PhonePe</b> - Pappan Rich Skills</small></div>
+<div style="text-align:center;padding:20px">
+<div class="timerCircle" id="timerCircle">05:00</div><small>Time left for completing transaction - Pappan 9068720373</small><br><br><b>Paying ₹<span id="timerAmt">14,999</span> to CREATORFEED TECHNOLOGIES - Pappan Rich Skills</b><br><small>Order id : order_120S9O3JxBuc2Z0yAM9g5Bc4fX9c - Pappan</small><br><br><button style="padding:8px 14px;border:1px solid #e5e7eb;background:#fff;border-radius:8px" onclick="showView('finalPayView')">Continue to Pay ₹<span id="timerBtnAmt">14,999</span></button>
+</div>
+</div>
 
-<div class="modal" id="cashModal"><div class="mbox" style="padding:40px 20px;text-align:center"><div style="width:32px;height:32px;border:3px solid #eee;border-top-color:#6d28d9;border-radius:50%;margin:0 auto;animation:spin 1s linear infinite"></div><br><b id="cashText">Processing payment... - Pappan Rich Skills</b><br><small id="cashSmall">Paying ₹2499 to Pappan Rich Skills - 9068720373@upi</small><br><br><div style="background:#f3f4f6;padding:8px;border-radius:6px;font-size:11px">● Transaction created successfully - Pappan Rich Skills</div><div style="margin-top:10px;color:#6d28d9;font-weight:900">Secured by Cashfree - Pappan Rich Skills - 90K+ orders</div></div></div>
+<div class="view" id="finalPayView" style="background:#f5f6fb">
+<div style="background:#fff;padding:12px;border-bottom:1px solid #eee"><b>Pay - Pappan Rich Skills 9068720373</b></div>
+<div style="padding:12px"><div style="background:#fff;border-radius:12px;padding:14px;border:1px solid #eee"><b>CREATORFEED TECHNOLOGIES - Pappan Rich Skills</b><br><b style="font-size:20px">₹ <span id="finalAmt">14,999</span></b><br><small>Message - Pappan Rich Skills - <span id="finalPkg">Finance Mastery</span> - 9068720373</small></div>
+<div style="background:#fff;border-radius:12px;padding:14px;border:1px solid #eee;margin-top:12px"><div style="display:flex;justify-content:space-between"><small>Total Payable - Pappan Rich Skills</small><b>₹<span id="finalTotal">14,999</span></b></div><div style="margin-top:10px;background:#f9fafb;padding:10px;border-radius:8px"><b style="font-size:12px">India Post Payment Bank - 9068720373</b></div></div>
+<button onclick="completePayment()" style="width:90%;margin:12px auto;display:block;padding:14px;background:#7c3aed;color:#fff;border:none;border-radius:12px;font-weight:800">Pay ₹<span id="payBtnFinal">14,999</span> - Pappan Rich Skills 9068720373</button>
+</div>
+</div>
+
+<!-- DASHBOARD - NO THE RICH SKILLS NAME -->
+<div class="view" id="dashboardView" style="background:#f5f6fb">
+<div style="background:#fff;padding:10px;border-bottom:1px solid #eee;display:flex;justify-content:space-between"><b>📘 Pappan Rich Skills - 9068720373</b><span onclick="logout()" style="color:#ef4444">Logout</span></div>
+<div style="padding:12px"><div style="background:#fff;border-radius:12px;padding:12px;border:1px solid #eee;display:flex;gap:10px;align-items:center"><img src="https://i.pravatar.cc/50?img=12" style="width:50px;height:50px;border-radius:50%"><div><b id="dashName">Pappan kumar</b><br><small id="dashPkgInfo">Finance Mastery - ₹14999 - Paid - Pappan 9068720373</small></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0"><div style="background:#fff;border-radius:12px;padding:12px;border:1px solid #eee"><small>Today's Earning - Pappan</small><br><b>₹0</b></div><div style="background:#fff;border-radius:12px;padding:12px;border:1px solid #eee"><small>7 Days Earning</small><br><b>₹0</b></div><div style="background:#fff;border-radius:12px;padding:12px;border:1px solid #eee"><small>30 Days Earnings</small><br><b>₹0</b></div><div style="background:#fff;border-radius:12px;padding:12px;border:1px solid #eee"><small>All Time Earnings</small><br><b>₹0</b></div><div style="background:#fff;border-radius:12px;padding:12px;border:1px solid #eee"><small>Industrial Income</small><br><b>₹0</b></div><div style="background:#fff;border-radius:12px;padding:12px;border:1px solid #eee"><small>Wallet Balance</small><br><b>₹0</b></div></div>
+<div style="background:#fff;border-radius:12px;padding:14px;border:1px solid #eee;text-align:center"><b>Earnings Chart - Pappan Rich Skills</b><div style="padding:20px"><div style="width:28px;height:28px;border:3px solid #eee;border-top-color:#4338ca;border-radius:50%;margin:0 auto;animation:spin 1s linear infinite"></div><br><small>Loading chart data... - 9068720373</small></div></div>
+<div style="background:#fff;border-radius:12px;padding:14px;border:1px solid #eee;text-align:center;margin-top:10px"><b>Your Recent Team - Pappan Rich Skills</b><br><small>No team members found - Pappan Team 9068720373</small><br><small style="color:#4338ca">View All - Pappan Rich Skills</small></div>
+<div style="margin-top:12px"><button class="btn btn-b" style="background:#fff;color:#000;border:1px solid #ddd" onclick="showView('communityView')">🔗 Community Links - Pappan Rich Skills - 9068720373</button></div>
+</div>
+</div>
+
+<div class="view" id="communityView" style="background:#f5f6fb">
+<div style="background:#fff;padding:10px;border-bottom:1px solid #eee;display:flex;gap:10px"><span onclick="showView('dashboardView')" style="font-size:20px">‹</span><b>📘 Community Links - Pappan Rich Skills 9068720373</b></div>
+<div style="padding:12px">
+<a href="https://wa.me/919068720373?text=Hi%20Pappan%20Bhai" target="_blank" style="display:block;background:#fff;border-radius:14px;padding:18px;border:1px solid #eee;margin:10px 0;text-align:center;text-decoration:none;color:#000"><div style="width:64px;height:64px;background:#22c55e;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px">W</div><b>WhatsApp Channel - Pappan Rich Skills private channel</b><br><small style="color:#4338ca">Visit Link → 9068720373 - Online earnig - Subscribers 1</small></a>
+<a href="https://t.me/skills_king_bhai" target="_blank" style="display:block;background:#fff;border-radius:14px;padding:18px;border:1px solid #eee;margin:10px 0;text-align:center;text-decoration:none;color:#000"><div style="width:64px;height:64px;background:#0ea5e9;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px">T</div><b>Telegram channel - skills_king_bhai</b><br><small>Visit Link → Telegram - Pappan Rich Skills</small></a>
+<a href="https://www.youtube.com/@TheskilsKing" target="_blank" style="display:block;background:#fff;border-radius:14px;padding:18px;border:1px solid #eee;margin:10px 0;text-align:center;text-decoration:none;color:#000"><div style="width:64px;height:64px;background:#ef4444;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px">Y</div><b>YouTube channel - The skils King - @TheskilsKing</b><br><small>https://www.youtube.com/@TheskilsKing - 1000 2000 kamana - Pappan Rich Skills</small></a>
+<a href="https://www.instagram.com/skills_king_bhai/" target="_blank" style="display:block;background:#fff;border-radius:14px;padding:18px;border:1px solid #eee;margin:10px 0;text-align:center;text-decoration:none;color:#000"><div style="width:64px;height:64px;background:linear-gradient(45deg,#feda75,#d62976);border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px">I</div><b>Instagram - skills_king_bhai - pappan rich skills</b><br><small>Visit Link → Instagram - Content banta hai - Pappan Rich Skills</small></a>
+</div>
+</div>
+
+<div class="modal" id="loginModal"><div class="mbox"><div style="padding:14px;border-bottom:1px solid #eee;display:flex;justify-content:space-between"><b>📘 Pappan Rich Skills Login - 9068720373</b><span onclick="closeM('loginModal')" style="font-size:20px">✕</span></div><div style="padding:14px"><div id="loginErr" class="err">❌ User is not active - Pehle Payment Karo - Pappan Rich Skills 9068720373 - Bina paise ke ID login nahi hogi!</div><input id="lEmail" class="input" placeholder="Email - Pappan Rich Skills"><input id="lPass" type="password" class="input" placeholder="Password - At least 6 characters"><button onclick="doLogin()" class="btn btn-b">Sign In - Pappan Rich Skills - Paise do tabhi login</button></div></div></div>
 
 <script>
-let curName='Branding Mastery',curPrice=2499;
+let selectedCourse='Finance Mastery',selectedPrice=14999,timerInt,seconds=300;
 function openL(){document.getElementById('drawerL').classList.add('open');document.getElementById('over').classList.add('open')}
-function openD(){document.getElementById('drawerD').classList.add('open');document.getElementById('over').classList.add('open')}
 function closeAll(){document.querySelectorAll('.drawer').forEach(d=>d.classList.remove('open'));document.getElementById('over').classList.remove('open')}
 function closeM(id){document.getElementById(id).classList.remove('open')}
-function goHome(){closeAll();document.getElementById('landing').classList.remove('hidden');document.getElementById('dashboard').classList.add('hidden');document.getElementById('topLanding').classList.remove('hidden');window.scrollTo(0,0)}
-function goCourses(){closeAll();document.getElementById('landing').classList.remove('hidden');document.getElementById('dashboard').classList.add('hidden');document.getElementById('topLanding').classList.remove('hidden');document.getElementById('coursesSec').scrollIntoView({behavior:'smooth'})}
-function goAbout(){closeAll();document.getElementById('landing').classList.remove('hidden');document.getElementById('dashboard').classList.add('hidden');document.getElementById('topLanding').classList.remove('hidden');document.getElementById('aboutSec').scrollIntoView({behavior:'smooth'})}
-function goContact(){closeAll();document.getElementById('landing').classList.remove('hidden');document.getElementById('dashboard').classList.add('hidden');document.getElementById('topLanding').classList.remove('hidden');document.getElementById('contactSec').scrollIntoView({behavior:'smooth'})}
-function showDash(page){document.querySelectorAll('#dashboard.dBody').forEach(b=>b.classList.add('hidden'));if(page==='dashHome')document.getElementById('dashHome').classList.remove('hidden');else if(page==='community')document.getElementById('communityPage').classList.remove('hidden');else document.getElementById('otherPage').classList.remove('hidden');closeAll()}
-
-function openCreate(name,price){
-curName=name;curPrice=price;
-let sel=document.getElementById('cPkgSel');
-let exists=[...sel.options].some(o=>o.value===name+'|'+price);
-if(!exists){let opt=document.createElement('option');opt.value=name+'|'+price;opt.text=name+' - ₹'+price+' - Pappan Rich Skills - Selected';sel.add(opt)}
-sel.value=name+'|'+price;
-document.getElementById('cAmtShow').innerText=price;
-document.getElementById('cPkgShow').innerText=name;
-document.getElementById('createAcc').classList.add('open');
-window.scrollTo(0,0);
-}
-document.getElementById('cPkgSel').addEventListener('change',function(){let v=this.value.split('|');curName=v[0];curPrice=parseInt(v[1]);document.getElementById('cAmtShow').innerText=curPrice;document.getElementById('cPkgShow').innerText=curName});
-
-function doCreateAcc(){
-let n=document.getElementById('cName').value.trim(),ph=document.getElementById('cPhone').value.trim(),em=document.getElementById('cEmail').value.trim(),ps=document.getElementById('cPass').value.trim();
+function showView(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.getElementById(id).classList.add('active');closeAll();window.scrollTo(0,0)}
+function selectCourse(name,price){selectedCourse=name;selectedPrice=price;document.getElementById('detailPrice').innerText=price;document.getElementById('enrollBtnPrice').innerText=price;showView('courseDetailView')}
+function openCreateAccount(){document.getElementById('caPkg').value=selectedCourse+'|'+selectedPrice;if(![...document.getElementById('caPkg').options].some(o=>o.value===selectedCourse+'|'+selectedPrice)){let opt=document.createElement('option');opt.value=selectedCourse+'|'+selectedPrice;opt.text=selectedCourse+' - ₹'+selectedPrice+' - Pappan Rich Skills';document.getElementById('caPkg').add(opt);document.getElementById('caPkg').value=selectedCourse+'|'+selectedPrice}document.getElementById('caPayAmt').innerText=selectedPrice;showView('createAccountView')}
+function showToast(msg){let t=document.getElementById('toast');t.innerText=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
+function createAccountSubmit(){
+let n=document.getElementById('caName').value.trim(),ph=document.getElementById('caPhone').value.trim(),em=document.getElementById('caEmail').value.trim(),ps=document.getElementById('caPass').value.trim();
 if(n.length<2){alert('Full Name likho - Pappan Kumar');return}
-if(ph.length<9){alert('Phone likho - 9068720373');return}
+if(ph.length<9){alert('Phone Number - 9068720373');return}
 if(!em.includes('@')){alert('Email sahi likho');return}
 if(ps.length<5){alert('Password - At least 6 characters');return}
-localStorage.setItem('pappan_temp_name',n);
-localStorage.setItem('pappan_temp_email',em);
-localStorage.setItem('pappan_temp_phone',ph);
-localStorage.setItem('pappan_temp_pkg',curName);
-localStorage.setItem('pappan_temp_price',curPrice);
-document.getElementById('createAcc').classList.remove('open');
-document.getElementById('gwPkg').innerText=curName;
-document.getElementById('gwPkg2').innerText=curName;
-document.getElementById('gwAmt').innerText=curPrice;
-document.getElementById('gwAmt2').innerText=curPrice;
-document.getElementById('gatewayModal').classList.add('open');
-}
-
-function proceedPay(){
-closeM('gatewayModal');
-document.getElementById('cashModal').classList.add('open');
-document.getElementById('cashText').innerText=`Processing payment... Paying ₹${curPrice} for ${curName} - Pappan Rich Skills`;
-document.getElementById('cashSmall').innerText=`Paying ₹${curPrice} to Pappan Rich Skills - CREATORFEED TECHNOLOGIES - 9068720373@upi - ${curName}`;
+localStorage.setItem('pappan_temp_name',n);localStorage.setItem('pappan_temp_phone',ph);localStorage.setItem('pappan_temp_email',em);localStorage.setItem('pappan_temp_pkg',selectedCourse);localStorage.setItem('pappan_temp_price',selectedPrice);
+showToast('✅ Order created successfully - Pappan Rich Skills - '+selectedCourse+' ₹'+selectedPrice+' - 9068720373');
 setTimeout(()=>{
-closeM('cashModal');
-let upi=`upi://pay?pa=9068720373@upi&pn=Pappan%20Rich%20Skills%20${encodeURIComponent(curName)}&am=${curPrice}&cu=INR&tn=${encodeURIComponent(curName+' - Pappan Rich Skills 9068720373 - Pay '+curPrice)}`;
+document.getElementById('cfPrice').innerText=selectedPrice.toLocaleString('en-IN');
+document.getElementById('timerAmt').innerText=selectedPrice.toLocaleString('en-IN');
+document.getElementById('timerBtnAmt').innerText=selectedPrice.toLocaleString('en-IN');
+document.getElementById('finalAmt').innerText=selectedPrice.toLocaleString('en-IN');
+document.getElementById('finalTotal').innerText=selectedPrice.toLocaleString('en-IN');
+document.getElementById('payBtnFinal').innerText=selectedPrice.toLocaleString('en-IN');
+document.getElementById('finalPkg').innerText=selectedCourse;
+showView('creatorFeedView');
+},800);
+}
+function goToUpiTimer(app){
+document.getElementById('payBy').innerText=app;
+seconds=300;clearInterval(timerInt);updateTimer();timerInt=setInterval(updateTimer,1000);
+showView('upiTimerView');
+setTimeout(()=>{
+let upi=`upi://pay?pa=9068720373@upi&pn=Pappan%20Rich%20Skills%20${encodeURIComponent(selectedCourse)}&am=${selectedPrice}&cu=INR&tn=${encodeURIComponent(selectedCourse+' - Pappan Rich Skills 9068720373')}`;
 window.location.href=upi;
-setTimeout(()=>{
-if(confirm(`✅ UPI App khula? ₹${curPrice} for ${curName} - Pappan Rich Skills 9068720373@upi pe pay karo.\n\nPackage: ${curName}\nAmount: ₹${curPrice}\n\nPayment kar diya hai toh OK dabao tabhi ID login hogi.\n\nCancel = Bina paise ke login nahi hoga - User is not active`)){
-localStorage.setItem('pappan_paid','yes');
-localStorage.setItem('pappan_pkg',curName);
-localStorage.setItem('pappan_price',curPrice);
-localStorage.setItem('pappan_name',localStorage.getItem('pappan_temp_name'));
-localStorage.setItem('pappan_email',localStorage.getItem('pappan_temp_email'));
-localStorage.setItem('pappan_phone',localStorage.getItem('pappan_temp_phone'));
-localStorage.setItem('pappan_ref','PAPPAN'+Math.floor(1000+Math.random()*9000));
-localStorage.setItem('pappan_date',new Date().toLocaleString('en-IN'));
-alert(`✅ Order Successful! Transaction Created Successfully\nPackage: ${curName}\nAmount: ₹${curPrice}\nTo: 9068720373@upi - Pappan Kumar\nOrder ID: ORD-PAPPAN-${Math.floor(100000+Math.random()*900000)}\nStatus: Paid\nAb login karo - Pappan Rich Skills - 9068720373`);
+},800);
+setTimeout(()=>{showView('finalPayView')},2500);
+}
+function updateTimer(){let m=Math.floor(seconds/60),s=seconds%60;document.getElementById('timerCircle').innerText=(m<10?'0':'')+m+':'+(s<10?'0':'')+s;if(seconds<=0){clearInterval(timerInt);showView('creatorFeedView')}seconds--;}
+function completePayment(){
+clearInterval(timerInt);
+localStorage.setItem('pappan_paid','yes');localStorage.setItem('pappan_pkg',selectedCourse);localStorage.setItem('pappan_price',selectedPrice);localStorage.setItem('pappan_name',localStorage.getItem('pappan_temp_name'));localStorage.setItem('pappan_email',localStorage.getItem('pappan_temp_email'));
+alert(`✅ Payment Successful! ₹${selectedPrice} for ${selectedCourse} - Pappan Rich Skills\nOrder ID: ORD-PAPPAN-${Math.floor(100000+Math.random()*900000)}\nTo: 9068720373@upi - Pappan Kumar\nAb login karo - Pappan Rich Skills`);
 openLogin();
-document.getElementById('lEmail').value=localStorage.getItem('pappan_temp_email');
-}else{
-alert(`❌ Bina paise ke login nahi hoga! Pehle ₹${curPrice} for ${curName} pay karo - Pappan Rich Skills 9068720373`);
 }
-},1500);
-},1500);
-}
-
-function openLogin(){document.getElementById('loginModal').classList.add('open');document.getElementById('loginErr').classList.remove('show');document.getElementById('loginErr').style.display='none'}
+function openLogin(){document.getElementById('loginModal').classList.add('open');document.getElementById('loginErr').style.display='none'}
 function doLogin(){
 if(localStorage.getItem('pappan_paid')!='yes'){
-let pkg=localStorage.getItem('pappan_temp_pkg')||curName||'Finance Mastery';
-let price=localStorage.getItem('pappan_temp_price')||curPrice||14999;
+let pkg=localStorage.getItem('pappan_temp_pkg')||selectedCourse;
+let price=localStorage.getItem('pappan_temp_price')||selectedPrice;
 let err=document.getElementById('loginErr');
-err.innerText=`❌ User is not active - Pehle Payment Karo! Package: ${pkg} - ₹${price} - Pappan Rich Skills 9068720373 - Bina paise ke login nahi hoga! Paise do tabhi ID login hogi!`;
-err.classList.add('show');err.style.display='block';
-return;
+err.innerHTML=`❌ User is not active - Pehle Payment Karo!<br>Package: ${pkg} - ₹${price}<br>Pappan Rich Skills 9068720373<br>Bina paise ke ID login nahi hogi - Paise do tabhi login hogi!`;
+err.classList.add('show');err.style.display='block';return;
 }
 closeM('loginModal');
-document.getElementById('landing').classList.add('hidden');
-document.getElementById('topLanding').classList.add('hidden');
-document.getElementById('dashboard').classList.remove('hidden');
-document.getElementById('dashPkgShow').innerText=localStorage.getItem('pappan_pkg')||curName;
-document.getElementById('dashPriceShow').innerText=localStorage.getItem('pappan_price')||curPrice;
-showDash('dashHome');
-window.scrollTo(0,0);
+document.getElementById('dashName').innerText=localStorage.getItem('pappan_name')||'Pappan kumar';
+document.getElementById('dashPkgInfo').innerText=`${localStorage.getItem('pappan_pkg')} - ₹${localStorage.getItem('pappan_price')} - Paid - Pappan Rich Skills 9068720373`;
+showView('dashboardView');
 }
+function logout(){localStorage.clear();location.reload()}
 </script>
 </body>
 </html>
