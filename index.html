@@ -239,4 +239,126 @@ function openDrawerLegacy(){let d=document.getElementById('drawer');d.style.righ
 window.openDrawer=()=>{let d=document.getElementById('drawer');d.classList.add('open');d.style.right='0';document.getElementById('over').classList.add('open')};
 </script>
 </body>
-</html>
+</html><!-- ========== PAPPAN RICH SKILLS - PATCH - COMMUNITY LINKS + FOOTER FIX - 9068720373 ========== -->
+<script>
+// Community Links ko live kar do - Pappan Rich Skills - 9068720373
+document.addEventListener('DOMContentLoaded', function(){
+  // Find all Visit Link buttons in community page
+  let commLinks = document.querySelectorAll('#commPage .chartBox, .dashBody .chartBox');
+  commLinks.forEach(box=>{
+    let text = box.innerText.toLowerCase();
+    if(text.includes('whatsapp')){
+      box.style.cursor='pointer';
+      box.onclick = ()=> window.open('https://whatsapp.com/channel/0029VaYourChannelLinkHere','_blank'); // Apna WhatsApp Channel link yaha daalo - abhi telegram khulega
+      // TEMP: agar channel link nahi hai to WhatsApp pe jao
+      box.onclick = ()=> window.open('https://wa.me/919068720373?text=Hi%20Pappan%20Bhai%20Mujhe%20Pappan%20Rich%20Skills%20Join%20Karna%20Hai','_blank');
+      let small = box.querySelector('small');
+      if(small) small.innerText='Visit Link → Pappan Rich Skills WhatsApp - 9068720373';
+      if(small) small.style.color='#4338ca';
+      if(small) small.style.fontWeight='800';
+    }
+    if(text.includes('telegram')){
+      box.style.cursor='pointer';
+      box.onclick = ()=> window.open('https://t.me/skills_king_bhai','_blank'); // Apna Telegram
+      let small = box.querySelector('small');
+      if(small){ small.innerText='Visit Link → Telegram - Pappan Rich Skills'; small.style.color='#0088cc'; small.style.fontWeight='800'; }
+    }
+    if(text.includes('youtube')){
+      box.style.cursor='pointer';
+      box.onclick = ()=> window.open('https://www.youtube.com/@TheskilsKing','_blank'); // Tumhara YouTube @TheskilsKing
+      let small = box.querySelector('small');
+      if(small){ small.innerText='Visit Link → YouTube @TheskilsKing - 1000-2000 kamana'; small.style.color='#ff0000'; small.style.fontWeight='800'; }
+    }
+    // Instagram add karo
+    if(text.includes('instagram') || box.innerHTML.toLowerCase().includes('instagram')){
+      box.style.cursor='pointer';
+      box.onclick = ()=> window.open('https://www.instagram.com/skills_king_bhai/','_blank'); // skills_king_bhai
+    }
+  });
+
+  // Agar Instagram box nahi hai toh banao - Community page me add karo
+  let commPage = document.getElementById('commPage');
+  if(commPage && !commPage.innerHTML.toLowerCase().includes('instagram')){
+    commPage.innerHTML += `
+    <div class="chartBox" style="cursor:pointer" onclick="window.open('https://www.instagram.com/skills_king_bhai/','_blank')">
+      <div style="width:60px;height:60px;background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff">I</div>
+      <b>Instagram - skills_king_bhai</b><br>
+      <small style="color:#d62976;font-weight:800">Visit Link → Pappan Rich Skills Instagram</small><br>
+      <small style="font-size:10px;color:#666">Content banta hai, views baad me aayenge Life ko vlog kar raha hu</small>
+    </div>
+    <div class="chartBox" style="cursor:pointer" onclick="window.open('https://whatsapp.com/channel/','_blank')">
+      <div style="width:60px;height:60px;background:#25D366;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff">W</div>
+      <b>Pappan rich skills - private channel</b><br>
+      <small style="color:#25D366;font-weight:800">Online earnig - 1 Subscriber - Visit</small><br>
+      <small style="font-size:10px;color:#666">Subscribers: 1 | Admin: 1 | Channel Settings</small>
+    </div>
+    `;
+  }
+});
+</script>
+
+<!-- FOOTER FIX - THE RICH SKILLS JAISA DARK FOOTER - EXACT VIDEO -->
+<style>
+.footer-dark-fix{background:#0a0a1e !important;color:#a0a0b0 !important;padding:24px 18px !important;font-size:12px !important;line-height:2 !important}
+.footer-dark-fix b{color:#fff !important;font-size:14px !important;display:block !important;margin-top:16px !important;margin-bottom:6px !important}
+.footer-dark-fix a{color:#8a8aa0 !important;display:block !important;text-decoration:none !important;margin:4px 0 !important;font-size:12px !important}
+.footer-dark-fix a:hover{color:#fff !important}
+.footer-dark-fix .socialIcons{display:flex;gap:12px;margin:12px 0}
+.footer-dark-fix .soc{width:38px;height:38px;background:#1a1a2e;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
+</style>
+<script>
+// Footer ko The Rich Skills jaisa dark banao - niche wala
+document.addEventListener('DOMContentLoaded', function(){
+  let oldFooter = document.querySelector('footer');
+  if(oldFooter){
+    oldFooter.className='footer-dark-fix';
+    oldFooter.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:center"><b style="margin:0;font-size:20px">The Rich Skills<br><small style="font-size:9px;letter-spacing:1px">Unlock Your Potential - Pappan 9068720373</small></b></div>
+      <p style="margin:14px 0;color:#8a8aa0;font-size:12px;line-height:1.6">Empowering individuals worldwide with practical skills and knowledge to achieve financial freedom and personal success. - Pappan Rich Skills by Pappan Kumar 9068720373</p>
+      <div class="socialIcons">
+        <div class="soc" onclick="window.open('https://www.instagram.com/skills_king_bhai/','_blank')">📷</div>
+        <div class="soc" onclick="window.open('https://www.youtube.com/@TheskilsKing','_blank')">▶</div>
+        <div class="soc" onclick="window.open('https://wa.me/919068720373','_blank')">W</div>
+      </div>
+      <b>Packages - Pappan Rich Skills 9068720373</b>
+      <a onclick="openPay('Finance Mastery',14999)">Finance Mastery - ₹14,999 - 90% OFF - 85695 students - Pappan 9068720373</a>
+      <a onclick="openPay('Influence Mastery',9999)">Influence Mastery - @TheskilsKing</a>
+      <a onclick="openPay('Traffic Mastery',2499)">Traffic Mastery - Pappan Rich Skills</a>
+      <a onclick="openPay('Branding Mastery',2499)">Branding Mastery - Pappan</a>
+      <a onclick="openPay('Marketing mastery',999)">Marketing mastery - ₹999 - MAIN - 70% - 9068720373</a>
+      <b>Quick Links</b>
+      <a>Disclaimer - Pappan Rich Skills</a>
+      <a>Terms and Conditions</a>
+      <a>Privacy Policy</a>
+      <a>Refund Policy</a>
+      <b>Get in Touch - Pappan Kumar 9068720373</b>
+      <a style="display:flex;gap:8px;align-items:center"><span>✉</span> support@therichskills.com - Pappan Rich Skills</a>
+      <a style="display:flex;gap:8px;align-items:center"><span>📍</span> Noida, Uttar Pradesh - Pappan Kumar - 9068720373</a>
+      <a style="display:flex;gap:8px;align-items:center" onclick="window.open('https://www.youtube.com/@TheskilsKing','_blank')"><span>▶</span> YouTube: @TheskilsKing - The skils King</a>
+      <a style="display:flex;gap:8px;align-items:center" onclick="window.open('https://www.instagram.com/skills_king_bhai/','_blank')"><span>📷</span> Instagram: skills_king_bhai - pappan rich skills 💻🤪</a>
+      <br>
+      <small>© 2026 The Rich Skills. All rights reserved.<br>Made With ❤️ By Bizfunnel - Pappan Rich Skills - Pappan Kumar 9068720373 - Online earnig Description</small>
+      <div style="margin-top:12px;background:#11112a;padding:8px 12px;border-radius:999px;display:inline-flex;gap:8px;align-items:center;font-size:11px"><span style="width:8px;height:8px;background:#22c55e;border-radius:50%"></span> Announcement From The Rich Skills. - Pappan Rich Skills - 9068720373</div>
+    `;
+  }
+});
+</script>
+<!-- END PATCH -->
+
+Bhai ab is patch ke baad kya hoga:
+
+✅ **Community Links me:**
+- WhatsApp Channel → `wa.me/919068720373` pe khulega (apna WhatsApp Channel link daal dena)
+- Telegram channel → `t.me/skills_king_bhai` pe
+- YouTube channel → **@TheskilsKing** pe - https://www.youtube.com/@TheskilsKing
+- **Naya Instagram** box add ho jayega - **skills_king_bhai** - Bio: "Content banta hai, views baad me aayenge"
+
+✅ **Niche ka Footer ab 100% The Rich Skills jaisa dark:**
+- Logo The Rich Skills Unlock Your Potential
+- Instagram + YouTube icons
+- Packages - Finance, Influence, Traffic, Branding, Marketing mastery (clickable - Enroll)
+- Quick Links - Disclaimer, Terms, Privacy, Refund
+- Get in Touch - support@therichskills.com, Noida
+- Made With ❤️ By Bizfunnel - Pappan Kumar
+
+**Paste karke bolo - Community Links ab khul rahe hai? Aur bolo agla kya chahiye?**
