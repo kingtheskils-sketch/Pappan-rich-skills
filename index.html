@@ -614,4 +614,159 @@ saveUsers([pappanUser]);
 });
 </script>
 </body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pappan Rich Skills - Direct UPI 9068720373</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#fff}
+.top{background:#fff;padding:12px;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10}
+.btn{width:100%;padding:13px;border-radius:12px;border:none;font-weight:800;cursor:pointer;margin:8px 0}
+.btn-b{background:#1e1b4b;color:#fff}
+.view{display:none;min-height:100vh}.view.active{display:block}
+.cInput{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px;background:#f9fafb}
+.cCard{border:1px solid #eee;border-radius:16px;padding:14px;margin:12px 0}
+.upiBtn{width:100%;padding:14px;background:#fff;border:1px solid #ddd;border-radius:12px;margin:8px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#065f46;color:#fff;padding:10px 16px;border-radius:10px;z-index:9999;display:none}.toast.show{display:block}
+.refBox{background:#dcfce7;border:2px dashed #166534;border-radius:12px;padding:12px;text-align:center;margin:10px 0}
+</style>
+</head>
+<body>
+<div class="toast" id="toast"></div>
+
+<div class="view active" id="home">
+<div class="top"><b>📘 Pappan Rich Skills - 9068720373 - DIRECT UPI</b></div>
+<div style="background:linear-gradient(180deg,#5b5bd6,#3f3fa0);color:#fff;padding:30px 18px;text-align:center">
+<h1>Learn Skills That Matter - Pappan Rich Skills</h1><p style="font-size:12px;margin-top:8px">Direct UPI - No Something Went Wrong - Refer Code Turant</p>
+</div>
+<div style="padding:16px">
+<div class="cCard"><b>💰 Finance Mastery - ₹14,999 - Commission ₹10,499 Auto</b><br><button class="btn btn-b" onclick="openCourse('Finance Mastery',14999,10499)">Pay ₹14,999 Direct - 9068720373@upi</button></div>
+<div class="cCard"><b>📈 Marketing Mastery - ₹999 - Commission ₹700 Auto</b><br><button class="btn btn-b" onclick="openCourse('Marketing Mastery',999,700)">Pay ₹999 Direct - Refer Code Turant</button></div>
+<div class="cCard"><b>🎨 Branding Mastery - ₹2,499 - Commission ₹1,749</b><br><button class="btn btn-b" onclick="openCourse('Branding Mastery',2499,1749)">Pay ₹2,499 Direct</button></div>
+<div class="cCard"><b>🚀 Traffic Mastery - ₹2,499</b><br><button class="btn btn-b" onclick="openCourse('Traffic Mastery',2499,1749)">Pay ₹2,499 Direct</button></div>
+<div class="cCard"><b>🌟 Influence Mastery - ₹9,999</b><br><button class="btn btn-b" onclick="openCourse('Influence Mastery',9999,6999)">Pay ₹9,999 Direct</button></div>
+</div>
+</div>
+
+<div class="view" id="create">
+<div class="top"><span onclick="show('home')" style="font-size:20px">‹</span> <b>Create Account - Pappan Rich Skills</b></div>
+<div style="padding:16px">
+<h2 style="text-align:center">Create Your Account</h2>
+<p style="text-align:center;font-size:11px;color:#666">Refer code account banate hi banega - Turant!</p>
+<div style="margin-top:16px">
+<div style="font-size:12px;font-weight:600">Full Name</div><input id="cName" class="cInput" value="Pappan Kumar">
+<div style="font-size:12px;font-weight:600">Phone - 9068720373</div><input id="cPhone" class="cInput" value="9068720373">
+<div style="font-size:12px;font-weight:600">Email</div><input id="cEmail" class="cInput" value="pappancreator@gmail.com">
+<div style="font-size:12px;font-weight:600">Password</div><input id="cPass" class="cInput" type="password" value="123456">
+<div style="font-size:12px;font-weight:600">Referral Code - Jiski ID se aaye (Optional)</div><input id="cRef" class="cInput" placeholder="Ex: PAPPAN0000">
+<div style="font-size:12px;font-weight:600">Package: <span id="cPkgName">Finance Mastery</span></div>
+<button onclick="createAcc()" class="btn btn-b">Create Account - Refer Code Turant Banega - Pay ₹<span id="cPay">14999</span></button>
+</div>
+</div>
+</div>
+
+<div class="view" id="pay">
+<div class="top"><span onclick="show('create')" style="font-size:20px">‹</span> <b>Pay Direct - 9068720373@upi - No Error</b></div>
+<div style="padding:12px">
+<div class="refBox"><b>✅ Tumhara Referral Code Ban Gaya! (Turant)</b><br><span id="rCode" style="font-size:26px;font-weight:900;letter-spacing:2px">PAPPAN0000</span><br><small>Ye code kisi ko do - Commission auto aayega!</small><br><button onclick="navigator.clipboard.writeText(document.getElementById('rCode').innerText);toast('✅ Refer Code Copied: '+document.getElementById('rCode').innerText)" style="margin-top:8px;padding:6px 12px;background:#166534;color:#fff;border:none;border-radius:6px">Copy Refer Code</button></div>
+
+<div style="background:#fff;border:1px solid #eee;border-radius:12px;padding:16px;text-align:center;margin-top:10px">
+<b>PAPPAN KUMAR - DIRECT UPI</b><br><b style="font-size:24px">₹<span id="pAmt">14,999</span></b><br><small>UPI ID: <b>9068720373@upi</b><br>Package: <span id="pPkg">Finance Mastery</span><br>Commission: ₹<span id="pComm">10499</span> Auto - <span id="pRefBy"></span></small><br><br>
+<div style="background:#f9fafb;padding:8px;border-radius:8px;font-size:11px">UPI ID: 9068720373@upi <button onclick="navigator.clipboard.writeText('9068720373@upi');toast('✅ UPI ID Copied - 9068720373@upi')" style="padding:4px 8px;background:#1e1b4b;color:#fff;border:none;border-radius:4px">Copy UPI ID</button></div>
+</div>
+
+<div style="background:#fff;border:1px solid #eee;border-radius:12px;padding:12px;margin-top:12px">
+<b>Pay Via UPI - Direct to Pappan - No Something Went Wrong!</b><br><small style="color:green">✅ Ab error nahi ayega - Direct payment!</small>
+<div class="upiBtn" onclick="pay('Google Pay')"><div><b>Google Pay</b><br><small>Direct 9068720373@upi - ₹<span class="pa">14999</span></small></div><span>›</span></div>
+<div class="upiBtn" onclick="pay('PhonePe')"><div><b>PhonePe - Direct Pappan</b><br><small>₹<span class="pa">14999</span> - No Error - Direct</small></div><span>›</span></div>
+<div class="upiBtn" onclick="pay('Paytm')"><div><b>Paytm UPI</b><br><small>Direct 9068720373@upi</small></div><span>›</span></div>
+<div class="upiBtn" onclick="pay('Any UPI')"><div><b>Any UPI - Bhim</b><br><small>Direct 9068720373@upi</small></div><span>›</span></div>
+</div>
+</div>
+</div>
+
+<div class="view" id="dash">
+<div class="top"><b>📘 Dashboard - Pappan Rich Skills</b> <span onclick="logout()" style="color:red;float:right">Logout</span></div>
+<div style="padding:12px">
+<div class="refBox"><small>My Refer Code - Turant Ban Gaya:</small><br><b id="dRef" style="font-size:22px">PAPPAN0000</b><br><small id="dInfo">Finance Mastery - Paid Direct</small><br><small>My Link:</small><br><small id="dLink" style="font-size:10px;word-break:break-all">https://kingtheskils-sketch.github.io/Pappan-rich-skills/?ref=PAPPAN0000</small><br><button onclick="navigator.clipboard.writeText(document.getElementById('dLink').innerText);toast('✅ Link Copied - Share karo commission auto aayega!')" style="margin-top:6px;padding:6px 12px;background:#1e1b4b;color:#fff;border:none;border-radius:6px">Copy Link</button></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+<div style="border:1px solid #eee;border-radius:12px;padding:12px"><small>Wallet - Auto Commission</small><br><b>₹<span id="dWallet">0</span></b></div>
+<div style="border:1px solid #eee;border-radius:12px;padding:12px"><small>My Team</small><br><b><span id="dTeam">0</span> Members</b></div>
+</div>
+<div id="teamList" style="margin-top:10px"></div>
+</div>
+</div>
+
+<script>
+let selCourse='Finance Mastery',selPrice=14999,selComm=10499,refBy='',myRef='';
+function show(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0)}
+function toast(m){let t=document.getElementById('toast');t.innerText=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
+function openCourse(n,p,c){selCourse=n;selPrice=p;selComm=c;document.getElementById('cPkgName').innerText=n;document.getElementById('cPay').innerText=p;show('create')}
+function createAcc(){
+let n=document.getElementById('cName').value.trim(),ph=document.getElementById('cPhone').value.trim(),em=document.getElementById('cEmail').value.trim(),ps=document.getElementById('cPass').value.trim();
+if(n.length<2){alert('Full Name likho');return}
+if(ph.length<9){alert('Phone 9068720373');return}
+if(!em.includes('@')){alert('Email sahi');return}
+refBy=document.getElementById('cRef').value.trim().toUpperCase();
+myRef=n.replace(/\s/g,'').substring(0,6).toUpperCase()+Math.floor(1000+Math.random()*9000);
+localStorage.setItem('temp_name',n);localStorage.setItem('temp_pkg',selCourse);localStorage.setItem('temp_price',selPrice);localStorage.setItem('temp_comm',selComm);localStorage.setItem('temp_refby',refBy);localStorage.setItem('my_ref',myRef);
+// Save immediately - refer code turant!
+let users=JSON.parse(localStorage.getItem('users')||'[]');
+let u={name:n,email:em,phone:ph,pkg:selCourse,price:selPrice,comm:selComm,refCode:myRef,refBy:refBy,wallet:0,earnings:0,team:[],paid:false,date:new Date().toLocaleString()};
+users.push(u);localStorage.setItem('users',JSON.stringify(users));
+toast('✅ Account Created! Refer Code: '+myRef+' - Turant ban gaya!');
+setTimeout(()=>{
+document.getElementById('rCode').innerText=myRef;
+document.getElementById('pAmt').innerText=selPrice;document.getElementById('pPkg').innerText=selCourse;document.getElementById('pComm').innerText=selComm;
+document.getElementById('pRefBy').innerText=refBy?'Refer By: '+refBy+' - Commission ₹'+selComm+' auto uske wallet me':'Direct Sale';
+document.querySelectorAll('.pa').forEach(e=>e.innerText=selPrice);
+show('pay');
+},500);
+}
+function pay(app){
+let upi=`upi://pay?pa=9068720373@upi&pn=Pappan%20Kumar&am=${selPrice}&cu=INR&tn=${encodeURIComponent(selCourse+' - Ref '+myRef+' - By '+refBy+' - Pappan Rich Skills')}`;
+window.location.href=upi;
+setTimeout(()=>{
+if(confirm(`✅ ${app} khula?\nPackage: ${selCourse}\nAmount: ₹${selPrice}\nYour Refer Code: ${myRef} (Turant ban gaya!)\nRefer By: ${refBy||'Direct'}\nCommission: ₹${selComm} auto ${refBy?refBy+' ke wallet me':'Direct'}\n\nUPI ID: 9068720373@upi - Direct Pappan\n\nAgar Something went wrong aaya to:\n1. UPI ID copy karo: 9068720373@upi\n2. Manual pay karo ₹${selPrice}\n\nPayment kar diya? OK dabao - Refer Code active hoga!`)){
+let users=JSON.parse(localStorage.getItem('users')||'[]');
+let me=users.find(x=>x.refCode===myRef);
+if(me){me.paid=true;}
+if(refBy){
+let refUser=users.find(x=>x.refCode===refBy);
+if(refUser){refUser.wallet=(refUser.wallet||0)+selComm;refUser.earnings=(refUser.earnings||0)+selComm;refUser.team.push({name:localStorage.getItem('temp_name'),pkg:selCourse,price:selPrice,comm:selComm,refCode:myRef,date:new Date().toLocaleString()});toast(`✅ Commission ₹${selComm} auto ${refBy} ke wallet me gaya!`);}
+}
+localStorage.setItem('users',JSON.stringify(users));
+localStorage.setItem('paid','yes');localStorage.setItem('cur_ref',myRef);
+alert(`✅ Payment Successful! ₹${selPrice} for ${selCourse}\nYour Refer Code: ${myRef} - Active!\nDirect to: 9068720373@upi\nOrder ID: ORD-PAPPAN-${Math.floor(100000+Math.random()*900000)}`);
+showDash();
+}else{toast('❌ Payment nahi kiya toh refer code active nahi hoga!')}
+},1200);
+}
+function showDash(){
+let users=JSON.parse(localStorage.getItem('users')||'[]');
+let curRef=localStorage.getItem('cur_ref')||myRef;
+let me=users.find(x=>x.refCode===curRef);
+if(!me){me={refCode:curRef,name:localStorage.getItem('temp_name')||'Pappan',pkg:selCourse,price:selPrice,wallet:0,team:[]}}
+document.getElementById('dRef').innerText=me.refCode;
+document.getElementById('dInfo').innerText=`${me.pkg||selCourse} - ₹${me.price||selPrice} - Paid Direct 9068720373@upi`;
+document.getElementById('dLink').innerText=`https://kingtheskils-sketch.github.io/Pappan-rich-skills/?ref=${me.refCode}`;
+document.getElementById('dWallet').innerText=(me.wallet||me.earnings||0);
+document.getElementById('dTeam').innerText=(me.team||[]).length;
+let tl=document.getElementById('teamList');
+if(me.team && me.team.length>0){
+let h='<div style=border:1px solid #eee;border-radius:12px;padding:10px><b>My Team - Commission Auto:</b><br>';
+me.team.forEach(t=>{h+=`<div style=display:flex;justify-content:space-between;font-size:11px;margin:6px 0><span>${t.name} - ${t.pkg} ₹${t.price}</span><b style=color:green>+₹${t.comm}</b></div>`});
+h+='</div>';tl.innerHTML=h;
+}
+show('dash');
+}
+function logout(){localStorage.removeItem('paid');location.reload()}
+window.addEventListener('load',()=>{
+let p=new URLSearchParams(window.location.search);let r=p.get('ref');if(r){document.getElementById('cRef').value=r.toUpperCase();refBy=r.toUpperCase();toast('✅ Referral Auto: '+r.toUpperCase()+' - Commission auto uske khate me!')}
+});
+</script>
+</body>
 </html>
