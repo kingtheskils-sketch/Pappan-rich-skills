@@ -1,131 +1,98 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pappan Rich Skills - India's Biggest Learning & Earning Platform 9068720373</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial}
-body{background:#fff;color:#111}
-.nav{position:sticky;top:0;z-index:99;background:#fff;border-bottom:1px solid #eee;padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
-.hero{background:linear-gradient(135deg,#0f0f23,#1e1b4b,#4338ca);color:#fff;padding:50px 16px;text-align:center}
-.hero h1{font-size:34px;line-height:1.1;font-weight:900}
-.hero h1 span{color:#facc15}
-.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:20px 0}
-.stat{background:rgba(255,255,255,.1);border-radius:12px;padding:12px}
-.btn{padding:14px 20px;border-radius:30px;border:none;font-weight:800;cursor:pointer}
-.btn-y{background:#facc15;color:#000;width:100%;margin:10px 0}
-.btn-b{background:#1e1b4b;color:#fff;width:100%}
-.section{padding:40px 16px}
-.card{border:1px solid #eee;border-radius:18px;padding:16px;margin:12px 0;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.05)}
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.gallery img{width:100%;height:140px;object-fit:cover;border-radius:12px;border:2px solid #eee}
-.view{display:none;min-height:100vh}.view.active{display:block}
-.cInput{width:100%;padding:13px;border:1px solid #ddd;border-radius:12px;margin:8px 0}
-.upi{padding:14px;border:1px solid #ddd;border-radius:12px;margin:8px 0;display:flex;justify-content:space-between;background:#fff}
-.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:12px 18px;border-radius:10px;display:none;z-index:9999}.toast.show{display:block}
-</style></head><body>
-<div class="toast" id="t"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pappan Rich Skills 9068720373 - Learn Skills That Matter for Your Career</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap');*{font-family:Inter,sans-serif}.no-scrollbar::-webkit-scrollbar{display:none}</style>
+</head>
+<body class="bg-white">
+<header class="sticky top-0 z-50 bg-white border-b flex justify-between items-center px-4 py-3">
+<div class="flex items-center gap-2"><div class="w-8 h-8 bg-[#1a1a4e] rounded-full flex items-center justify-center text-white font-black">R</div><div><p class="font-black text-[13px] leading-none">The RichSkills</p><p class="text-[7px] tracking-[2px]">Unlock Your Potential</p><p class="text-[8px] text-indigo-600 font-bold">PAPPAN 9068720373</p></div></div><div class="text-xl">☰</div>
+</header>
 
-<!-- HOME - RICH SKILLS JAISE BADA -->
-<div class="view active" id="home">
-<div class="nav"><b>💎 PAPPAN RICH SKILLS 9068720373</b><span onclick="document.getElementById('loginM').style.display='flex'" style="background:#1e1b4b;color:#fff;padding:7px 14px;border-radius:20px;font-size:12px">Login</span></div>
+<section class="bg-gradient-to-b from-[#6d6df0] to-[#4a4ab8] text-white px-5 pt-8 pb-8 text-center">
+<div class="inline-flex items-center gap-1 bg-white/20 rounded-full px-3 py-1 text-[10px] mb-4">⭐ Rated 4.9/5 by 10,000+ students</div>
+<h1 class="text-[30px] font-black leading-[1.1]">Learn Skills That<br>Matter for Your<br>Career</h1>
+<p class="text-[12px] opacity-80 mt-3">Access thousands of courses from industry experts. Build real-world projects and earn certificates recognized by top companies worldwide.</p>
+<button onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})" class="w-full bg-white text-black font-bold rounded-full py-3 mt-5 text-[13px]">Explore Courses →</button>
+<button onclick="alert('Login: Email se login karo - ID paise ke baad hi banegi')" class="w-full border border-white/50 font-semibold rounded-full py-3 mt-3 text-[13px]">Login</button>
+<div class="grid grid-cols-2 gap-3 mt-6 text-left">
+<div class="bg-white/10 rounded-2xl p-4"><p class="text-[20px]">👥</p><p class="font-black text-[18px]">85+</p><p class="text-[10px] opacity-70">Exclusive Courses</p></div>
+<div class="bg-white/10 rounded-2xl p-4"><p class="text-[20px]">⏰</p><p class="font-black text-[18px]">24/7</p><p class="text-[10px] opacity-70">Practical Skills</p></div>
+<div class="bg-white/10 rounded-2xl p-4"><p class="text-[20px]">🎯</p><p class="font-black text-[18px]">98%</p><p class="text-[10px] opacity-70">Career Focused</p></div>
+<div class="bg-white/10 rounded-2xl p-4"><p class="text-[20px]">⚡</p><p class="font-black text-[18px]">98%</p><p class="text-[10px] opacity-70">World Results</p></div>
+</div>
+</section>
 
-<div class="hero">
-<h1>Learn <span>High-Income</span> Skills & Start Earning From Day 1</h1>
-<p style="opacity:.9;margin:12px 0">India's Most Trusted Platform - Direct Payment to 9068720373@upi</p>
-<div class="stats">
-<div class="stat"><b>50K+</b><br><small>Students</small></div>
-<div class="stat"><b>5</b><br><small>Courses</small></div>
-<div class="stat"><b>70%</b><br><small>Commission</small></div>
+<section id="courses" class="px-4 py-7">
+<p class="text-[10px] bg-[#eef2ff] text-[#4f46e5] inline-block px-3 py-1 rounded-full font-bold">Our Core Offerings</p>
+<h2 class="text-[20px] font-black leading-tight mt-2">Our Courses for Precision Learning for Professional Growth.</h2>
+<div class="flex gap-3 overflow-x-auto no-scrollbar mt-4 pb-2">
+<div class="min-w-[250px] bg-[#0f172a] text-white rounded-2xl p-4"><p class="text-[9px] bg-white/10 inline-block px-2 py-1 rounded-full">FINANCE MASTERY</p><h3 class="font-bold mt-2">Finance Mastery</h3><p class="text-[10px] opacity-60">Build Wealth in Finance Market</p><div class="flex gap-3 mt-2 text-[10px]"><span>15.7k+ Students</span><span>⭐5</span></div><button onclick="buy('Finance Mastery',14999,10499)" class="bg-[#facc15] text-black w-full rounded-full py-2 mt-3 font-bold text-[11px]">Enroll Now → Rs 14999 to 9068720373@upi</button></div>
+<div class="min-w-[250px] bg-[#f97316] text-white rounded-2xl p-4"><p class="text-[9px] bg-white/20 inline-block px-2 py-1 rounded-full">INFLUENCE MASTERY</p><h3 class="font-bold mt-2">Influence Mastery</h3><p class="text-[10px] opacity-80">Become a Powerful Digital Influencer</p><div class="flex gap-3 mt-2 text-[10px]"><span>12.3k+ Students</span><span>⭐4.9</span></div><button onclick="buy('Influence Mastery',9999,6999)" class="bg-white text-black w-full rounded-full py-2 mt-3 font-bold text-[11px]">Enroll Now → Rs 9999</button></div>
+<div class="min-w-[250px] bg-[#ef4444] text-white rounded-2xl p-4"><p class="text-[9px] bg-white/20 inline-block px-2 py-1 rounded-full">BRANDING MASTERY</p><h3 class="font-bold mt-2">Branding Mastery</h3><p class="text-[10px] opacity-80">Build Strong Brand Identity</p><button onclick="buy('Branding Mastery',2499,1749)" class="bg-white text-black w-full rounded-full py-2 mt-3 font-bold text-[11px]">Enroll Now → Rs 2499</button></div>
+<div class="min-w-[250px] bg-[#22c55e] text-white rounded-2xl p-4"><p class="text-[9px] bg-white/20 inline-block px-2 py-1 rounded-full">TRAFFIC MASTERY</p><h3 class="font-bold mt-2">Traffic Mastery</h3><p class="text-[10px] opacity-80">Drive Unlimited Sales & Traffic</p><button onclick="buy('Traffic Mastery',2499,1749)" class="bg-white text-black w-full rounded-full py-2 mt-3 font-bold text-[11px]">Enroll Now → Rs 2499</button></div>
+<div class="min-w-[250px] bg-[#3b82f6] text-white rounded-2xl p-4"><p class="text-[9px] bg-white/20 inline-block px-2 py-1 rounded-full">MARKETING MASTERY</p><h3 class="font-bold mt-2">Marketing Mastery</h3><p class="text-[10px] opacity-80">High Converting Marketing</p><button onclick="buy('Marketing Mastery',999,700)" class="bg-white text-black w-full rounded-full py-2 mt-3 font-bold text-[11px]">Enroll Now → Rs 999</button></div>
 </div>
-<button class="btn btn-y" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">Explore Courses - Start Now 🚀</button>
-<p style="font-size:11px;margin-top:10px;color:#facc15">⚠️ ID tabhi banegi jab paisa 9068720373@upi pe success hoga!</p>
-</div>
+</section>
 
-<div class="section" style="background:#f9fafb">
-<h2 style="text-align:center;font-size:26px;font-weight:900">About Pappan Kumar - 9068720373</h2>
-<div class="card" style="text-align:center">
-<img src="https://i.pravatar.cc/120?img=12" style="width:90px;height:90px;border-radius:50%;border:3px solid #facc15">
-<p style="margin:10px 0;font-size:13px"><b>Founder - Pappan Rich Skills</b><br>9068720373@upi Direct Owner<br>Mission: Har Indian ko paise kamana sikhana<br><b style="color:red">Bina Paise Ke ID Nahi Banegi - Direct UPI System</b></p>
+<section class="px-4 py-6 bg-gray-50">
+<h2 class="font-black text-[18px]">Why The Rich Skills? - Pappan Edition</h2>
+<p class="text-[11px] text-gray-500 mt-1">We bridge gap between traditional education and real-world success. Direct UPI 9068720373@upi - No error.</p>
+<div class="space-y-2 mt-4 text-[12px]">
+<div class="bg-white p-3 rounded-xl border">📘 <b>Practical Skill-Based Learning</b></div>
+<div class="bg-white p-3 rounded-xl border">💡 <b>Real-World Knowledge</b></div>
+<div class="bg-white p-3 rounded-xl border">💰 <b>Financial Literacy</b></div>
+<div class="bg-white p-3 rounded-xl border">✅ <b>Direct UPI 9068720373@upi - ID only after payment</b></div>
 </div>
-</div>
+</section>
 
-<!-- 6-7 PHOTO GALLERY - YAHAN APNI PHOTO JODNA -->
-<div class="section">
-<h2 style="text-align:center;font-weight:900">My Journey - 6 Photo Gallery</h2>
-<p style="text-align:center;font-size:11px;color:#666">Yahan apni 6-7 photo lagao - Niche naam change kar sakte ho</p>
-<div class="gallery">
-<!-- TUNE JO 5 PHOTO UPLOAD KI HAIN, UNKA NAAM YAHAN LAGA DIYA HAI, BAKI 2 ME APNI PHOTO LAGA DE -->
-<img src="./IMG-20260916-WA0018.jpg" onerror="this.src='https://picsum.photos/300/200?1'" alt="Photo 1 - Pappan">
-<img src="./IMG-20260926-WA0128.jpg" onerror="this.src='https://picsum.photos/300/200?2'" alt="Photo 2">
-<img src="./IMG-20260907_191024.jpg" onerror="this.src='https://picsum.photos/300/200?3'" alt="Photo 3">
-<img src="./IMG-20260907_191025.jpg" onerror="this.src='https://picsum.photos/300/200?4'" alt="Photo 4">
-<img src="./IMG-20260918_063153.jpg" onerror="this.src='https://picsum.photos/300/200?5'" alt="Photo 5">
-<img src="./Screenshot_2026_0926.png" onerror="this.src='https://picsum.photos/300/200?6'" alt="Photo 6 - Add Your Photo">
-<img src="https://i.pravatar.cc/300?img=12" alt="Photo 7 - Add Your New Photo" style="grid-column:span 2;height:180px">
+<section class="px-4 py-6 bg-[#f0f0ff]">
+<p class="text-center text-[10px] font-bold text-indigo-600">⭐ Elite Community</p>
+<h2 class="text-center font-black text-[18px]">Meet Our VIP Members</h2>
+<p class="text-center text-[11px] text-gray-500">6-7 Photo Gallery - Apni photo yahan lagegi</p>
+<div class="grid grid-cols-2 gap-3 mt-4">
+<div class="relative rounded-xl overflow-hidden h-[170px] bg-gray-200"><img src="./photo1.jpg" onerror="this.src='https://i.pravatar.cc/300?img=12'" class="w-full h-full object-cover"><div class="absolute bottom-0 w-full bg-black/60 p-2"><p class="text-white text-[10px] font-bold">Pappan Kumar - Founder - 9068720373</p></div><div class="absolute top-2 right-2 bg-yellow-400 text-[7px] px-2 py-1 rounded-full font-bold">VIP</div></div>
+<div class="relative rounded-xl overflow-hidden h-[170px] bg-gray-200"><img src="./photo2.jpg" onerror="this.src='https://i.pravatar.cc/300?img=32'" class="w-full h-full object-cover"><div class="absolute bottom-0 w-full bg-black/60 p-2"><p class="text-white text-[10px] font-bold">My Journey Photo 2</p></div><div class="absolute top-2 right-2 bg-yellow-400 text-[7px] px-2 py-1 rounded-full font-bold">VIP</div></div>
+<div class="relative rounded-xl overflow-hidden h-[170px] bg-gray-200"><img src="./photo3.jpg" onerror="this.src='https://i.pravatar.cc/300?img=33'" class="w-full h-full object-cover"><div class="absolute bottom-0 w-full bg-black/60 p-2"><p class="text-white text-[10px] font-bold">My Journey Photo 3</p></div><div class="absolute top-2 right-2 bg-yellow-400 text-[7px] px-2 py-1 rounded-full font-bold">VIP</div></div>
+<div class="relative rounded-xl overflow-hidden h-[170px] bg-gray-200"><img src="./photo4.jpg" onerror="this.src='https://i.pravatar.cc/300?img=15'" class="w-full h-full object-cover"><div class="absolute bottom-0 w-full bg-black/60 p-2"><p class="text-white text-[10px] font-bold">My Journey Photo 4</p></div><div class="absolute top-2 right-2 bg-yellow-400 text-[7px] px-2 py-1 rounded-full font-bold">VIP</div></div>
+<div class="relative rounded-xl overflow-hidden h-[170px] bg-gray-200"><img src="./photo5.jpg" onerror="this.src='https://i.pravatar.cc/300?img=8'" class="w-full h-full object-cover"><div class="absolute bottom-0 w-full bg-black/60 p-2"><p class="text-white text-[10px] font-bold">My Journey Photo 5</p></div><div class="absolute top-2 right-2 bg-yellow-400 text-[7px] px-2 py-1 rounded-full font-bold">VIP</div></div>
+<div class="relative rounded-xl overflow-hidden h-[170px] bg-gray-200"><img src="./photo6.jpg" onerror="this.src='https://i.pravatar.cc/300?img=20'" class="w-full h-full object-cover"><div class="absolute bottom-0 w-full bg-black/60 p-2"><p class="text-white text-[10px] font-bold">My Journey Photo 6</p></div><div class="absolute top-2 right-2 bg-yellow-400 text-[7px] px-2 py-1 rounded-full font-bold">VIP</div></div>
+<div class="relative rounded-xl overflow-hidden h-[170px] col-span-2 bg-gray-200"><img src="./photo7.jpg" onerror="this.src='https://i.pravatar.cc/600?img=12'" class="w-full h-full object-cover"><div class="absolute bottom-0 w-full bg-black/60 p-2"><p class="text-white text-[10px] font-bold">Pappan Rich Skills - All Team - 9068720373@upi</p></div><div class="absolute top-2 right-2 bg-yellow-400 text-[7px] px-2 py-1 rounded-full font-bold">VIP</div></div>
 </div>
-<p style="text-align:center;font-size:10px;margin-top:8px">Photo change karne ke liye: GitHub me ye photo upload kar, aur upar naam same rakh</p>
+</section>
+
+<footer class="bg-[#0f0f23] text-white px-5 py-6 text-[10px]">
+<p class="font-black text-[12px]">The RichSkills - Pappan Edition 9068720373@upi</p>
+<p class="opacity-60 mt-2">Direct Payment - No Error - ID Only After Payment Success - 70% Commission Auto Wallet Me</p>
+<p class="mt-3 opacity-40 text-center">© 2026 Pappan Rich Skills - 9068720373</p>
+</footer>
+
+<div id="payM" class="fixed inset-0 bg-black/70 hidden z-[100] items-center justify-center p-4">
+<div class="bg-white rounded-2xl w-full max-w-sm p-4">
+<div class="flex justify-between"><b id="pName" class="text-[13px]">Package</b><span onclick="closeM()" class="text-xl">✕</span></div>
+<p class="text-[10px] text-red-600 font-bold mt-1">⚠️ ID tabhi banegi jab paisa 9068720373@upi pe success hoga!</p>
+<div class="bg-yellow-50 border border-yellow-300 rounded-xl p-3 mt-2 text-center">
+<p class="font-black">Rs <span id="pPrice">0</span> to 9068720373@upi</p><p class="text-[10px]">Commission Rs <span id="pComm">0</span></p>
 </div>
-
-<div class="section" id="courses" style="background:#0f0f23;color:#fff">
-<h2 style="text-align:center;font-size:26px;font-weight:900">Our Premium Courses - 70% Commission Auto Wallet Me</h2>
-
-<div class="card" style="color:#111">
-<h3>💰 Finance Mastery - Rs 14999 (Commission Rs 10499)</h3><p style="font-size:12px">Learn Trading, Investment, Money Making</p>
-<button class="btn btn-b" onclick="openD('Finance Mastery',14999,10499)">Enroll Now - Pay 14999 to 9068720373@upi</button>
-</div>
-
-<div class="card" style="color:#111">
-<h3>🚀 Influence Mastery - Rs 9999 (Commission Rs 6999)</h3><p style="font-size:12px">Become Influencer & Earn Lakhs</p>
-<button class="btn btn-b" onclick="openD('Influence Mastery',9999,6999)">Enroll Now - Pay 9999</button>
-</div>
-
-<div class="card" style="color:#111">
-<h3>🎯 Branding Mastery - Rs 2499 (Commission Rs 1749)</h3>
-<button class="btn btn-b" onclick="openD('Branding Mastery',2499,1749)">Enroll Now - Pay 2499</button>
-</div>
-
-<div class="card" style="color:#111">
-<h3>📈 Traffic Mastery - Rs 2499 (Commission Rs 1749)</h3>
-<button class="btn btn-b" onclick="openD('Traffic Mastery',2499,1749)">Enroll Now - Pay 2499</button>
-</div>
-
-<div class="card" style="color:#111">
-<h3>💼 Marketing Mastery - Rs 999 (Commission Rs 700)</h3>
-<button class="btn btn-b" onclick="openD('Marketing Mastery',999,700)">Enroll Now - Pay 999</button>
+<input id="n" class="w-full border rounded-xl px-3 py-2 mt-2 text-[12px]" placeholder="Full Name" value="Pappan Kumar">
+<input id="ph" class="w-full border rounded-xl px-3 py-2 mt-2 text-[12px]" placeholder="Phone" value="9068720373">
+<input id="em" class="w-full border rounded-xl px-3 py-2 mt-2 text-[12px]" placeholder="Email" value="pappan@gmail.com">
+<input id="rf" class="w-full border rounded-xl px-3 py-2 mt-2 text-[12px]" placeholder="Referral Code">
+<div class="space-y-2 mt-3">
+<div onclick="pay('Google Pay')" class="border rounded-xl p-3 flex justify-between text-[12px] font-bold"><span>📱 Google Pay Direct</span><span>›</span></div>
+<div onclick="pay('PhonePe')" class="border rounded-xl p-3 flex justify-between text-[12px] font-bold"><span>💜 PhonePe Direct</span><span>›</span></div>
+<div onclick="pay('Paytm')" class="border rounded-xl p-3 flex justify-between text-[12px] font-bold"><span>💙 Paytm Direct</span><span>›</span></div>
 </div>
 </div>
-
-<div class="section" style="text-align:center">
-<h2 style="font-weight:900">Why Pappan Rich Skills?</h2>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;text-align:left">
-<div class="card"><b>✅ Direct UPI</b><br><small>9068720373@upi - No CreatorFeed Error</small></div>
-<div class="card"><b>✅ ID After Payment</b><br><small>Bina paise ID nahi</small></div>
-<div class="card"><b>✅ 70% Commission</b><br><small>Har kisi ke wallet me auto</small></div>
-<div class="card"><b>✅ Lifetime Access</b><br><small>Courses + Earning</small></div>
 </div>
-</div>
-
-<div style="background:#111;color:#fff;padding:20px;text-align:center;font-size:11px">© 2026 Pappan Rich Skills - 9068720373@upi - Direct Payment System - No Something Went Wrong</div>
-</div>
-
-<!-- DETAIL / CREATE / PAY / DASHBOARD - WAHI DIRECT SYSTEM -->
-<div class="view" id="detail"><div class="nav"><span onclick="show('home')" style="font-size:24px">‹</span><b id="dT">Package</b></div><div style="padding:16px;text-align:center"><h1>Rs <span id="dP">0</span></h1><p>Comm Rs <span id="dC">0</span> Auto Wallet Me</p><button class="btn btn-b" style="margin-top:20px" onclick="openC()">Enroll Now - ID Paise Ke Baad</button></div></div>
-
-<div class="view" id="create"><div class="nav"><span onclick="show('detail')" style="font-size:22px">✕</span><b>Create Account - ID Paise Ke Baad</b></div><div style="padding:16px"><p style="color:red;font-weight:700;text-align:center">Bina paise ke ID nahi banegi!</p><input id="cN" class="cInput" value="Pappan Kumar" placeholder="Full Name"><input id="cPh" class="cInput" value="9068720373" placeholder="Phone"><input id="cE" class="cInput" value="pappan@gmail.com" placeholder="Email"><input id="cPa" class="cInput" type="password" value="123456" placeholder="Password"><input id="cR" class="cInput" placeholder="Referral Code (Optional) PAPPAN0000"><button onclick="createA()" class="btn btn-b">Continue To Pay Rs <span id="cPay">0</span> to 9068720373@upi</button></div></div>
-
-<div class="view" id="pay"><div class="nav"><span onclick="show('create')" style="font-size:22px">‹</span><b>Pay Direct 9068720373@upi</b></div><div style="padding:12px"><div style="background:#fff3cd;border-radius:12px;padding:12px;text-align:center"><b>ID abhi nahi bani!</b><br><small>ID tabhi banegi jab paisa 9068720373@upi pe success hoga</small></div><div style="background:#fff;border:1px solid #eee;border-radius:14px;padding:16px;margin-top:12px;text-align:center"><b>Rs <span id="pP">0</span> - <span id="pPkg"></span><br>UPI: 9068720373@upi<br>Comm Rs <span id="pCo">0</span></b><br><br><div class="upi" onclick="payN('Google Pay')"><b>Google Pay Direct - No Error</b><span>›</span></div><div class="upi" onclick="payN('PhonePe')"><b>PhonePe Direct</b><span>›</span></div><div class="upi" onclick="payN('Paytm')"><b>Paytm Direct</b><span>›</span></div><div class="upi" onclick="payN('Any UPI')"><b>Any UPI Direct 9068720373@upi</b><span>›</span></div></div></div></div>
-
-<div class="view" id="dash"><div class="nav"><b>Dashboard 9068720373</b><span onclick="localStorage.clear();location.reload()" style="color:red">Logout</span></div><div style="padding:12px"><div style="background:linear-gradient(135deg,#1e1b4b,#4338ca);color:#fff;border-radius:16px;padding:16px"><small>Wallet Balance Auto Commission Har Kisi Ke Wallet Me</small><br><b style="font-size:28px">Rs <span id="wBal">0</span></b></div><div style="margin-top:12px"><small>Referral Link:</small><br><small id="dLink" style="word-break:break-all"></small><br><button onclick="navigator.clipboard.writeText(document.getElementById('dLink').innerText);toast('Link Copied')" class="btn btn-b" style="margin-top:8px">Copy Referral Link - Commission Auto</button></div><div id="tList" style="margin-top:12px"></div></div></div>
-
-<div id="loginM" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:999;display:none;justify-content:center;align-items:center"><div style="background:#fff;border-radius:16px;padding:16px;width:90%;max-width:360px"><div style="display:flex;justify-content:space-between"><b>Login 9068720373</b><span onclick="document.getElementById('loginM').style.display='none'">✕</span></div><input id="lE" class="cInput" placeholder="Email"><input id="lP" type="password" class="cInput" placeholder="Password"><button onclick="doLogin()" class="btn btn-b">Login - ID Paise Ke Baad Hi</button></div></div>
 
 <script>
-let selC='',selP=0,selCo=0,refBy='',tempData=null;
-const pkgs={'Finance Mastery':{p:14999,c:10499},'Marketing Mastery':{p:999,c:700},'Branding Mastery':{p:2499,c:1749},'Traffic Mastery':{p:2499,c:1749},'Influence Mastery':{p:9999,c:6999}};
-function show(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.getElementById(id).classList.add('active');scrollTo(0,0)}
-function toast(m){let t=document.getElementById('t');t.innerText=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000)}
-function openD(n,p,c){selC=n;selP=pkgs[n].p;selCo=pkgs[n].c;document.getElementById('dT').innerText=n;document.getElementById('dP').innerText=selP;document.getElementById('dC').innerText=selCo;show('detail')}
-function openC(){document.getElementById('cPay').innerText=selP;let pr=new URLSearchParams(location.search).get('ref');if(pr){document.getElementById('cR').value=pr.toUpperCase();refBy=pr.toUpperCase()}show('create')}
-function createA(){let n=cN.value.trim(),ph=cPh.value.trim(),em=cE.value.trim().toLowerCase(),pa=cPa.value.trim();if(n.length<2||ph.length<9||!em.includes('@')||pa.length<5){alert('Details sahi bharo');return}refBy=document.getElementById('cR').value.trim().toUpperCase()||refBy;tempData={name:n,phone:ph,email:em,password:pa,pkg:selC,price:selP,comm:selCo,refBy:refBy};localStorage.setItem('temp_pending',JSON.stringify(tempData));document.getElementById('pP').innerText=selP;document.getElementById('pPkg').innerText=selC;document.getElementById('pCo').innerText=selCo;show('pay')}
-function payN(app){let upi=`upi://pay?pa=9068720373@upi&pn=Pappan%20Kumar&am=${selP}&cu=INR&tn=${encodeURIComponent(selC+' '+selP)}`;location.href=upi;setTimeout(()=>{if(confirm(`✅ ${app} khula?\nRs ${selP} to 9068720373@upi\nPackage ${selC}\nCommission Rs ${selCo}\n\nPayment SUCCESS hua? OK = ID Banegi, Cancel = ID Nahi Banegi`)){let myR=tempData.name.replace(/\s/g,'').substring(0,6).toUpperCase()+Math.floor(1000+Math.random()*9000);let users=JSON.parse(localStorage.getItem('users')||'[]');if(users.find(u=>u.email===tempData.email)){alert('Email se ID already hai - Login karo');document.getElementById('loginM').style.display='flex';return}let newUser={name:tempData.name,email:tempData.email,phone:tempData.phone,password:tempData.password,pkg:selC,price:selP,comm:selCo,refCode:myR,refBy:refBy,wallet:0,earnings:0,team:[],paid:true,date:new Date().toLocaleString()};users.push(newUser);if(refBy){let refU=users.find(u=>u.refCode===refBy);if(refU){refU.wallet=(refU.wallet||0)+selCo;refU.earnings=(refU.earnings||0)+selCo;refU.team.push({name:tempData.name,email:tempData.email,pkg:selC,price:selP,comm:selCo,date:new Date().toLocaleString()})}}localStorage.setItem('users',JSON.stringify(users));localStorage.setItem('cur_ref',myR);localStorage.setItem('cur_email',tempData.email);localStorage.setItem('paid','yes');localStorage.removeItem('temp_pending');alert(`✅ Payment SUCCESS! ID Ban Gayi!\nRef Code ${myR}\nCommission Rs ${selCo} ${refBy?'auto '+refBy+' ke wallet me':''}`);showDash()}},1500)}
-function showDash(){let users=JSON.parse(localStorage.getItem('users')||'[]');let cur=localStorage.getItem('cur_ref');let me=users.find(u=>u.refCode===cur)||users.find(u=>u.email===localStorage.getItem('cur_email'));if(!me)return;document.getElementById('wBal').innerText=me.wallet||me.earnings||0;document.getElementById('dLink').innerText=`https://kingtheskils-sketch.github.io/Pappan-rich-skills/?ref=${me.refCode}`;let tl=document.getElementById('tList');tl.innerHTML=(me.team&&me.team.length)?'<b>My Team '+me.team.length+'</b><br>'+me.team.map(t=>`<div style=background:#f9fafb;padding:6px;margin:6px 0;border-radius:8px;display:flex;justify-content:space-between><span>${t.name} ${t.pkg}</span><b style=color:green>+Rs ${t.comm}</b></div>`).join(''):'<div style=text-align:center;padding:12px;border:1px solid #eee;border-radius:12px><small>No Team - Link share karo - Har kisi ke wallet me commission auto aayega</small></div>';show('dash')}
-function doLogin(){let em=lE.value.trim().toLowerCase(),pa=lP.value.trim();let users=JSON.parse(localStorage.getItem('users')||'[]');let f=users.find(u=>u.email===em&&u.password===pa);if(!f||!f.paid){alert('❌ ID nahi bani - Pehle paisa do 9068720373@upi pe!');return}document.getElementById('loginM').style.display='none';localStorage.setItem('cur_ref',f.refCode);localStorage.setItem('cur_email',f.email);localStorage.setItem('paid','yes');showDash()}
-window.addEventListener('load',()=>{let p=new URLSearchParams(location.search).get('ref');if(p)refBy=p.toUpperCase();let users=JSON.parse(localStorage.getItem('users')||'[]');if(users.length===0){users.push({name:'Pappan Kumar',email:'pappan.rich.skills@gmail.com',phone:'9068720373',password:'123456',pkg:'Owner',price:0,comm:0,refCode:'PAPPAN0000',refBy:'',wallet:0,earnings:0,team:[],paid:true});localStorage.setItem('users',JSON.stringify(users))}});
-</script></body></html>
+let cur={name:'',price:0,comm:0}
+function buy(n,p,c){cur={name:n,price:p,comm:c};document.getElementById('pName').innerText=n;document.getElementById('pPrice').innerText=p;document.getElementById('pComm').innerText=c;let r=new URLSearchParams(location.search).get('ref');if(r)document.getElementById('rf').value=r.toUpperCase();document.getElementById('payM').classList.remove('hidden');document.getElementById('payM').classList.add('flex')}
+function closeM(){document.getElementById('payM').classList.add('hidden')}
+function pay(app){let name=document.getElementById('n').value.trim(),ph=document.getElementById('ph').value.trim(),em=document.getElementById('em').value.trim(),ref=document.getElementById('rf').value.trim().toUpperCase();if(name.length<2){alert('Name bharo');return}let upi=`upi://pay?pa=9068720373@upi&pn=PappanRichSkills&am=${cur.price}&cu=INR&tn=${encodeURIComponent(cur.name)}`;location.href=upi;setTimeout(()=>{if(confirm(`${app} khula? Rs ${cur.price} to 9068720373@upi SUCCESS? OK=ID Banegi`)){let users=JSON.parse(localStorage.getItem('users')||'[]');if(users.length===0)users.push({name:'Pappan Kumar',email:'pappan@gmail.com',phone:'9068720373',refCode:'PAPPAN0000',wallet:0,team:[],paid:true});if(users.find(u=>u.email===em)){alert('Email already');return}let code=name.replace(/\s/g,'').substring(0,6).toUpperCase()+Math.floor(1000+Math.random()*9000);let nu={name,phone:ph,email:em,pkg:cur.name,price:cur.price,comm:cur.comm,refCode:code,refBy:ref,wallet:0,team:[],paid:true};users.push(nu);if(ref){let ru=users.find(u=>u.refCode===ref);if(ru){ru.wallet=(ru.wallet||0)+cur.comm;ru.team.push({name,comm:cur.comm})}}localStorage.setItem('users',JSON.stringify(users));alert(`✅ ID BAN GAYI! Code ${code} | Comm Rs ${cur.comm} ${ref?ref+' wallet me':''}`);closeM()}},1200)}
+</script>
+</body>
+</html>
