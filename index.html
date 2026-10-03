@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>PAPPAN RICH SKILLS | Online Business Learning Center</title>
-<meta name="description" content="PAPPAN RICH SKILLS - Learn online business, AI, digital marketing, Canva and other useful skills.">
-<meta name="keywords" content="PAPPAN RICH SKILLS, online business learning, AI course, digital marketing, Canva">
+
+<meta name="description" content="PAPPAN RICH SKILLS - Online Business Learning Center. AI, Digital Marketing, Video Editing, Canva and Online Business courses.">
+<meta name="keywords" content="Pappan Rich Skills, online courses, digital marketing, AI course, video editing, Canva, online business">
 <meta name="robots" content="index, follow">
 
 <script src="https://cdn.tailwindcss.com"></script>
@@ -16,409 +17,494 @@ body{
     margin:0;
     font-family:Arial,Helvetica,sans-serif;
     background:#f5f7fb;
-    color:#111827;
+    color:#172033;
 }
 
+*{box-sizing:border-box}
+
 .sidebar{
-    background:linear-gradient(180deg,#111827,#1f2937);
+    background:#071426;
+    color:white;
+    min-height:100vh;
+}
+
+.logo{
+    color:#f7c948;
+}
+
+.nav-item{
+    padding:13px 16px;
+    border-radius:12px;
+    margin:5px 0;
+    cursor:pointer;
+}
+
+.nav-item:hover,
+.nav-active{
+    background:#f7c948;
+    color:#071426;
 }
 
 .card{
     background:white;
-    border-radius:20px;
-    box-shadow:0 8px 30px rgba(0,0,0,.07);
-}
-
-.course-card{
-    transition:.25s;
-}
-
-.course-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
+    border-radius:18px;
+    box-shadow:0 5px 25px rgba(0,0,0,.06);
 }
 
 .gold{
-    color:#d4a017;
+    color:#e5ad19;
 }
 
 .gold-bg{
-    background:linear-gradient(135deg,#d4a017,#f6d365);
+    background:#f7c948;
 }
 
-.hidden{
-    display:none!important;
+.blue-btn{
+    background:#1769ff;
+    color:white;
+    border-radius:10px;
+    padding:11px 18px;
+    font-weight:bold;
 }
 
-.modal{
-    background:rgba(0,0,0,.65);
+.blue-btn:hover{
+    background:#0758e5;
 }
 
-.progress{
-    height:9px;
-    border-radius:20px;
-    background:#e5e7eb;
+.section{
+    display:none;
+}
+
+.section.active{
+    display:block;
+}
+
+.course-img{
+    height:150px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:55px;
+}
+
+.hero{
+    background:linear-gradient(120deg,#071426,#102d50);
+    color:white;
+    border-radius:25px;
     overflow:hidden;
 }
 
-.progress div{
-    height:100%;
-    background:linear-gradient(90deg,#d4a017,#f59e0b);
+.package-popular{
+    border:3px solid #f7c948;
+    transform:translateY(-5px);
 }
 
-.nav-btn{
-    width:100%;
-    text-align:left;
-    padding:13px 15px;
-    border-radius:12px;
-    color:#d1d5db;
-    margin-bottom:5px;
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    z-index:100;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
 }
 
-.nav-btn:hover,
-.nav-active{
-    background:#374151;
-    color:white;
+.modal.show{
+    display:flex;
 }
 
-@media(max-width:768px){
-    .sidebar{
-        position:relative!important;
-        width:100%!important;
-        min-height:auto!important;
+@media(max-width:900px){
+    .desktop-sidebar{
+        display:none;
     }
+
+    .mobile-nav{
+        display:flex !important;
+    }
+
+    .hero{
+        border-radius:18px;
+    }
+}
+
+.mobile-nav{
+    display:none;
 }
 </style>
 </head>
 
 <body>
 
+<!-- MOBILE TOP BAR -->
+<div class="mobile-nav bg-[#071426] text-white p-4 justify-between items-center sticky top-0 z-50">
+    <div class="font-bold text-lg">
+        <span class="gold">PAPPAN</span> RICH SKILLS
+    </div>
+    <button onclick="openMenu()" class="text-2xl">☰</button>
+</div>
+
+
+<div class="flex min-h-screen">
+
 <!-- SIDEBAR -->
-<div class="flex flex-col md:flex-row min-h-screen">
+<aside class="desktop-sidebar w-64 sidebar p-5 fixed left-0 top-0 bottom-0">
 
-<aside class="sidebar w-full md:w-72 md:fixed md:left-0 md:top-0 md:h-screen p-5 text-white">
-
-    <div class="mb-7">
-        <div class="text-2xl font-black gold">PAPPAN</div>
+    <div class="text-center mb-8">
+        <div class="text-4xl">👑</div>
+        <div class="text-2xl font-black logo">PAPPAN</div>
         <div class="text-xl font-bold">RICH SKILLS</div>
-        <div class="text-xs text-gray-400 mt-1">ONLINE BUSINESS LEARNING CENTER</div>
+        <div class="text-xs text-gray-400 mt-1">
+            ONLINE BUSINESS LEARNING CENTER
+        </div>
     </div>
 
-    <nav>
-        <button onclick="showSection('home')" class="nav-btn nav-active">
-            🏠 Dashboard
-        </button>
+    <div class="nav-item nav-active" onclick="showSection('home',this)">
+        🏠 Dashboard
+    </div>
 
-        <button onclick="showSection('courses')" class="nav-btn">
-            📚 My Courses
-        </button>
+    <div class="nav-item" onclick="showSection('courses',this)">
+        📚 Courses
+    </div>
 
-        <button onclick="showSection('packages')" class="nav-btn">
-            💳 Packages
-        </button>
+    <div class="nav-item" onclick="showSection('packages',this)">
+        💰 Packages
+    </div>
 
-        <button onclick="showSection('progress')" class="nav-btn">
-            📊 My Progress
-        </button>
+    <div class="nav-item" onclick="showSection('dashboard',this)">
+        👨‍🎓 My Dashboard
+    </div>
 
-        <button onclick="showSection('profile')" class="nav-btn">
-            👤 Profile
-        </button>
+    <div class="nav-item" onclick="showSection('learning',this)">
+        🎥 My Learning
+    </div>
 
-        <button onclick="showSection('support')" class="nav-btn">
-            📞 Support
-        </button>
-    </nav>
+    <div class="nav-item" onclick="showSection('profile',this)">
+        👤 Profile
+    </div>
 
-    <div class="mt-8 p-4 rounded-2xl bg-gray-800">
-        <div class="text-sm text-gray-400">Student Account</div>
-        <div id="sideName" class="font-bold mt-1">Guest Student</div>
-        <button onclick="openLogin()" class="mt-3 text-sm gold">
-            Login / Register →
-        </button>
+    <div class="nav-item" onclick="showLogin()">
+        🔐 Login / Signup
+    </div>
+
+    <div class="nav-item" onclick="showSupport()">
+        📞 Support
+    </div>
+
+    <div class="absolute bottom-6 left-5 right-5">
+        <div class="bg-[#102d50] p-4 rounded-xl text-center">
+            <div class="gold font-bold">Grow Your Skills</div>
+            <div class="text-xs text-gray-400 mt-1">
+                Small steps today,<br>
+                Big dreams tomorrow.
+            </div>
+        </div>
     </div>
 
 </aside>
 
 
 <!-- MAIN -->
-<main class="w-full md:ml-72 p-4 md:p-8">
+<main class="w-full md:ml-64 p-4 md:p-8">
 
-<!-- TOP BAR -->
-<header class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-7">
+<!-- HEADER -->
+<header class="flex flex-wrap justify-between items-center gap-4 mb-6">
 
     <div>
-        <p class="text-gray-500 text-sm">Welcome to</p>
-        <h1 class="text-3xl md:text-4xl font-black">
-            PAPPAN <span class="gold">RICH SKILLS</span>
-        </h1>
+        <h2 class="text-2xl font-bold">PAPPAN RICH SKILLS</h2>
+        <p class="text-gray-500 text-sm">
+            Learn Skills. Build Your Future.
+        </p>
     </div>
 
-    <div class="flex gap-3">
-        <button onclick="openLogin()" class="px-5 py-3 rounded-xl bg-gray-900 text-white font-bold">
-            🔐 Login
+    <div class="flex items-center gap-3">
+
+        <input
+        class="hidden md:block border rounded-xl px-4 py-3 w-64"
+        placeholder="Search courses, skills..."
+        onkeyup="searchCourses(this.value)"
+        >
+
+        <button class="text-xl">🔔</button>
+
+        <button onclick="showLogin()"
+        class="bg-[#071426] text-white px-4 py-2 rounded-xl">
+            👤 Login
         </button>
 
-        <button onclick="showSection('packages')" class="px-5 py-3 rounded-xl gold-bg font-bold">
-            🚀 Start Learning
-        </button>
     </div>
 
 </header>
 
 
 <!-- HOME -->
-<section id="homeSection">
+<section id="home" class="section active">
 
-<!-- HERO -->
-<div class="card p-7 md:p-10 mb-7 overflow-hidden relative">
+    <!-- HERO -->
+    <div class="hero p-6 md:p-10 mb-7">
 
-    <div class="max-w-3xl relative z-10">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
 
-        <span class="inline-block px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 text-sm font-bold mb-4">
-            ONLINE BUSINESS LEARNING CENTER
-        </span>
+            <div>
 
-        <h2 class="text-4xl md:text-6xl font-black leading-tight">
-            Learn Skills.
-            <span class="gold">Build Your Future.</span>
-        </h2>
+                <div class="text-yellow-300 font-bold mb-3">
+                    ONLINE BUSINESS LEARNING CENTER
+                </div>
 
-        <p class="text-gray-600 text-lg mt-5 max-w-2xl">
-            Learn AI, digital marketing, Canva and other online skills
-            from your mobile and build your knowledge step by step.
-        </p>
+                <h1 class="text-4xl md:text-6xl font-black leading-tight">
+                    PAPPAN
+                    <span class="text-yellow-300">RICH SKILLS</span>
+                </h1>
 
-        <div class="flex flex-wrap gap-3 mt-7">
-            <button onclick="showSection('courses')" class="px-6 py-3 rounded-xl bg-gray-900 text-white font-bold">
-                📚 Explore Courses
-            </button>
+                <p class="text-xl mt-4 text-gray-200">
+                    Ghar Baithe Online Skills Seekho
+                    Aur Apna Future Build Karo
+                </p>
 
-            <button onclick="showSection('packages')" class="px-6 py-3 rounded-xl border-2 border-gray-900 font-bold">
-                View Packages
-            </button>
+                <p class="text-gray-400 mt-3">
+                    AI, Digital Marketing, Video Editing,
+                    Canva, Online Business aur bahut kuch.
+                </p>
+
+                <button onclick="showSection('courses')"
+                class="gold-bg text-black px-7 py-3 rounded-xl font-bold mt-6">
+                    Explore Courses →
+                </button>
+
+            </div>
+
+            <div class="text-center">
+
+                <div class="text-8xl">💻</div>
+
+                <div class="text-yellow-300 text-2xl font-bold mt-4">
+                    Learn • Earn • Grow
+                </div>
+
+                <div class="text-gray-400 mt-2">
+                    Better Skills • Bigger Dreams
+                </div>
+
+            </div>
+
         </div>
 
     </div>
 
-</div>
 
+    <!-- STATS -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
 
-<!-- STATS -->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-7">
+        <div class="card p-5 text-center">
+            <div class="text-3xl">📚</div>
+            <div class="text-2xl font-bold">4+</div>
+            <div class="text-gray-500 text-sm">Courses</div>
+        </div>
 
-    <div class="card p-5">
-        <div class="text-3xl font-black gold">04+</div>
-        <div class="text-gray-500 mt-1">Courses</div>
+        <div class="card p-5 text-center">
+            <div class="text-3xl">⏰</div>
+            <div class="text-2xl font-bold">24/7</div>
+            <div class="text-gray-500 text-sm">Learning Access</div>
+        </div>
+
+        <div class="card p-5 text-center">
+            <div class="text-3xl">📱</div>
+            <div class="text-2xl font-bold">Mobile</div>
+            <div class="text-gray-500 text-sm">Friendly</div>
+        </div>
+
+        <div class="card p-5 text-center">
+            <div class="text-3xl">🛡️</div>
+            <div class="text-2xl font-bold">100%</div>
+            <div class="text-gray-500 text-sm">Online Platform</div>
+        </div>
+
     </div>
 
-    <div class="card p-5">
-        <div class="text-3xl font-black">24/7</div>
-        <div class="text-gray-500 mt-1">Learning Access</div>
-    </div>
 
-    <div class="card p-5">
-        <div class="text-3xl font-black">📱</div>
-        <div class="text-gray-500 mt-1">Mobile Learning</div>
-    </div>
-
-    <div class="card p-5">
-        <div class="text-3xl font-black">100%</div>
-        <div class="text-gray-500 mt-1">Online</div>
-    </div>
-
-</div>
-
-
-<!-- QUICK DASHBOARD -->
-<div class="grid md:grid-cols-3 gap-5">
-
-    <div class="card p-6">
-        <div class="text-3xl mb-3">📚</div>
-        <h3 class="text-xl font-bold">My Courses</h3>
-        <p class="text-gray-500 mt-2">
-            Access your available learning courses.
-        </p>
-        <button onclick="showSection('courses')" class="mt-4 font-bold gold">
-            Open Courses →
+    <!-- POPULAR COURSES -->
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="text-2xl font-bold">Popular Courses</h2>
+        <button onclick="showSection('courses')" class="gold">
+            View All →
         </button>
     </div>
 
-    <div class="card p-6">
-        <div class="text-3xl mb-3">🔒</div>
-        <h3 class="text-xl font-bold">Locked Courses</h3>
-        <p class="text-gray-500 mt-2">
-            Paid courses can be unlocked after purchase.
-        </p>
-        <button onclick="showSection('packages')" class="mt-4 font-bold gold">
-            View Packages →
-        </button>
-    </div>
+    <div id="homeCourses"
+    class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
 
-    <div class="card p-6">
-        <div class="text-3xl mb-3">📊</div>
-        <h3 class="text-xl font-bold">Learning Progress</h3>
-        <p class="text-gray-500 mt-2">
-            Track your learning progress.
-        </p>
-        <button onclick="showSection('progress')" class="mt-4 font-bold gold">
-            View Progress →
-        </button>
-    </div>
+        <div class="card p-4 course-item">
+            <div class="course-img bg-blue-100">🤖</div>
+            <h3 class="font-bold text-xl mt-4">AI Tools</h3>
+            <p class="text-gray-500 text-sm">
+                AI tools aur practical skills.
+            </p>
+            <div class="flex justify-between items-center mt-4">
+                <b>₹99</b>
+                <button onclick="courseDetails('AI Tools')"
+                class="blue-btn">
+                    View
+                </button>
+            </div>
+        </div>
 
-</div>
+
+        <div class="card p-4 course-item">
+            <div class="course-img bg-yellow-100">📢</div>
+            <h3 class="font-bold text-xl mt-4">Digital Marketing</h3>
+            <p class="text-gray-500 text-sm">
+                Social Media + Ads.
+            </p>
+            <div class="flex justify-between items-center mt-4">
+                <b>₹499</b>
+                <button onclick="courseDetails('Digital Marketing')"
+                class="blue-btn">
+                    View
+                </button>
+            </div>
+        </div>
+
+
+        <div class="card p-4 course-item">
+            <div class="course-img bg-purple-100">🎨</div>
+            <h3 class="font-bold text-xl mt-4">Canva Design</h3>
+            <p class="text-gray-500 text-sm">
+                Poster, Thumbnail, Logo.
+            </p>
+            <div class="flex justify-between items-center mt-4">
+                <b>₹299</b>
+                <button onclick="courseDetails('Canva Design')"
+                class="blue-btn">
+                    View
+                </button>
+            </div>
+        </div>
+
+
+        <div class="card p-4 course-item">
+            <div class="course-img bg-green-100">💼</div>
+            <h3 class="font-bold text-xl mt-4">Online Business</h3>
+            <p class="text-gray-500 text-sm">
+                Online business basics.
+            </p>
+            <div class="flex justify-between items-center mt-4">
+                <b>₹699</b>
+                <button onclick="courseDetails('Online Business')"
+                class="blue-btn">
+                    View
+                </button>
+            </div>
+        </div>
+
+    </div>
 
 </section>
 
 
 <!-- COURSES -->
-<section id="coursesSection" class="hidden">
+<section id="courses" class="section">
 
     <div class="mb-7">
-        <h2 class="text-3xl font-black">📚 My Courses</h2>
-        <p class="text-gray-500 mt-2">
-            Choose a course and start learning.
+        <h1 class="text-3xl font-black">All Courses</h1>
+        <p class="text-gray-500">
+            Apni skill ke according course choose karein.
         </p>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- COURSE 1 -->
-        <div class="card course-card overflow-hidden">
-
-            <div class="h-40 gold-bg flex items-center justify-center text-6xl">
-                🤖
-            </div>
-
-            <div class="p-6">
-
-                <span class="text-xs font-bold text-green-600">
-                    AVAILABLE
+        <div class="card p-5 course-item">
+            <div class="course-img bg-yellow-100">📢</div>
+            <h2 class="text-xl font-bold mt-4">Digital Marketing</h2>
+            <p class="text-gray-500 mt-2">
+                Social Media + Ads
+            </p>
+            <div class="mt-4">
+                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs">
+                    Beginner to Advanced
                 </span>
-
-                <h3 class="text-2xl font-black mt-2">
-                    AI Skills
-                </h3>
-
-                <p class="text-gray-500 mt-2">
-                    Learn useful AI tools and practical AI skills.
-                </p>
-
-                <div class="progress mt-5">
-                    <div style="width:25%"></div>
+            </div>
+            <div class="flex justify-between items-center mt-5">
+                <div>
+                    <del class="text-gray-400">₹999</del>
+                    <b class="text-2xl ml-2">₹499</b>
                 </div>
-
-                <div class="text-sm text-gray-500 mt-2">
-                    Progress: 25%
-                </div>
-
-                <button onclick="openCourse('AI Skills')"
-                    class="w-full mt-5 py-3 rounded-xl bg-gray-900 text-white font-bold">
-                    ▶ Continue Learning
+                <button onclick="courseDetails('Digital Marketing')"
+                class="blue-btn">
+                    View Details
                 </button>
-
             </div>
         </div>
 
 
-        <!-- COURSE 2 -->
-        <div class="card course-card overflow-hidden">
-
-            <div class="h-40 bg-indigo-100 flex items-center justify-center text-6xl">
-                📢
-            </div>
-
-            <div class="p-6">
-
-                <span class="text-xs font-bold text-yellow-600">
-                    LOCKED
+        <div class="card p-5 course-item">
+            <div class="course-img bg-purple-100">🎬</div>
+            <h2 class="text-xl font-bold mt-4">Video Editing</h2>
+            <p class="text-gray-500 mt-2">
+                CapCut + Mobile Editing
+            </p>
+            <div class="mt-4">
+                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs">
+                    Beginner to Advanced
                 </span>
-
-                <h3 class="text-2xl font-black mt-2">
-                    Digital Marketing
-                </h3>
-
-                <p class="text-gray-500 mt-2">
-                    Learn digital marketing fundamentals.
-                </p>
-
-                <div class="text-xl font-black mt-4">
-                    ₹499
+            </div>
+            <div class="flex justify-between items-center mt-5">
+                <div>
+                    <del class="text-gray-400">₹999</del>
+                    <b class="text-2xl ml-2">₹499</b>
                 </div>
-
-                <button onclick="showSection('packages')"
-                    class="w-full mt-5 py-3 rounded-xl gold-bg font-bold">
-                    🔒 Unlock Course
+                <button onclick="courseDetails('Video Editing')"
+                class="blue-btn">
+                    View Details
                 </button>
-
             </div>
         </div>
 
 
-        <!-- COURSE 3 -->
-        <div class="card course-card overflow-hidden">
-
-            <div class="h-40 bg-pink-100 flex items-center justify-center text-6xl">
-                🎨
-            </div>
-
-            <div class="p-6">
-
-                <span class="text-xs font-bold text-yellow-600">
-                    LOCKED
+        <div class="card p-5 course-item">
+            <div class="course-img bg-blue-100">🤖</div>
+            <h2 class="text-xl font-bold mt-4">AI Tools</h2>
+            <p class="text-gray-500 mt-2">
+                AI Tools + Practical Work
+            </p>
+            <div class="mt-4">
+                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs">
+                    Beginner to Advanced
                 </span>
-
-                <h3 class="text-2xl font-black mt-2">
-                    Canva & Design
-                </h3>
-
-                <p class="text-gray-500 mt-2">
-                    Learn posters, thumbnails and basic design.
-                </p>
-
-                <div class="text-xl font-black mt-4">
-                    ₹299
+            </div>
+            <div class="flex justify-between items-center mt-5">
+                <div>
+                    <del class="text-gray-400">₹299</del>
+                    <b class="text-2xl ml-2">₹99</b>
                 </div>
-
-                <button onclick="showSection('packages')"
-                    class="w-full mt-5 py-3 rounded-xl gold-bg font-bold">
-                    🔒 Unlock Course
+                <button onclick="courseDetails('AI Tools')"
+                class="blue-btn">
+                    View Details
                 </button>
-
             </div>
         </div>
 
 
-        <!-- COURSE 4 -->
-        <div class="card course-card overflow-hidden">
-
-            <div class="h-40 bg-green-100 flex items-center justify-center text-6xl">
-                💼
-            </div>
-
-            <div class="p-6">
-
-                <span class="text-xs font-bold text-yellow-600">
-                    LOCKED
+        <div class="card p-5 course-item">
+            <div class="course-img bg-green-100">💼</div>
+            <h2 class="text-xl font-bold mt-4">Freelancing</h2>
+            <p class="text-gray-500 mt-2">
+                Work From Home Skills
+            </p>
+            <div class="mt-4">
+                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs">
+                    Beginner to Advanced
                 </span>
-
-                <h3 class="text-2xl font-black mt-2">
-                    Online Business
-                </h3>
-
-                <p class="text-gray-500 mt-2">
-                    Learn the basics of building an online business.
-                </p>
-
-                <div class="text-xl font-black mt-4">
-                    ₹699
+            </div>
+            <div class="flex justify-between items-center mt-5">
+                <div>
+                    <b class="text-2xl">₹499</b>
                 </div>
-
-                <button onclick="showSection('packages')"
-                    class="w-full mt-5 py-3 rounded-xl gold-bg font-bold">
-                    🔒 Unlock Course
+                <button onclick="courseDetails('Freelancing')"
+                class="blue-btn">
+                    View Details
                 </button>
-
             </div>
         </div>
 
@@ -428,58 +514,60 @@ body{
 
 
 <!-- PACKAGES -->
-<section id="packagesSection" class="hidden">
+<section id="packages" class="section">
 
-    <div class="mb-7">
-        <h2 class="text-3xl font-black">💳 Packages</h2>
-        <p class="text-gray-500 mt-2">
-            Choose your learning package.
-        </p>
-    </div>
+    <h1 class="text-3xl font-black mb-2">
+        Choose Your Package
+    </h1>
+
+    <p class="text-gray-500 mb-8">
+        Apni learning journey start karein.
+    </p>
 
     <div class="grid md:grid-cols-3 gap-6">
 
         <div class="card p-7">
-            <div class="text-sm font-bold text-gray-500">
-                STARTER
-            </div>
+            <div class="text-gray-500 font-bold">STARTER</div>
+            <div class="text-4xl font-black mt-3">₹99</div>
 
-            <h3 class="text-3xl font-black mt-2">
-                ₹99
-            </h3>
-
-            <ul class="mt-5 space-y-3 text-gray-600">
-                <li>✓ AI Skills</li>
-                <li>✓ Basic learning material</li>
-                <li>✓ Student dashboard</li>
+            <ul class="mt-6 space-y-3">
+                <li>✅ AI Skills</li>
+                <li>✅ Basic Learning Material</li>
+                <li>✅ Student Dashboard</li>
+                <li>✅ Mobile Friendly</li>
             </ul>
 
-            <button onclick="demoPayment('Starter Package - ₹99')"
-                class="w-full mt-7 py-3 rounded-xl gold-bg font-bold">
+            <button onclick="payment('Starter Package','99')"
+            class="blue-btn w-full mt-7">
                 Buy Package
             </button>
         </div>
 
 
-        <div class="card p-7 border-2 border-yellow-400">
+        <div class="card package-popular p-7">
 
-            <div class="text-sm font-bold gold">
-                POPULAR
+            <div class="gold font-bold">
+                ⭐ POPULAR
             </div>
 
-            <h3 class="text-3xl font-black mt-2">
-                ₹499
-            </h3>
+            <div class="text-gray-500 font-bold mt-2">
+                BUSINESS
+            </div>
 
-            <ul class="mt-5 space-y-3 text-gray-600">
-                <li>✓ AI Skills</li>
-                <li>✓ Digital Marketing</li>
-                <li>✓ Learning dashboard</li>
-                <li>✓ Progress tracking</li>
+            <div class="text-4xl font-black mt-3">
+                ₹499
+            </div>
+
+            <ul class="mt-6 space-y-3">
+                <li>✅ AI Skills</li>
+                <li>✅ Digital Marketing</li>
+                <li>✅ Learning Dashboard</li>
+                <li>✅ Progress Tracking</li>
+                <li>✅ Mobile Learning</li>
             </ul>
 
-            <button onclick="demoPayment('Business Package - ₹499')"
-                class="w-full mt-7 py-3 rounded-xl gold-bg font-bold">
+            <button onclick="payment('Business Package','499')"
+            class="blue-btn w-full mt-7">
                 Buy Package
             </button>
 
@@ -488,77 +576,235 @@ body{
 
         <div class="card p-7">
 
-            <div class="text-sm font-bold text-gray-500">
+            <div class="text-gray-500 font-bold">
                 PREMIUM
             </div>
 
-            <h3 class="text-3xl font-black mt-2">
+            <div class="text-4xl font-black mt-3">
                 ₹999
-            </h3>
+            </div>
 
-            <ul class="mt-5 space-y-3 text-gray-600">
-                <li>✓ AI Skills</li>
-                <li>✓ Digital Marketing</li>
-                <li>✓ Canva & Design</li>
-                <li>✓ Online Business</li>
+            <ul class="mt-6 space-y-3">
+                <li>✅ AI Skills</li>
+                <li>✅ Digital Marketing</li>
+                <li>✅ Canva & Design</li>
+                <li>✅ Online Business</li>
+                <li>✅ Student Dashboard</li>
             </ul>
 
-            <button onclick="demoPayment('Premium Package - ₹999')"
-                class="w-full mt-7 py-3 rounded-xl gold-bg font-bold">
+            <button onclick="payment('Premium Package','999')"
+            class="blue-btn w-full mt-7">
                 Buy Package
             </button>
 
         </div>
 
-    </div>
-
-    <div class="card mt-7 p-5 bg-yellow-50">
-        <b>Important:</b>
-        अभी ये buttons केवल demo हैं। Real payment gateway अभी connected नहीं है।
-        अगले चरण में secure payment system लगाया जाएगा।
     </div>
 
 </section>
 
 
-<!-- PROGRESS -->
-<section id="progressSection" class="hidden">
+<!-- DASHBOARD -->
+<section id="dashboard" class="section">
 
-    <h2 class="text-3xl font-black mb-2">
-        📊 My Progress
+    <div class="card p-6 mb-6">
+
+        <h1 class="text-3xl font-black">
+            Hello, Student 👋
+        </h1>
+
+        <p class="text-gray-500 mt-2">
+            Keep learning and build your future.
+        </p>
+
+    </div>
+
+
+    <div class="grid md:grid-cols-3 gap-5 mb-7">
+
+        <div class="card p-6">
+            <div class="text-gray-500">Enrolled Courses</div>
+            <div class="text-4xl font-black mt-2">2</div>
+        </div>
+
+        <div class="card p-6">
+            <div class="text-gray-500">Completed</div>
+            <div class="text-4xl font-black mt-2">1</div>
+        </div>
+
+        <div class="card p-6">
+            <div class="text-gray-500">Overall Progress</div>
+            <div class="text-4xl font-black mt-2">25%</div>
+        </div>
+
+    </div>
+
+
+    <h2 class="text-2xl font-bold mb-4">
+        My Courses
     </h2>
 
-    <p class="text-gray-500 mb-7">
-        Your learning progress.
-    </p>
+    <div class="grid md:grid-cols-2 gap-5">
 
-    <div class="card p-7">
+        <div class="card p-5">
 
-        <div class="flex justify-between mb-2">
-            <b>AI Skills</b>
-            <b>25%</b>
+            <div class="flex justify-between">
+                <h3 class="text-xl font-bold">
+                    AI Tools
+                </h3>
+
+                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs">
+                    UNLOCKED
+                </span>
+            </div>
+
+            <div class="w-full bg-gray-200 rounded-full h-3 mt-5">
+                <div class="bg-green-500 h-3 rounded-full"
+                style="width:25%"></div>
+            </div>
+
+            <div class="flex justify-between text-sm mt-2">
+                <span>Progress</span>
+                <b>25%</b>
+            </div>
+
+            <button onclick="showSection('learning')"
+            class="blue-btn mt-5">
+                Continue Learning
+            </button>
+
         </div>
 
-        <div class="progress">
-            <div style="width:25%"></div>
+
+        <div class="card p-5">
+
+            <div class="flex justify-between">
+                <h3 class="text-xl font-bold">
+                    Digital Marketing
+                </h3>
+
+                <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs">
+                    LOCKED
+                </span>
+            </div>
+
+            <p class="text-gray-500 mt-3">
+                Purchase the course to start learning.
+            </p>
+
+            <button onclick="payment('Digital Marketing','499')"
+            class="blue-btn mt-5">
+                Unlock Course ₹499
+            </button>
+
         </div>
 
-        <div class="mt-7 flex justify-between mb-2">
-            <b>Digital Marketing</b>
-            <b>Locked</b>
+    </div>
+
+</section>
+
+
+<!-- LEARNING -->
+<section id="learning" class="section">
+
+    <div class="mb-5">
+
+        <h1 class="text-3xl font-black">
+            My Learning
+        </h1>
+
+        <p class="text-gray-500">
+            AI Tools — Module 1
+        </p>
+
+    </div>
+
+
+    <div class="grid lg:grid-cols-3 gap-6">
+
+        <div class="lg:col-span-2">
+
+            <div class="bg-black rounded-2xl overflow-hidden">
+
+                <div class="aspect-video flex items-center justify-center text-white">
+
+                    <div class="text-center">
+
+                        <div class="text-7xl">▶️</div>
+
+                        <div class="text-xl font-bold mt-3">
+                            Course Video
+                        </div>
+
+                        <div class="text-gray-400 text-sm mt-2">
+                            Your course video will appear here.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card p-5 mt-5">
+
+                <div class="flex gap-4 border-b pb-4">
+
+                    <button class="font-bold gold">
+                        Overview
+                    </button>
+
+                    <button>
+                        Notes
+                    </button>
+
+                    <button>
+                        Q&A
+                    </button>
+
+                </div>
+
+                <h2 class="text-2xl font-bold mt-5">
+                    AI Tools Introduction
+                </h2>
+
+                <p class="text-gray-500 mt-3">
+                    Is lesson mein AI tools ke basic concepts
+                    aur practical use ke baare mein seekhein.
+                </p>
+
+            </div>
+
         </div>
 
-        <div class="progress">
-            <div style="width:0%"></div>
-        </div>
 
-        <div class="mt-7 flex justify-between mb-2">
-            <b>Canva & Design</b>
-            <b>Locked</b>
-        </div>
+        <div class="card p-5">
 
-        <div class="progress">
-            <div style="width:0%"></div>
+            <h2 class="text-xl font-bold mb-4">
+                Course Lessons
+            </h2>
+
+            <div class="space-y-3">
+
+                <div class="bg-blue-50 p-4 rounded-xl">
+                    ▶ Lesson 1 — Introduction
+                </div>
+
+                <div class="p-4 rounded-xl border">
+                    🔒 Lesson 2 — AI Tools
+                </div>
+
+                <div class="p-4 rounded-xl border">
+                    🔒 Lesson 3 — Practical Work
+                </div>
+
+                <div class="p-4 rounded-xl border">
+                    🔒 Lesson 4 — Assignment
+                </div>
+
+            </div>
+
         </div>
 
     </div>
@@ -567,98 +813,102 @@ body{
 
 
 <!-- PROFILE -->
-<section id="profileSection" class="hidden">
+<section id="profile" class="section">
 
-    <h2 class="text-3xl font-black mb-7">
-        👤 My Profile
-    </h2>
+    <div class="max-w-2xl">
 
-    <div class="card p-7 max-w-2xl">
+        <div class="card p-7">
 
-        <div class="w-20 h-20 rounded-full gold-bg flex items-center justify-center text-3xl font-black">
-            P
+            <div class="text-center">
+
+                <div class="w-24 h-24 bg-gray-200 rounded-full
+                mx-auto flex items-center justify-center text-4xl">
+                    👤
+                </div>
+
+                <h1 class="text-2xl font-bold mt-4">
+                    Student
+                </h1>
+
+                <p class="text-gray-500">
+                    student@example.com
+                </p>
+
+            </div>
+
+            <div class="mt-7 space-y-4">
+
+                <div>
+                    <label class="text-sm text-gray-500">
+                        Name
+                    </label>
+                    <input class="w-full border rounded-xl p-3 mt-1"
+                    value="Student">
+                </div>
+
+                <div>
+                    <label class="text-sm text-gray-500">
+                        Email
+                    </label>
+                    <input class="w-full border rounded-xl p-3 mt-1"
+                    value="student@example.com">
+                </div>
+
+                <button class="blue-btn">
+                    Save Profile
+                </button>
+
+            </div>
+
         </div>
-
-        <h3 id="profileName" class="text-2xl font-black mt-5">
-            Guest Student
-        </h3>
-
-        <p id="profileEmail" class="text-gray-500 mt-1">
-            Login to see your account details.
-        </p>
-
-        <button onclick="openLogin()"
-            class="mt-6 px-6 py-3 rounded-xl bg-gray-900 text-white font-bold">
-            Login / Register
-        </button>
 
     </div>
 
 </section>
 
 
-<!-- SUPPORT -->
-<section id="supportSection" class="hidden">
+<!-- FOOTER -->
+<footer class="mt-12 bg-[#071426] text-white rounded-2xl p-8">
 
-    <h2 class="text-3xl font-black mb-2">
-        📞 Support
-    </h2>
+    <div class="grid md:grid-cols-4 gap-7">
 
-    <p class="text-gray-500 mb-7">
-        Need help? Contact PAPPAN RICH SKILLS.
-    </p>
+        <div>
+            <h2 class="text-xl font-bold gold">
+                PAPPAN RICH SKILLS
+            </h2>
+            <p class="text-gray-400 text-sm mt-3">
+                Online Business Learning Center.
+            </p>
+        </div>
 
-    <div class="grid md:grid-cols-2 gap-6">
+        <div>
+            <h3 class="font-bold">Platform</h3>
+            <p class="text-gray-400 mt-2">Courses</p>
+            <p class="text-gray-400">Packages</p>
+            <p class="text-gray-400">Dashboard</p>
+        </div>
 
-        <div class="card p-7">
-            <div class="text-4xl">💬</div>
-            <h3 class="text-2xl font-black mt-4">
+        <div>
+            <h3 class="font-bold">Learning</h3>
+            <p class="text-gray-400 mt-2">AI Skills</p>
+            <p class="text-gray-400">Digital Marketing</p>
+            <p class="text-gray-400">Video Editing</p>
+        </div>
+
+        <div>
+            <h3 class="font-bold">Support</h3>
+            <p class="text-gray-400 mt-2">
                 WhatsApp Support
-            </h3>
-            <p class="text-gray-500 mt-2">
-                Contact support for course-related questions.
             </p>
-
-            <!-- अपना असली WhatsApp link बाद में यहां डालना -->
-            <button onclick="alert('WhatsApp link अभी connect नहीं किया गया है.')"
-                class="mt-5 px-6 py-3 rounded-xl bg-green-500 text-white font-bold">
-                Open WhatsApp
-            </button>
-        </div>
-
-
-        <div class="card p-7">
-            <div class="text-4xl">📧</div>
-            <h3 class="text-2xl font-black mt-4">
-                Contact
-            </h3>
-            <p class="text-gray-500 mt-2">
-                PAPPAN RICH SKILLS support.
-            </p>
-
-            <button onclick="alert('Contact details बाद में add करेंगे.')"
-                class="mt-5 px-6 py-3 rounded-xl bg-gray-900 text-white font-bold">
+            <p class="text-gray-400">
                 Contact Us
-            </button>
+            </p>
         </div>
 
     </div>
 
-</section>
-
-
-<footer class="mt-12 border-t pt-7 text-center text-gray-500">
-
-    <div class="font-black text-gray-900">
-        PAPPAN RICH SKILLS
-    </div>
-
-    <div class="text-sm mt-2">
-        ONLINE BUSINESS LEARNING CENTER
-    </div>
-
-    <div class="text-xs mt-4">
-        © 2026 PAPPAN RICH SKILLS. All rights reserved.
+    <div class="border-t border-gray-700 mt-7 pt-5 text-center text-gray-500 text-sm">
+        © 2026 PAPPAN RICH SKILLS. All Rights Reserved.
     </div>
 
 </footer>
@@ -667,46 +917,144 @@ body{
 </div>
 
 
-<!-- LOGIN MODAL -->
-<div id="loginModal"
-     class="modal fixed inset-0 z-50 hidden items-center justify-center p-4">
+<!-- COURSE DETAILS MODAL -->
+<div id="courseModal" class="modal">
 
-    <div class="bg-white rounded-3xl p-7 w-full max-w-md">
+    <div class="bg-white rounded-2xl max-w-3xl w-full p-6 max-h-[90vh] overflow-auto">
 
-        <div class="flex justify-between items-center">
-
-            <h2 class="text-2xl font-black">
-                Login / Register
+        <div class="flex justify-between">
+            <h2 id="courseTitle"
+            class="text-3xl font-black">
+                Course
             </h2>
 
-            <button onclick="closeLogin()" class="text-2xl">
-                ×
+            <button onclick="closeModal('courseModal')"
+            class="text-2xl">
+                ✕
+            </button>
+        </div>
+
+        <div class="bg-[#071426] text-white rounded-2xl p-7 mt-5">
+
+            <div class="text-6xl">🎓</div>
+
+            <h3 class="text-3xl font-bold mt-4">
+                Learn Skills. Build Your Future.
+            </h3>
+
+            <p class="text-gray-400 mt-3">
+                Practical learning from beginner to advanced level.
+            </p>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5 mt-6">
+
+            <div>
+                <h3 class="font-bold text-xl">
+                    Course Includes
+                </h3>
+
+                <ul class="mt-4 space-y-3">
+                    <li>✅ Video Lessons</li>
+                    <li>✅ Learning Material</li>
+                    <li>✅ Mobile Access</li>
+                    <li>✅ Progress Tracking</li>
+                    <li>✅ Student Support</li>
+                </ul>
+            </div>
+
+            <div class="card p-5 border">
+
+                <div class="text-gray-500">
+                    Course Price
+                </div>
+
+                <div id="coursePrice"
+                class="text-4xl font-black mt-2">
+                    ₹499
+                </div>
+
+                <button onclick="payment('Selected Course','499')"
+                class="blue-btn w-full mt-5">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- PAYMENT MODAL -->
+<div id="paymentModal" class="modal">
+
+    <div class="bg-white rounded-2xl max-w-md w-full p-6">
+
+        <div class="flex justify-between">
+
+            <h2 class="text-2xl font-bold">
+                Complete Your Purchase
+            </h2>
+
+            <button onclick="closeModal('paymentModal')">
+                ✕
             </button>
 
         </div>
 
-        <p class="text-gray-500 mt-2">
-            Demo student account
-        </p>
+        <div class="bg-gray-50 rounded-xl p-5 mt-5">
 
-        <input id="nameInput"
-            type="text"
-            placeholder="Your Name"
-            class="w-full mt-6 p-4 border rounded-xl">
+            <div class="text-gray-500">
+                Selected Package
+            </div>
 
-        <input id="emailInput"
-            type="email"
-            placeholder="Email"
-            class="w-full mt-4 p-4 border rounded-xl">
+            <div id="paymentName"
+            class="font-bold text-xl mt-2">
+                Package
+            </div>
 
-        <button onclick="loginUser()"
-            class="w-full mt-5 py-4 rounded-xl gold-bg font-black">
-            Continue
+            <div id="paymentAmount"
+            class="text-3xl font-black mt-2">
+                ₹99
+            </div>
+
+        </div>
+
+        <h3 class="font-bold mt-6">
+            Payment Method
+        </h3>
+
+        <div class="space-y-3 mt-3">
+
+            <label class="border rounded-xl p-4 block">
+                <input type="radio" checked>
+                UPI — Google Pay / PhonePe / Paytm
+            </label>
+
+            <label class="border rounded-xl p-4 block">
+                <input type="radio">
+                Debit / Credit Card
+            </label>
+
+            <label class="border rounded-xl p-4 block">
+                <input type="radio">
+                Net Banking
+            </label>
+
+        </div>
+
+        <button onclick="demoPayment()"
+        class="blue-btn w-full mt-6 text-lg">
+            Pay Now
         </button>
 
-        <p class="text-xs text-gray-400 mt-4">
-            This is currently a demo login. Real secure authentication
-            will be added with the backend.
+        <p class="text-xs text-gray-500 text-center mt-4">
+            ⚠️ Demo payment screen — real payment gateway
+            abhi connected nahi hai.
         </p>
 
     </div>
@@ -714,38 +1062,106 @@ body{
 </div>
 
 
-<!-- COURSE MODAL -->
-<div id="courseModal"
-     class="modal fixed inset-0 z-50 hidden items-center justify-center p-4">
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="modal">
 
-    <div class="bg-white rounded-3xl p-7 w-full max-w-lg">
+    <div class="bg-white rounded-2xl max-w-md w-full p-7">
 
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between">
 
-            <h2 id="courseTitle" class="text-2xl font-black">
-                Course
+            <h2 class="text-2xl font-bold">
+                Welcome Back 👋
             </h2>
 
-            <button onclick="closeCourse()" class="text-2xl">
-                ×
+            <button onclick="closeModal('loginModal')">
+                ✕
             </button>
 
         </div>
 
-        <div class="mt-6 p-5 rounded-2xl bg-gray-100">
+        <p class="text-gray-500 mt-2">
+            Login to your PAPPAN RICH SKILLS account.
+        </p>
 
-            <h3 class="font-black text-xl">
-                Lesson 1
-            </h3>
+        <input
+        class="w-full border rounded-xl p-3 mt-6"
+        placeholder="Email or Mobile Number">
 
-            <p class="text-gray-600 mt-2">
-                Welcome to your course. Course videos and lessons
-                will be added here.
-            </p>
+        <input
+        class="w-full border rounded-xl p-3 mt-3"
+        type="password"
+        placeholder="Password">
 
-            <button onclick="alert('Demo lesson completed!')"
-                class="mt-5 px-5 py-3 rounded-xl bg-gray-900 text-white font-bold">
-                ✓ Mark Complete
+        <button onclick="demoLogin()"
+        class="blue-btn w-full mt-5">
+            Login
+        </button>
+
+        <div class="text-center text-gray-400 my-4">
+            OR
+        </div>
+
+        <button class="w-full border rounded-xl p-3 font-bold">
+            🇬 Continue with Google
+        </button>
+
+        <p class="text-center text-sm mt-5">
+            Don't have an account?
+            <button class="gold font-bold">
+                Sign Up
+            </button>
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu"
+class="fixed inset-0 bg-[#071426] text-white z-[90] hidden p-6">
+
+    <button onclick="closeMenu()"
+    class="float-right text-3xl">
+        ✕
+    </button>
+
+    <div class="clear-both pt-12">
+
+        <h1 class="text-3xl font-black gold">
+            PAPPAN RICH SKILLS
+        </h1>
+
+        <div class="space-y-3 mt-8">
+
+            <button onclick="mobileGo('home')"
+            class="block w-full text-left p-4 rounded-xl bg-white/10">
+                🏠 Home
+            </button>
+
+            <button onclick="mobileGo('courses')"
+            class="block w-full text-left p-4 rounded-xl bg-white/10">
+                📚 Courses
+            </button>
+
+            <button onclick="mobileGo('packages')"
+            class="block w-full text-left p-4 rounded-xl bg-white/10">
+                💰 Packages
+            </button>
+
+            <button onclick="mobileGo('dashboard')"
+            class="block w-full text-left p-4 rounded-xl bg-white/10">
+                👨‍🎓 Dashboard
+            </button>
+
+            <button onclick="mobileGo('learning')"
+            class="block w-full text-left p-4 rounded-xl bg-white/10">
+                🎥 My Learning
+            </button>
+
+            <button onclick="showLogin();closeMenu()"
+            class="block w-full text-left p-4 rounded-xl bg-yellow-400 text-black">
+                🔐 Login / Signup
             </button>
 
         </div>
@@ -757,155 +1173,153 @@ body{
 
 <script>
 
-function showSection(section){
+function showSection(id, element){
 
-    const sections = [
-        "home",
-        "courses",
-        "packages",
-        "progress",
-        "profile",
-        "support"
-    ];
-
-    sections.forEach(function(name){
-
-        const element =
-            document.getElementById(name + "Section");
-
-        if(element){
-            element.classList.add("hidden");
-        }
-
+    document.querySelectorAll('.section')
+    .forEach(section=>{
+        section.classList.remove('active');
     });
 
-    const selected =
-        document.getElementById(section + "Section");
+    const target=document.getElementById(id);
 
-    if(selected){
-        selected.classList.remove("hidden");
+    if(target){
+        target.classList.add('active');
+    }
+
+    document.querySelectorAll('.nav-item')
+    .forEach(item=>{
+        item.classList.remove('nav-active');
+    });
+
+    if(element){
+        element.classList.add('nav-active');
     }
 
     window.scrollTo({
         top:0,
-        behavior:"smooth"
+        behavior:'smooth'
     });
 }
 
 
-function openLogin(){
-
-    const modal =
-        document.getElementById("loginModal");
-
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
-
+function closeModal(id){
+    document.getElementById(id).classList.remove('show');
 }
 
 
-function closeLogin(){
-
-    const modal =
-        document.getElementById("loginModal");
-
-    modal.classList.add("hidden");
-    modal.classList.remove("flex");
-
+function showLogin(){
+    document.getElementById('loginModal')
+    .classList.add('show');
 }
 
 
-function loginUser(){
+function courseDetails(name){
 
-    const name =
-        document.getElementById("nameInput").value.trim();
+    document.getElementById('courseTitle')
+    .innerText=name;
 
-    const email =
-        document.getElementById("emailInput").value.trim();
+    let price="₹499";
 
-    if(!name || !email){
-
-        alert("Please enter your name and email.");
-
-        return;
+    if(name==="AI Tools"){
+        price="₹99";
     }
 
-    localStorage.setItem("pappan_student_name",name);
-    localStorage.setItem("pappan_student_email",email);
-
-    updateProfile();
-
-    closeLogin();
-
-    alert("Demo account created successfully!");
-
-}
-
-
-function updateProfile(){
-
-    const name =
-        localStorage.getItem("pappan_student_name");
-
-    const email =
-        localStorage.getItem("pappan_student_email");
-
-    if(name){
-
-        document.getElementById("sideName").textContent =
-            name;
-
-        document.getElementById("profileName").textContent =
-            name;
-
+    if(name==="Canva Design"){
+        price="₹299";
     }
 
-    if(email){
+    document.getElementById('coursePrice')
+    .innerText=price;
 
-        document.getElementById("profileEmail").textContent =
-            email;
-
-    }
-
+    document.getElementById('courseModal')
+    .classList.add('show');
 }
 
 
-function openCourse(name){
+function payment(name,amount){
 
-    document.getElementById("courseTitle").textContent =
-        name;
+    document.getElementById('paymentName')
+    .innerText=name;
 
-    const modal =
-        document.getElementById("courseModal");
+    document.getElementById('paymentAmount')
+    .innerText="₹"+amount;
 
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
-
+    document.getElementById('paymentModal')
+    .classList.add('show');
 }
 
 
-function closeCourse(){
-
-    const modal =
-        document.getElementById("courseModal");
-
-    modal.classList.add("hidden");
-    modal.classList.remove("flex");
-
-}
-
-
-function demoPayment(packageName){
+function demoPayment(){
 
     alert(
-        packageName +
-        "\\n\\nReal payment gateway अभी connected नहीं है.\\n\\nअगले चरण में secure payment + automatic course unlock जोड़ा जाएगा."
+        "Ye DEMO payment screen hai. Real payment abhi connected nahi hai. Real payment ke liye secure payment gateway + backend connect karna hoga."
     );
 
 }
 
 
-updateProfile();
+function demoLogin(){
+
+    alert(
+        "Demo login button. Real student accounts ke liye secure authentication/database connect karna hoga."
+    );
+
+}
+
+
+function showSupport(){
+
+    alert(
+        "WhatsApp Support: Yahan baad mein aapka WhatsApp number/link connect kiya ja sakta hai."
+    );
+
+}
+
+
+function openMenu(){
+
+    document.getElementById('mobileMenu')
+    .classList.remove('hidden');
+
+}
+
+
+function closeMenu(){
+
+    document.getElementById('mobileMenu')
+    .classList.add('hidden');
+
+}
+
+
+function mobileGo(id){
+
+    closeMenu();
+    showSection(id);
+
+}
+
+
+function searchCourses(value){
+
+    const courses=document
+    .querySelectorAll('.course-item');
+
+    value=value.toLowerCase();
+
+    courses.forEach(course=>{
+
+        const text=course.innerText.toLowerCase();
+
+        if(text.includes(value)){
+            course.style.display="";
+        }else{
+            course.style.display="none";
+        }
+
+    });
+
+}
 
 </script>
 
