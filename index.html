@@ -1,2389 +1,431 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="theme-color" content="#080808">
+<meta name="description" content="PAPPAN RICH SKILLS - Online Business Learning Center. Digital skills, marketing and online business courses.">
 <title>PAPPAN RICH SKILLS | Online Business Learning Center</title>
 
-<meta name="description"
-content="PAPPAN RICH SKILLS - Online Business Learning Center. Learn digital skills, online business, referral marketing, video editing and practical skills.">
-
-<meta name="robots" content="index, follow">
-
-<link rel="canonical"
-href="https://kingtheskils-sketch.github.io/Pappan-rich-skills/">
-
-<meta property="og:title" content="PAPPAN RICH SKILLS">
-<meta property="og:site_name" content="PAPPAN RICH SKILLS">
-<meta property="og:description" content="ONLINE BUSINESS LEARNING CENTER">
-<meta property="og:type" content="website">
-
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root{
+  --bg:#080808;
+  --panel:#121212;
+  --gold:#f5c451;
+  --gold2:#ffe6a0;
+  --muted:#b5b5b5;
+  --line:#373020;
 }
-
-html{
-    scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#050505;
-    color:#fff;
-    line-height:1.6;
+  margin:0;background:var(--bg);color:#fff;
+  font-family:Arial,Helvetica,sans-serif;line-height:1.6
 }
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-button,
-input,
-select,
-textarea{
-    font-family:inherit;
-}
-
-.container{
-    width:min(1180px,92%);
-    margin:auto;
-}
-
-/* ================= HEADER ================= */
-
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(1120px,92%);margin:auto}
 header{
-    position:sticky;
-    top:0;
-    z-index:999;
-    background:rgba(5,5,5,.96);
-    border-bottom:1px solid #272727;
-    backdrop-filter:blur(12px);
+  background:#090909;border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:10
 }
-
-.navbar{
-    min-height:74px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
+.nav{
+  min-height:76px;display:flex;align-items:center;
+  justify-content:space-between;gap:18px
 }
-
+.brand{display:flex;align-items:center;gap:10px}
 .logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-weight:900;
+  width:49px;height:49px;border:2px solid var(--gold);
+  border-radius:50%;display:grid;place-items:center;
+  color:var(--gold);font-size:24px;
+  box-shadow:0 0 18px #f5c45122
 }
-
-.logo-circle{
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(145deg,#ffd86a,#a86d00);
-    color:#080808;
-    font-weight:1000;
-    box-shadow:0 0 25px rgba(255,193,7,.25);
-}
-
-.logo-text{
-    font-size:18px;
-    letter-spacing:.5px;
-}
-
-.logo-text small{
-    display:block;
-    color:#bdbdbd;
-    font-size:9px;
-    letter-spacing:2px;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:25px;
-}
-
-.nav-links a{
-    color:#ddd;
-    font-size:14px;
-    transition:.2s;
-}
-
-.nav-links a:hover{
-    color:#ffc928;
-}
-
-.nav-actions{
-    display:flex;
-    gap:10px;
-}
-
+.brand strong{display:block;color:var(--gold);font-size:16px}
+.brand small{color:#ddd;font-size:10px;letter-spacing:1px}
+.links{display:flex;align-items:center;gap:20px;font-size:13px}
+.links a:hover{color:var(--gold)}
 .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:12px 19px;
-    border-radius:9px;
-    border:1px solid #333;
-    cursor:pointer;
-    font-weight:800;
-    transition:.2s;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#171006;font-weight:bold;padding:12px 19px;
+  border:0;border-radius:9px;transition:.2s
 }
-
-.btn:hover{
-    transform:translateY(-2px);
+.btn:hover{transform:translateY(-2px);filter:brightness(1.07)}
+.btn-outline{
+  display:inline-flex;justify-content:center;align-items:center;
+  padding:11px 18px;border:1px solid var(--gold);
+  border-radius:9px;color:var(--gold);font-weight:bold
 }
-
-.btn-gold{
-    background:linear-gradient(135deg,#ffd95c,#e9a900);
-    color:#080808;
-    border:none;
-}
-
-.btn-dark{
-    background:#151515;
-    color:#fff;
-}
-
-.mobile-menu{
-    display:none;
-    font-size:28px;
-    cursor:pointer;
-}
-
-/* ================= HERO ================= */
-
 .hero{
-    min-height:650px;
-    display:flex;
-    align-items:center;
-    position:relative;
-    overflow:hidden;
-    background:
-      radial-gradient(circle at 80% 30%,rgba(255,193,7,.14),transparent 30%),
-      radial-gradient(circle at 20% 80%,rgba(255,193,7,.06),transparent 35%),
-      #050505;
+  padding:70px 0 64px;
+  background:radial-gradient(ellipse at 80% 15%,#76531330,transparent 40%),
+  linear-gradient(180deg,#10100e,#080808)
 }
-
-.hero-grid{
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:60px;
-    align-items:center;
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:42px;align-items:center}
+.eyebrow{
+  color:var(--gold);letter-spacing:2px;text-transform:uppercase;
+  font-size:12px;font-weight:bold
 }
-
-.badge{
-    display:inline-flex;
-    padding:8px 14px;
-    border:1px solid #5c4810;
-    border-radius:30px;
-    background:#171205;
-    color:#ffd64d;
-    font-size:12px;
-    font-weight:800;
-    margin-bottom:18px;
-}
-
-.hero h1{
-    font-size:clamp(42px,6vw,76px);
-    line-height:1;
-    margin-bottom:20px;
-}
-
+h1{font-size:clamp(36px,6vw,66px);line-height:1.08;margin:15px 0}
 .gold{
-    color:#ffc72c;
+  color:var(--gold);
+  text-shadow:0 2px 0 #9a6d16,0 8px 25px #f5c45120
 }
-
-.hero p{
-    max-width:620px;
-    color:#bdbdbd;
-    font-size:18px;
-    margin-bottom:30px;
-}
-
-.hero-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
+.lead{color:#d0d0d0;max-width:600px;font-size:17px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0}
+.hero-note{font-size:12px;color:var(--muted)}
 .hero-card{
-    border:1px solid #2c2c2c;
-    background:linear-gradient(145deg,#161616,#090909);
-    padding:28px;
-    border-radius:24px;
-    box-shadow:0 25px 80px rgba(0,0,0,.6);
+  background:linear-gradient(145deg,#1b1913,#0d0d0d);
+  border:1px solid #8d6a28;border-radius:24px;
+  padding:32px;text-align:center;
+  box-shadow:0 20px 60px #0008
 }
-
-.hero-card-logo{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    margin:0 auto 20px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:42px;
-    font-weight:1000;
-    color:#111;
-    background:linear-gradient(145deg,#ffe98c,#bd7900);
-    box-shadow:0 0 70px rgba(255,193,7,.2);
+.emblem{
+  margin:auto;width:140px;height:140px;border:3px solid var(--gold);
+  border-radius:50%;display:grid;place-items:center;
+  color:var(--gold);font-size:65px;
+  box-shadow:inset 0 0 25px #f5c45118,0 0 35px #f5c45116
 }
-
-.hero-card h3{
-    text-align:center;
-    color:#ffd34a;
-    font-size:23px;
-}
-
-.hero-card p{
-    text-align:center;
-    font-size:13px;
-    margin:8px auto 0;
-}
-
-/* ================= TRUST ================= */
-
-.trust{
-    border-top:1px solid #242424;
-    border-bottom:1px solid #242424;
-    background:#0b0b0b;
-}
-
-.trust-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-    padding:24px 0;
-}
-
-.trust-item{
-    text-align:center;
-    color:#bbb;
-    font-size:13px;
-}
-
-.trust-item strong{
-    display:block;
-    color:#fff;
-    font-size:18px;
-}
-
-/* ================= SECTIONS ================= */
-
-section{
-    padding:85px 0;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:45px;
-}
-
-.section-title span{
-    color:#ffc72c;
-    font-weight:900;
-    font-size:13px;
-    letter-spacing:2px;
-}
-
-.section-title h2{
-    font-size:clamp(30px,5vw,48px);
-    margin:8px 0;
-}
-
-.section-title p{
-    color:#999;
-    max-width:650px;
-    margin:auto;
-}
-
-/* ================= CATEGORIES ================= */
-
-.category-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:16px;
-}
-
-.category{
-    padding:25px;
-    background:#111;
-    border:1px solid #292929;
-    border-radius:15px;
-    transition:.25s;
-}
-
-.category:hover{
-    transform:translateY(-5px);
-    border-color:#9a7312;
-}
-
-.category-icon{
-    font-size:32px;
-    margin-bottom:12px;
-}
-
-.category h3{
-    margin-bottom:6px;
-}
-
-.category p{
-    color:#888;
-    font-size:13px;
-}
-
-/* ================= COURSES ================= */
-
-.course-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
-
-.course{
-    background:#111;
-    border:1px solid #292929;
-    border-radius:18px;
-    overflow:hidden;
-    display:flex;
-    flex-direction:column;
-}
-
-.course-top{
-    height:145px;
-    background:
-      linear-gradient(135deg,rgba(255,199,44,.18),transparent),
-      #181818;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:45px;
-}
-
-.course-body{
-    padding:22px;
-    display:flex;
-    flex-direction:column;
-    flex:1;
-}
-
-.course-tag{
-    display:inline-block;
-    color:#ffd447;
-    font-size:11px;
-    font-weight:900;
-    margin-bottom:8px;
-}
-
-.course h3{
-    font-size:20px;
-    margin-bottom:9px;
-}
-
-.course p{
-    color:#8e8e8e;
-    font-size:13px;
-    margin-bottom:18px;
-}
-
-.course-price{
-    margin-top:auto;
-    margin-bottom:15px;
-}
-
-.course-price strong{
-    font-size:27px;
-    color:#ffd13a;
-}
-
-.course-price del{
-    color:#666;
-    font-size:13px;
-    margin-left:5px;
-}
-
-/* ================= OFFER ================= */
-
-.offer{
-    background:
-      radial-gradient(circle at 20% 50%,rgba(255,198,39,.15),transparent 30%),
-      #111;
-}
-
-.offer-box{
-    border:1px solid #5b4510;
-    border-radius:24px;
-    padding:45px;
-    text-align:center;
-    background:linear-gradient(145deg,#17130a,#0b0b0b);
-}
-
-.offer-box h2{
-    font-size:40px;
-    margin-bottom:12px;
-}
-
-.offer-box p{
-    color:#aaa;
-    max-width:650px;
-    margin:0 auto 25px;
-}
-
-/* ================= PACKAGES ================= */
-
-.package-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
-
-.package{
-    background:#101010;
-    border:1px solid #292929;
-    border-radius:18px;
-    padding:27px;
-    position:relative;
-}
-
-.package.featured{
-    border-color:#d6a51b;
-    box-shadow:0 0 35px rgba(255,193,7,.08);
-}
-
-.popular{
-    position:absolute;
-    top:15px;
-    right:15px;
-    background:#ffc928;
-    color:#111;
-    padding:5px 9px;
-    border-radius:20px;
-    font-size:10px;
-    font-weight:900;
-}
-
-.package h3{
-    margin-bottom:8px;
-}
-
-.package .price{
-    color:#ffd33e;
-    font-size:31px;
-    font-weight:1000;
-    margin:10px 0;
-}
-
-.package ul{
-    list-style:none;
-    color:#aaa;
-    font-size:13px;
-    margin:18px 0 25px;
-}
-
-.package li{
-    margin:8px 0;
-}
-
-.package li::before{
-    content:"✓";
-    color:#ffc928;
-    margin-right:8px;
-}
-
-/* ================= WHY ================= */
-
-.why-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-}
-
-.info-card{
-    padding:30px;
-    background:#101010;
-    border:1px solid #282828;
-    border-radius:18px;
-}
-
-.info-card h3{
-    margin-bottom:10px;
-    color:#ffd343;
-}
-
-.info-card p{
-    color:#999;
-    font-size:14px;
-}
-
-/* ================= DASHBOARD ================= */
-
-.dashboard{
-    background:#090909;
-}
-
-.dashboard-box{
-    border:1px solid #292929;
-    border-radius:22px;
-    padding:25px;
-    background:#101010;
-}
-
-.dashboard-top{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
-    margin-bottom:25px;
-}
-
-.dashboard-top h3{
-    font-size:24px;
-}
-
-.dashboard-top span{
-    color:#888;
-    font-size:12px;
-}
-
+.hero-card h2{color:var(--gold);font-size:25px;margin:18px 0 4px}
+.hero-card p{color:#ccc;margin:5px 0}
+.hero-card .mini{border-top:1px solid var(--line);margin-top:22px;padding-top:16px;color:var(--gold);font-size:13px}
 .stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+  padding:22px 0;border-top:1px solid #29251c;border-bottom:1px solid #29251c
 }
-
-.stat{
-    background:#171717;
-    border:1px solid #292929;
-    border-radius:13px;
-    padding:20px;
+.stat{text-align:center;padding:8px}
+.stat strong{display:block;color:var(--gold);font-size:23px}
+.stat span{font-size:12px;color:var(--muted)}
+section{padding:65px 0}
+.section-head{text-align:center;max-width:700px;margin:0 auto 32px}
+.section-head h2{font-size:clamp(27px,4vw,40px);line-height:1.2;margin:10px 0}
+.section-head p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{
+  background:linear-gradient(145deg,#171717,#101010);
+  border:1px solid #34302a;border-radius:17px;padding:25px;
+  display:flex;flex-direction:column;align-items:flex-start
 }
-
-.stat small{
-    color:#888;
+.card:hover{border-color:#9e782e}
+.course-icon{
+  width:48px;height:48px;border-radius:12px;
+  display:grid;place-items:center;background:#f5c45114;
+  color:var(--gold);font-size:24px
 }
-
-.stat strong{
-    display:block;
-    color:#ffd33f;
-    font-size:25px;
-    margin-top:5px;
+.card h3{margin:15px 0 6px;font-size:22px}
+.card p{color:var(--muted);font-size:14px;margin:0 0 15px}
+.price{font-size:30px;font-weight:bold;color:var(--gold);margin:4px 0 14px}
+.card ul{padding-left:19px;color:#ddd;font-size:14px;margin:0 0 22px}
+.card li{margin:5px 0}
+.card .btn-outline{margin-top:auto;width:100%}
+.featured{border-color:var(--gold);position:relative}
+.tag{
+  background:var(--gold);color:#171006;font-size:11px;
+  font-weight:bold;padding:5px 10px;border-radius:20px;
+  position:absolute;top:16px;right:16px
 }
-
-.dashboard-sections{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-    margin-top:15px;
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feature{
+  padding:22px;border:1px solid #302a1e;border-radius:14px;
+  background:#111;text-align:center
 }
-
-.dash-panel{
-    background:#171717;
-    padding:22px;
-    border-radius:13px;
-    border:1px solid #292929;
+.feature .symbol{font-size:30px;color:var(--gold)}
+.feature h3{font-size:17px;margin:9px 0}
+.feature p{font-size:13px;color:var(--muted);margin:0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.step{border-top:2px solid var(--gold);padding:17px 14px;background:#111;border-radius:0 0 12px 12px}
+.step b{font-size:27px;color:var(--gold)}
+.step h3{font-size:16px;margin:7px 0}
+.step p{font-size:13px;color:var(--muted)}
+.dashboard{
+  border:1px solid #55431e;border-radius:18px;padding:24px;
+  background:linear-gradient(145deg,#17140e,#101010)
 }
-
-.dash-panel h4{
-    margin-bottom:12px;
+.dash-top{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+.dash-top h3{margin:0}
+.demo-label{font-size:11px;color:var(--gold);border:1px solid #655021;padding:5px 9px;border-radius:20px}
+.wallet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.wallet{
+  background:#0b0b0b;border:1px solid #34302a;border-radius:12px;padding:17px
 }
-
-.progress{
-    height:9px;
-    background:#292929;
-    border-radius:20px;
-    overflow:hidden;
-}
-
-.progress span{
-    display:block;
-    height:100%;
-    width:68%;
-    background:#ffc928;
-}
-
-/* ================= STEPS ================= */
-
-.steps{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
-
-.step{
-    text-align:center;
-    background:#111;
-    border:1px solid #292929;
-    border-radius:17px;
-    padding:28px 20px;
-}
-
-.step-number{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:0 auto 15px;
-    background:#ffc928;
-    color:#111;
-    font-weight:1000;
-}
-
-.step p{
-    color:#888;
-    font-size:13px;
-    margin-top:7px;
-}
-
-/* ================= REFERRAL ================= */
-
-.referral-box{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-}
-
-.referral-card{
-    padding:30px;
-    background:#111;
-    border:1px solid #2a2a2a;
-    border-radius:18px;
-}
-
-.referral-card h3{
-    color:#ffd23b;
-    margin-bottom:12px;
-}
-
-.referral-card p{
-    color:#999;
-    font-size:14px;
-}
-
-.referral-list{
-    list-style:none;
-    margin-top:15px;
-}
-
-.referral-list li{
-    padding:9px 0;
-    border-bottom:1px solid #222;
-    color:#bbb;
-}
-
-.referral-list li span{
-    color:#ffd33f;
-}
-
-/* ================= FAQ ================= */
-
-.faq{
-    max-width:850px;
-    margin:auto;
-}
-
-details{
-    background:#111;
-    border:1px solid #292929;
-    border-radius:12px;
-    margin-bottom:10px;
-    padding:18px 20px;
-}
-
-summary{
-    cursor:pointer;
-    font-weight:800;
-}
-
-details p{
-    color:#999;
-    margin-top:12px;
-    font-size:14px;
-}
-
-/* ================= CTA ================= */
-
+.wallet small{color:var(--muted);display:block}
+.wallet strong{font-size:23px;color:var(--gold)}
+.dash-note{font-size:12px;color:var(--muted);margin:17px 0 0}
 .cta{
-    padding-top:30px;
+  background:radial-gradient(ellipse at center,#4b351526,transparent 70%);
+  border:1px solid #5e4922;border-radius:20px;padding:38px;text-align:center
 }
-
-.cta-box{
-    text-align:center;
-    padding:60px 25px;
-    border-radius:25px;
-    background:
-      radial-gradient(circle at center,rgba(255,200,50,.16),transparent 55%),
-      #101010;
-    border:1px solid #46370e;
+.cta h2{font-size:clamp(27px,4vw,40px);margin:8px 0}
+.cta p{color:#ccc}
+footer{border-top:1px solid var(--line);padding:35px 0 22px;background:#060606}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px}
+footer h3,footer h4{color:var(--gold);margin-top:0}
+footer p,footer a{font-size:13px;color:#bbb}
+footer a{display:block;margin:7px 0}
+footer a:hover{color:var(--gold)}
+.copyright{border-top:1px solid #25221c;padding-top:17px;margin-top:25px;color:#888;font-size:12px;text-align:center}
+.mobile-menu{display:none}
+.notice{font-size:12px;color:#aaa;margin-top:15px}
+@media(max-width:760px){
+  .nav{min-height:68px;flex-wrap:wrap;padding:10px 0}
+  .links{width:100%;gap:15px;overflow-x:auto;padding:7px 0;font-size:12px}
+  .nav>.btn{padding:9px 12px;font-size:12px}
+  .hero{padding:45px 0}
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .hero-card{padding:25px}
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .stat strong{font-size:19px}
+  section{padding:45px 0}
+  .grid{grid-template-columns:1fr}
+  .feature-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .wallet-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr}
 }
-
-.cta-box h2{
-    font-size:42px;
-    margin-bottom:10px;
-}
-
-.cta-box p{
-    color:#999;
-    margin-bottom:25px;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    border-top:1px solid #242424;
-    background:#080808;
-    padding:50px 0 25px;
-}
-
-.footer-grid{
-    display:grid;
-    grid-template-columns:1.5fr 1fr 1fr 1fr;
-    gap:35px;
-}
-
-.footer-col h3,
-.footer-col h4{
-    margin-bottom:13px;
-}
-
-.footer-col p,
-.footer-col a{
-    color:#888;
-    font-size:13px;
-}
-
-.footer-col a{
-    display:block;
-    margin:7px 0;
-}
-
-.footer-col a:hover{
-    color:#ffd13d;
-}
-
-.copyright{
-    border-top:1px solid #202020;
-    margin-top:35px;
-    padding-top:20px;
-    text-align:center;
-    color:#666;
-    font-size:12px;
-}
-
-/* ================= MODAL ================= */
-
-.modal{
-    position:fixed;
-    inset:0;
-    z-index:2000;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-    background:rgba(0,0,0,.82);
-}
-
-.modal.active{
-    display:flex;
-}
-
-.modal-box{
-    width:min(470px,100%);
-    max-height:90vh;
-    overflow:auto;
-    background:#111;
-    border:1px solid #333;
-    border-radius:20px;
-    padding:28px;
-    position:relative;
-}
-
-.close{
-    position:absolute;
-    right:18px;
-    top:13px;
-    font-size:27px;
-    cursor:pointer;
-    color:#888;
-}
-
-.modal-box h2{
-    margin-bottom:8px;
-}
-
-.modal-box p{
-    color:#888;
-    font-size:13px;
-    margin-bottom:20px;
-}
-
-.form-group{
-    margin-bottom:14px;
-}
-
-.form-group label{
-    display:block;
-    color:#bbb;
-    font-size:12px;
-    margin-bottom:6px;
-}
-
-.form-group input{
-    width:100%;
-    padding:13px;
-    border-radius:9px;
-    border:1px solid #333;
-    background:#080808;
-    color:#fff;
-    outline:none;
-}
-
-.form-group input:focus{
-    border-color:#d9aa21;
-}
-
-/* ================= COURSE MODAL ================= */
-
-.course-detail-price{
-    color:#ffd23d;
-    font-size:35px;
-    font-weight:1000;
-    margin:15px 0;
-}
-
-.course-features{
-    list-style:none;
-    margin-bottom:20px;
-}
-
-.course-features li{
-    padding:7px 0;
-    color:#aaa;
-}
-
-.course-features li::before{
-    content:"✓";
-    color:#ffc928;
-    margin-right:8px;
-}
-
-/* ================= TOAST ================= */
-
-.toast{
-    position:fixed;
-    bottom:25px;
-    right:25px;
-    z-index:3000;
-    background:#171717;
-    border:1px solid #3c3c3c;
-    color:#fff;
-    padding:14px 18px;
-    border-radius:10px;
-    transform:translateY(120px);
-    opacity:0;
-    transition:.3s;
-}
-
-.toast.show{
-    transform:translateY(0);
-    opacity:1;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:950px){
-
-    .nav-links,
-    .nav-actions{
-        display:none;
-    }
-
-    .mobile-menu{
-        display:block;
-    }
-
-    .hero-grid{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
-
-    .hero p{
-        margin-left:auto;
-        margin-right:auto;
-    }
-
-    .hero-buttons{
-        justify-content:center;
-    }
-
-    .category-grid,
-    .course-grid,
-    .package-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .trust-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .steps{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .stats{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .footer-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media(max-width:600px){
-
-    section{
-        padding:60px 0;
-    }
-
-    .hero{
-        min-height:auto;
-        padding:80px 0;
-    }
-
-    .hero h1{
-        font-size:43px;
-    }
-
-    .hero p{
-        font-size:15px;
-    }
-
-    .hero-card{
-        padding:20px;
-    }
-
-    .category-grid,
-    .course-grid,
-    .package-grid,
-    .why-grid,
-    .referral-box,
-    .dashboard-sections{
-        grid-template-columns:1fr;
-    }
-
-    .steps{
-        grid-template-columns:1fr;
-    }
-
-    .stats{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-
-    .offer-box{
-        padding:30px 18px;
-    }
-
-    .offer-box h2,
-    .cta-box h2{
-        font-size:30px;
-    }
-
-    .dashboard-top{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .navbar{
-        min-height:65px;
-    }
-
-    .logo-text{
-        font-size:15px;
-    }
-
-    .logo-circle{
-        width:42px;
-        height:42px;
-    }
+@media(max-width:390px){
+  .brand strong{font-size:13px}
+  .brand small{font-size:9px}
+  .logo{width:42px;height:42px}
+  .steps{grid-template-columns:1fr}
+  .wallet-grid{grid-template-columns:1fr 1fr}
+  .wallet{padding:12px}
+  .wallet strong{font-size:19px}
 }
 </style>
 </head>
 
 <body>
-
-<!-- ================= HEADER ================= -->
-
 <header>
-<div class="container navbar">
-
-<a href="#home" class="logo">
-<div class="logo-circle">PRS</div>
-<div class="logo-text">
-PAPPAN RICH SKILLS
-<small>ONLINE BUSINESS LEARNING CENTER</small>
-</div>
-</a>
-
-<nav class="nav-links">
-<a href="#home">Home</a>
-<a href="#courses">Courses</a>
-<a href="#packages">Packages</a>
-<a href="#about">About</a>
-<a href="#faq">FAQ</a>
-<a href="#support">Support</a>
-</nav>
-
-<div class="nav-actions">
-<button class="btn btn-dark" onclick="openModal('loginModal')">Login</button>
-<button class="btn btn-gold" onclick="openModal('signupModal')">Sign Up</button>
-</div>
-
-<div class="mobile-menu" onclick="mobileNav()">☰</div>
-
-</div>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="PAPPAN RICH SKILLS home">
+      <div class="logo">♛</div>
+      <div>
+        <strong>PAPPAN RICH SKILLS</strong>
+        <small>ONLINE BUSINESS LEARNING CENTER</small>
+      </div>
+    </a>
+    <nav class="links" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#courses">Courses</a>
+      <a href="#dashboard">Dashboard Preview</a>
+      <a href="#steps">How It Works</a>
+      <a href="#support">Support</a>
+    </nav>
+    <a class="btn" href="#courses">Explore Courses</a>
+  </div>
 </header>
 
-
-<!-- ================= HERO ================= -->
-
+<main>
 <section class="hero" id="home">
-
-<div class="container hero-grid">
-
-<div>
-
-<div class="badge">🚀 Learn • Practice • Grow</div>
-
-<h1>
-Build Your
-<span class="gold">Digital Skills</span>
-With PAPPAN RICH SKILLS
-</h1>
-
-<p>
-Learn practical online business, referral marketing, content creation,
-video editing and digital skills from one place.
-</p>
-
-<div class="hero-buttons">
-<a href="#courses" class="btn btn-gold">Explore Courses</a>
-<button class="btn btn-dark" onclick="openModal('signupModal')">
-Create Account
-</button>
-</div>
-
-</div>
-
-<div class="hero-card">
-
-<div class="hero-card-logo">PRS</div>
-
-<h3>PAPPAN RICH SKILLS</h3>
-
-<p>
-ONLINE BUSINESS LEARNING CENTER
-</p>
-
-<div style="margin-top:22px;text-align:center;">
-<span class="badge">Mobile Friendly</span>
-<span class="badge">Practical Learning</span>
-</div>
-
-</div>
-
-</div>
-
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Learn • Practice • Grow</div>
+      <h1>Build Your Skills.<br><span class="gold">Build Your Future.</span></h1>
+      <p class="lead">
+        Welcome to PAPPAN RICH SKILLS — ek learning platform
+        jahan aap digital skills, marketing aur online business
+        ke baare mein seekh sakte hain.
+      </p>
+      <div class="actions">
+        <a class="btn" href="#courses">Explore Our Courses →</a>
+        <a class="btn-outline" href="#steps">How It Works</a>
+      </div>
+      <p class="hero-note">Learn at your own pace. Results depend on your skills and effort.</p>
+    </div>
+    <div class="hero-card">
+      <div class="emblem">♛</div>
+      <h2>PAPPAN RICH SKILLS</h2>
+      <p>ONLINE BUSINESS LEARNING CENTER</p>
+      <div class="mini">KNOWLEDGE • SKILLS • GROWTH</div>
+    </div>
+  </div>
 </section>
 
-
-<!-- ================= TRUST ================= -->
-
-<div class="trust">
-
-<div class="container trust-grid">
-
-<div class="trust-item">
-<strong>4</strong>
-Courses
+<div class="wrap stats">
+  <div class="stat"><strong>4</strong><span>Course Packages</span></div>
+  <div class="stat"><strong>Learn</strong><span>At Your Own Pace</span></div>
+  <div class="stat"><strong>Online</strong><span>Learning Platform</span></div>
 </div>
-
-<div class="trust-item">
-<strong>30%</strong>
-Referral Commission
-</div>
-
-<div class="trust-item">
-<strong>24/7</strong>
-Learning Access
-</div>
-
-<div class="trust-item">
-<strong>📱</strong>
-Mobile Friendly
-</div>
-
-</div>
-
-</div>
-
-
-<!-- ================= CATEGORIES ================= -->
-
-<section>
-
-<div class="container">
-
-<div class="section-title">
-<span>LEARN WHAT MATTERS</span>
-<h2>Our Learning Categories</h2>
-<p>
-Practical skills designed for people who want to learn and grow online.
-</p>
-</div>
-
-<div class="category-grid">
-
-<div class="category">
-<div class="category-icon">📱</div>
-<h3>Online Business</h3>
-<p>Learn the basics of building an online business.</p>
-</div>
-
-<div class="category">
-<div class="category-icon">🎯</div>
-<h3>Referral Marketing</h3>
-<p>Learn how referral selling and lead generation work.</p>
-</div>
-
-<div class="category">
-<div class="category-icon">🎬</div>
-<h3>Video Editing</h3>
-<p>Create better videos and social media content.</p>
-</div>
-
-<div class="category">
-<div class="category-icon">🤖</div>
-<h3>AI Skills</h3>
-<p>Learn practical AI tools for digital work.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= COURSES ================= -->
 
 <section id="courses">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Our Learning Programs</div>
+      <h2>Choose Your <span class="gold">Course</span></h2>
+      <p>Apne learning goals aur budget ke hisaab se course chunein.
+         Course ki details aur actual contents purchase se pehle confirm karein.</p>
+    </div>
 
-<div class="container">
+    <div class="grid">
+      <article class="card">
+        <div class="course-icon">✦</div>
+        <h3>Starter Marketing</h3>
+        <p>Marketing ki basic knowledge aur online promotion seekhne ke liye.</p>
+        <div class="price">₹999</div>
+        <ul>
+          <li>Marketing fundamentals</li>
+          <li>Online promotion basics</li>
+          <li>Beginner learning path</li>
+        </ul>
+        <a class="btn-outline" href="#support">Course Details / Support</a>
+      </article>
 
-<div class="section-title">
-<span>START LEARNING</span>
-<h2>Our Courses</h2>
-<p>Choose the course that matches your learning goal.</p>
-</div>
+      <article class="card featured">
+        <span class="tag">POPULAR</span>
+        <div class="course-icon">◆</div>
+        <h3>Digital Skills Pro</h3>
+        <p>Digital skills aur online business ke baare mein seekhne ka agla step.</p>
+        <div class="price">₹2,499</div>
+        <ul>
+          <li>Digital skills learning</li>
+          <li>Content and promotion basics</li>
+          <li>Practical learning activities</li>
+        </ul>
+        <a class="btn-outline" href="#support">Course Details / Support</a>
+      </article>
 
-<div class="course-grid">
+      <article class="card">
+        <div class="course-icon">⬡</div>
+        <h3>Business Growth</h3>
+        <p>Marketing, audience understanding aur business planning par focus.</p>
+        <div class="price">₹4,999</div>
+        <ul>
+          <li>Business planning concepts</li>
+          <li>Lead generation fundamentals</li>
+          <li>Follow-up learning concepts</li>
+        </ul>
+        <a class="btn-outline" href="#support">Course Details / Support</a>
+      </article>
 
-<div class="course">
-
-<div class="course-top">📣</div>
-
-<div class="course-body">
-
-<span class="course-tag">BEGINNER</span>
-
-<h3>Digital Marketing</h3>
-
-<p>
-Learn practical digital marketing fundamentals and online promotion.
-</p>
-
-<div class="course-price">
-<strong>₹999</strong>
-<del>₹1,999</del>
-</div>
-
-<button class="btn btn-gold"
-onclick="openCourse('Digital Marketing',999)">
-View Course
-</button>
-
-</div>
-</div>
-
-
-<div class="course">
-
-<div class="course-top">🤖</div>
-
-<div class="course-body">
-
-<span class="course-tag">POPULAR</span>
-
-<h3>AI & Online Business</h3>
-
-<p>
-Learn AI tools and practical online business concepts.
-</p>
-
-<div class="course-price">
-<strong>₹2,499</strong>
-<del>₹4,999</del>
-</div>
-
-<button class="btn btn-gold"
-onclick="openCourse('AI & Online Business',2499)">
-View Course
-</button>
-
-</div>
-</div>
-
-
-<div class="course">
-
-<div class="course-top">🎬</div>
-
-<div class="course-body">
-
-<span class="course-tag">SKILLS</span>
-
-<h3>Video Editing</h3>
-
-<p>
-Learn video editing and content creation for social platforms.
-</p>
-
-<div class="course-price">
-<strong>₹4,999</strong>
-<del>₹8,999</del>
-</div>
-
-<button class="btn btn-gold"
-onclick="openCourse('Video Editing',4999)">
-View Course
-</button>
-
-</div>
-</div>
-
-
-<div class="course">
-
-<div class="course-top">👑</div>
-
-<div class="course-body">
-
-<span class="course-tag">MASTER PACKAGE</span>
-
-<h3>Complete Digital Skills</h3>
-
-<p>
-A complete package covering multiple practical digital skills.
-</p>
-
-<div class="course-price">
-<strong>₹9,999</strong>
-<del>₹19,999</del>
-</div>
-
-<button class="btn btn-gold"
-onclick="openCourse('Complete Digital Skills',9999)">
-View Course
-</button>
-
-</div>
-</div>
-
-</div>
-
-</div>
-
+      <article class="card">
+        <div class="course-icon">♛</div>
+        <h3>Advanced Business</h3>
+        <p>Online business processes aur marketing skills ko aage badhane ke liye.</p>
+        <div class="price">₹9,999</div>
+        <ul>
+          <li>Advanced learning pathway</li>
+          <li>Marketing and sales concepts</li>
+          <li>Business workflow education</li>
+        </ul>
+        <a class="btn-outline" href="#support">Course Details / Support</a>
+      </article>
+    </div>
+    <p class="notice">Note: Ye course descriptions design placeholders hain. Sirf wahi lessons aur benefits publish karein jo aapke actual course mein maujood hain. Payment abhi is page se enable nahi hai.</p>
+  </div>
 </section>
-
-
-<!-- ================= OFFER ================= -->
-
-<section class="offer">
-
-<div class="container">
-
-<div class="offer-box">
-
-<h2>Learn Skills. Build Knowledge. Grow.</h2>
-
-<p>
-PAPPAN RICH SKILLS is designed to help students learn practical
-digital skills from their phone.
-</p>
-
-<a href="#packages" class="btn btn-gold">
-See Packages
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= PACKAGES ================= -->
-
-<section id="packages">
-
-<div class="container">
-
-<div class="section-title">
-<span>CHOOSE YOUR PLAN</span>
-<h2>Course Packages</h2>
-<p>Simple pricing for different learning levels.</p>
-</div>
-
-<div class="package-grid">
-
-<div class="package">
-
-<h3>Starter</h3>
-
-<div class="price">₹999</div>
-
-<ul>
-<li>Digital Marketing</li>
-<li>Beginner Lessons</li>
-<li>Practical Training</li>
-<li>Mobile Access</li>
-</ul>
-
-<button class="btn btn-gold"
-onclick="openCourse('Digital Marketing',999)">
-Choose Course
-</button>
-
-</div>
-
-
-<div class="package featured">
-
-<div class="popular">POPULAR</div>
-
-<h3>Growth</h3>
-
-<div class="price">₹2,499</div>
-
-<ul>
-<li>AI & Online Business</li>
-<li>Practical Lessons</li>
-<li>Referral Basics</li>
-<li>Mobile Access</li>
-</ul>
-
-<button class="btn btn-gold"
-onclick="openCourse('AI & Online Business',2499)">
-Choose Course
-</button>
-
-</div>
-
-
-<div class="package">
-
-<h3>Pro</h3>
-
-<div class="price">₹4,999</div>
-
-<ul>
-<li>Video Editing</li>
-<li>Content Creation</li>
-<li>Practical Training</li>
-<li>Mobile Access</li>
-</ul>
-
-<button class="btn btn-gold"
-onclick="openCourse('Video Editing',4999)">
-Choose Course
-</button>
-
-</div>
-
-
-<div class="package">
-
-<h3>Master</h3>
-
-<div class="price">₹9,999</div>
-
-<ul>
-<li>Complete Digital Skills</li>
-<li>Multiple Topics</li>
-<li>Advanced Training</li>
-<li>Mobile Access</li>
-</ul>
-
-<button class="btn btn-gold"
-onclick="openCourse('Complete Digital Skills',9999)">
-Choose Course
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section id="about">
-
-<div class="container">
-
-<div class="section-title">
-<span>ABOUT US</span>
-<h2>Why PAPPAN RICH SKILLS?</h2>
-<p>
-Our goal is to make practical digital learning simple and accessible.
-</p>
-</div>
-
-<div class="why-grid">
-
-<div class="info-card">
-<h3>📚 Practical Learning</h3>
-<p>
-Focus on practical concepts instead of unnecessary theory.
-</p>
-</div>
-
-<div class="info-card">
-<h3>📱 Learn From Phone</h3>
-<p>
-The platform is designed with mobile users in mind.
-</p>
-</div>
-
-<div class="info-card">
-<h3>🎯 Step-by-Step</h3>
-<p>
-Learn topics in a structured way and practice what you learn.
-</p>
-</div>
-
-<div class="info-card">
-<h3>🤝 Support</h3>
-<p>
-For support, contact PAPPAN RICH SKILLS through WhatsApp.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= DASHBOARD ================= -->
-
-<section class="dashboard">
-
-<div class="container">
-
-<div class="section-title">
-<span>STUDENT AREA</span>
-<h2>Student Dashboard Preview</h2>
-<p>
-A future dashboard can contain courses, progress, referral and wallet information.
-</p>
-</div>
-
-<div class="dashboard-box">
-
-<div class="dashboard-top">
-
-<div>
-<h3>Welcome, Student 👋</h3>
-<span>My Learning Dashboard</span>
-</div>
-
-<button class="btn btn-gold"
-onclick="openModal('loginModal')">
-Login
-</button>
-
-</div>
-
-
-<div class="stats">
-
-<div class="stat">
-<small>Today Earning</small>
-<strong>₹0</strong>
-</div>
-
-<div class="stat">
-<small>7 Days Earning</small>
-<strong>₹0</strong>
-</div>
-
-<div class="stat">
-<small>30 Days Earning</small>
-<strong>₹0</strong>
-</div>
-
-<div class="stat">
-<small>Total Earning</small>
-<strong>₹0</strong>
-</div>
-
-</div>
-
-
-<div class="dashboard-sections">
-
-<div class="dash-panel">
-
-<h4>📚 My Course</h4>
-
-<p style="color:#888;font-size:13px;">
-Digital Marketing
-</p>
-
-<div class="progress">
-<span></span>
-</div>
-
-<p style="color:#777;font-size:11px;margin-top:7px;">
-68% completed
-</p>
-
-</div>
-
-
-<div class="dash-panel">
-
-<h4>🔗 Referral</h4>
-
-<p style="color:#888;font-size:13px;">
-Referral ID: PRS-DEMO123
-</p>
-
-<p style="color:#888;font-size:13px;margin-top:8px;">
-Commission Rate:
-<span style="color:#ffd23d;">30%</span>
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= STEPS ================= -->
 
 <section>
-
-<div class="container">
-
-<div class="section-title">
-<span>HOW IT WORKS</span>
-<h2>Start Learning In 4 Steps</h2>
-</div>
-
-<div class="steps">
-
-<div class="step">
-<div class="step-number">1</div>
-<h3>Create Account</h3>
-<p>Register your student account.</p>
-</div>
-
-<div class="step">
-<div class="step-number">2</div>
-<h3>Choose Course</h3>
-<p>Select the course you want.</p>
-</div>
-
-<div class="step">
-<div class="step-number">3</div>
-<h3>Learn</h3>
-<p>Watch lessons and practice.</p>
-</div>
-
-<div class="step">
-<div class="step-number">4</div>
-<h3>Grow</h3>
-<p>Use your skills in real work.</p>
-</div>
-
-</div>
-
-</div>
-
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why Learn Here?</div>
+      <h2>Learn Skills That <span class="gold">Matter</span></h2>
+      <p>Learning ko simple, organized aur practical banane ka goal.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="symbol">▣</div>
+        <h3>Structured Learning</h3>
+        <p>Lessons ko step-by-step seekhne ke liye organize karein.</p>
+      </div>
+      <div class="feature">
+        <div class="symbol">◈</div>
+        <h3>Practical Knowledge</h3>
+        <p>Concepts ko practice aur projects se samajhne par focus.</p>
+      </div>
+      <div class="feature">
+        <div class="symbol">◎</div>
+        <h3>Learning Support</h3>
+        <p>Course se jude sawalon ke liye support links dekhein.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
+<section id="dashboard">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Student Area Preview</div>
+      <h2>Your Learning <span class="gold">Dashboard</span></h2>
+      <p>Yeh sirf dashboard ka visual preview hai, asli account ya wallet nahi.</p>
+    </div>
+    <div class="dashboard">
+      <div class="dash-top">
+        <h3>Welcome, Student!</h3>
+        <span class="demo-label">DESIGN PREVIEW — DEMO DATA</span>
+      </div>
+      <div class="wallet-grid">
+        <div class="wallet"><small>Wallet Balance</small><strong>₹0</strong></div>
+        <div class="wallet"><small>Today's Income</small><strong>₹0</strong></div>
+        <div class="wallet"><small>Last 7 Days</small><strong>₹0</strong></div>
+        <div class="wallet"><small>Last 30 Days</small><strong>₹0</strong></div>
+        <div class="wallet"><small>Lifetime Income</small><strong>₹0</strong></div>
+        <div class="wallet"><small>Course Access</small><strong>Preview</strong></div>
+      </div>
+      <p class="dash-note">
+        Actual login, course progress, referral tracking, earnings and withdrawals
+        ke liye secure backend integration zaroori hai. Demo figures real income
+        ya earning guarantee nahi hain.
+      </p>
+    </div>
+  </div>
+</section>
 
-<!-- ================= REFERRAL ================= -->
+<section id="steps">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Simple Learning Journey</div>
+      <h2>How It <span class="gold">Works</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><b>01</b><h3>Explore</h3><p>Available course details padhein.</p></div>
+      <div class="step"><b>02</b><h3>Choose</h3><p>Apne goal ke hisaab se course chunein.</p></div>
+      <div class="step"><b>03</b><h3>Learn</h3><p>Lessons dekhein aur practice karein.</p></div>
+      <div class="step"><b>04</b><h3>Apply</h3><p>Seekhi hui skills ko practical kaam mein lagayein.</p></div>
+    </div>
+  </div>
+</section>
 
 <section>
-
-<div class="container">
-
-<div class="section-title">
-
-<span>REFERRAL PROGRAM</span>
-
-<h2>Learn Referral Selling</h2>
-
-<p>
-The planned referral system can help eligible students promote
-PAPPAN RICH SKILLS courses.
-</p>
-
-</div>
-
-
-<div class="referral-box">
-
-<div class="referral-card">
-
-<h3>How Referral Works</h3>
-
-<ul class="referral-list">
-
-<li>1. Student creates account</li>
-
-<li>2. Student gets referral ID</li>
-
-<li>3. Student shares course link</li>
-
-<li>4. Customer purchases course</li>
-
-<li>5. Sale is verified</li>
-
-<li>6. Eligible commission is credited</li>
-
-</ul>
-
-</div>
-
-
-<div class="referral-card">
-
-<h3>30% Commission Example</h3>
-
-<ul class="referral-list">
-
-<li>₹999 Course → <span>₹299.70</span></li>
-
-<li>₹2,499 Course → <span>₹749.70</span></li>
-
-<li>₹4,999 Course → <span>₹1,499.70</span></li>
-
-<li>₹9,999 Course → <span>₹2,999.70</span></li>
-
-</ul>
-
-<p style="margin-top:15px;">
-Commission should only be credited after a verified eligible sale.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
+  <div class="wrap">
+    <div class="cta">
+      <div class="eyebrow">Start Learning</div>
+      <h2>Ready to Learn Something <span class="gold">New?</span></h2>
+      <p>Course details samjhein aur phir apne liye sahi option chunein.</p>
+      <a class="btn" href="#courses">View Courses →</a>
+    </div>
+  </div>
 </section>
-
-
-<!-- ================= FAQ ================= -->
-
-<section id="faq">
-
-<div class="container">
-
-<div class="section-title">
-<span>FAQ</span>
-<h2>Frequently Asked Questions</h2>
-</div>
-
-<div class="faq">
-
-<details>
-<summary>PAPPAN RICH SKILLS kya hai?</summary>
-<p>
-PAPPAN RICH SKILLS ek online learning platform concept hai jahan
-practical digital skills aur online business related training di jayegi.
-</p>
-</details>
-
-<details>
-<summary>Courses ki price kya hai?</summary>
-<p>
-Current listed sale prices ₹999, ₹2,499, ₹4,999 aur ₹9,999 hain.
-</p>
-</details>
-
-<details>
-<summary>Kya phone se course kar sakte hain?</summary>
-<p>
-Haan, website mobile-friendly design ki gayi hai.
-</p>
-</details>
-
-<details>
-<summary>Referral commission kitna hai?</summary>
-<p>
-Planned referral rate 30% hai. Actual commission verified eligible sale
-ke baad hi credit hona chahiye.
-</p>
-</details>
-
-<details>
-<summary>Kya earning guaranteed hai?</summary>
-<p>
-Nahi. Koi bhi earning guaranteed nahi hai. Result skill, effort,
-promotion aur customer response par depend karta hai.
-</p>
-</details>
-
-<details>
-<summary>Payment kaise karna hai?</summary>
-<p>
-Payment system connect hone ke baad official payment method use kiya jayega.
-</p>
-</details>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= CTA ================= -->
-
-<section class="cta">
-
-<div class="container">
-
-<div class="cta-box">
-
-<h2>Ready To Start Learning?</h2>
-
-<p>
-Create your account and explore PAPPAN RICH SKILLS.
-</p>
-
-<button class="btn btn-gold"
-onclick="openModal('signupModal')">
-Create Free Account
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= SUPPORT ================= -->
-
-<section id="support">
-
-<div class="container">
-
-<div class="section-title">
-<span>SUPPORT</span>
-<h2>Need Help?</h2>
-<p>Contact PAPPAN RICH SKILLS for support.</p>
-</div>
-
-<div class="why-grid">
-
-<div class="info-card">
-
-<h3>💬 WhatsApp Support</h3>
-
-<p>
-WhatsApp: 9068720373
-</p>
-
-<br>
-
-<a
-class="btn btn-gold"
-target="_blank"
-href="https://wa.me/919068720373?text=Hello%20Pappan%20Rich%20Skills">
-Chat On WhatsApp
-</a>
-
-</div>
-
-
-<div class="info-card">
-
-<h3>▶️ YouTube</h3>
-
-<p>
-Watch PAPPAN RICH SKILLS related videos and tutorials.
-</p>
-
-<br>
-
-<a
-class="btn btn-gold"
-target="_blank"
-href="https://www.youtube.com/@TheskilsKing">
-Open YouTube
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<div class="container">
-
-<div class="footer-grid">
-
-<div class="footer-col">
-
-<h3>PAPPAN RICH SKILLS</h3>
-
-<p>
-ONLINE BUSINESS LEARNING CENTER
-</p>
-
-<p style="margin-top:12px;">
-Learn practical digital skills from your phone.
-</p>
-
-</div>
-
-
-<div class="footer-col">
-
-<h4>Quick Links</h4>
-
-<a href="#home">Home</a>
-<a href="#courses">Courses</a>
-<a href="#packages">Packages</a>
-<a href="#about">About</a>
-
-</div>
-
-
-<div class="footer-col">
-
-<h4>Learning</h4>
-
-<a href="#courses">Digital Marketing</a>
-<a href="#courses">AI & Online Business</a>
-<a href="#courses">Video Editing</a>
-<a href="#courses">Complete Skills</a>
-
-</div>
-
-
-<div class="footer-col">
-
-<h4>Support</h4>
-
-<a href="#faq">FAQ</a>
-<a href="#support">WhatsApp</a>
-<a
-target="_blank"
-href="https://www.youtube.com/@TheskilsKing">
-YouTube
-</a>
-
-</div>
-
-</div>
-
-
-<div class="copyright">
-
-© 2026 PAPPAN RICH SKILLS. All Rights Reserved.
-
-</div>
-
-</div>
-
+</main>
+
+<footer id="support">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>PAPPAN RICH SKILLS</h3>
+        <p>ONLINE BUSINESS LEARNING CENTER</p>
+        <p>Digital skills aur online business learning ke liye ek educational platform.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#dashboard">Dashboard Preview</a>
+        <a href="#steps">How It Works</a>
+      </div>
+      <div>
+        <h4>Support & Community</h4>
+        <a href="https://www.youtube.com/@TheskilsKing" target="_blank" rel="noopener noreferrer">YouTube Channel ↗</a>
+        <p>WhatsApp support ka verified link baad mein yahan add karein.</p>
+      </div>
+    </div>
+    <div class="copyright">
+      © <span id="year"></span> PAPPAN RICH SKILLS. All rights reserved.
+    </div>
+  </div>
 </footer>
-
-
-<!-- ================= LOGIN MODAL ================= -->
-
-<div class="modal" id="loginModal">
-
-<div class="modal-box">
-
-<div class="close" onclick="closeModal('loginModal')">×</div>
-
-<h2>Login</h2>
-
-<p>Student account me login karein.</p>
-
-<form onsubmit="loginDemo(event)">
-
-<div class="form-group">
-<label>Email</label>
-<input type="email" id="loginEmail" required placeholder="Enter email">
-</div>
-
-<div class="form-group">
-<label>Password</label>
-<input type="password" required placeholder="Enter password">
-</div>
-
-<button class="btn btn-gold" style="width:100%;">
-Login
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-
-<!-- ================= SIGNUP MODAL ================= -->
-
-<div class="modal" id="signupModal">
-
-<div class="modal-box">
-
-<div class="close" onclick="closeModal('signupModal')">×</div>
-
-<h2>Create Account</h2>
-
-<p>Demo student registration.</p>
-
-<form onsubmit="signupDemo(event)">
-
-<div class="form-group">
-<label>Full Name</label>
-<input type="text" required placeholder="Enter name">
-</div>
-
-<div class="form-group">
-<label>Email</label>
-<input type="email" required placeholder="Enter email">
-</div>
-
-<div class="form-group">
-<label>Mobile Number</label>
-<input type="tel" required placeholder="Enter mobile">
-</div>
-
-<div class="form-group">
-<label>Password</label>
-<input type="password" required placeholder="Create password">
-</div>
-
-<button class="btn btn-gold" style="width:100%;">
-Create Account
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-
-<!-- ================= COURSE MODAL ================= -->
-
-<div class="modal" id="courseModal">
-
-<div class="modal-box">
-
-<div class="close" onclick="closeModal('courseModal')">×</div>
-
-<h2 id="courseTitle">Course</h2>
-
-<p id="courseDescription">
-Course details
-</p>
-
-<div class="course-detail-price" id="coursePrice">
-₹999
-</div>
-
-<ul class="course-features">
-
-<li>📱 Mobile friendly learning</li>
-
-<li>🎥 Video lessons</li>
-
-<li>📚 Practical training</li>
-
-<li>🎯 Step-by-step learning</li>
-
-<li>🔗 Referral learning module</li>
-
-</ul>
-
-<button
-class="btn btn-gold"
-style="width:100%;"
-onclick="startPayment()">
-
-Pay & Continue
-
-</button>
-
-<p style="font-size:11px;margin-top:15px;">
-Payment verification and automatic course unlocking require a
-real backend/payment integration.
-</p>
-
-</div>
-
-</div>
-
-
-<!-- ================= TOAST ================= -->
-
-<div class="toast" id="toast"></div>
-
-
 <script>
-
-/* =========================================================
-   PAPPAN RICH SKILLS MAIN SETTINGS
-========================================================= */
-
-const APP = {
-
-    brand: "PAPPAN RICH SKILLS",
-
-    whatsapp: "9068720373",
-
-    youtube: "https://www.youtube.com/@TheskilsKing",
-
-    upi: "9068720373@ybl",
-
-    referralRate: 0.30,
-
-    prices: [
-        999,
-        2499,
-        4999,
-        9999
-    ]
-
-};
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-function mobileNav(){
-
-    const nav = document.querySelector(".nav-links");
-
-    if(!nav) return;
-
-    if(nav.style.display === "flex"){
-
-        nav.style.display = "none";
-
-    }else{
-
-        nav.style.display = "flex";
-        nav.style.flexDirection = "column";
-        nav.style.position = "absolute";
-        nav.style.top = "65px";
-        nav.style.left = "0";
-        nav.style.right = "0";
-        nav.style.padding = "20px";
-        nav.style.background = "#080808";
-        nav.style.borderBottom = "1px solid #292929";
-
-    }
-
-}
-
-
-/* =========================================================
-   MODAL
-========================================================= */
-
-function openModal(id){
-
-    const modal = document.getElementById(id);
-
-    if(modal){
-
-        modal.classList.add("active");
-
-    }
-
-}
-
-
-function closeModal(id){
-
-    const modal = document.getElementById(id);
-
-    if(modal){
-
-        modal.classList.remove("active");
-
-    }
-
-}
-
-
-/* Close modal by clicking outside */
-
-document.querySelectorAll(".modal").forEach(function(modal){
-
-    modal.addEventListener("click",function(e){
-
-        if(e.target === modal){
-
-            modal.classList.remove("active");
-
-        }
-
-    });
-
-});
-
-
-/* =========================================================
-   COURSE
-========================================================= */
-
-let selectedCourse = "";
-
-let selectedAmount = 0;
-
-
-function openCourse(course,amount){
-
-    selectedCourse = course;
-
-    selectedAmount = amount;
-
-    document.getElementById("courseTitle").textContent = course;
-
-    document.getElementById("coursePrice").textContent =
-        "₹" + amount.toLocaleString("en-IN");
-
-    document.getElementById("courseDescription").textContent =
-        "Learn " + course +
-        " through practical step-by-step lessons.";
-
-    openModal("courseModal");
-
-}
-
-
-/* =========================================================
-   UPI PAYMENT LINK
-========================================================= */
-
-function startPayment(){
-
-    if(!selectedAmount){
-
-        showToast("Course select nahi hua.");
-
-        return;
-
-    }
-
-    const link =
-        "upi://pay" +
-        "?pa=" + encodeURIComponent(APP.upi) +
-        "&pn=" + encodeURIComponent(APP.brand) +
-        "&am=" + encodeURIComponent(selectedAmount) +
-        "&cu=INR" +
-        "&tn=" + encodeURIComponent(selectedCourse);
-
-    showToast("Payment app open ho raha hai...");
-
-    setTimeout(function(){
-
-        window.location.href = link;
-
-    },500);
-
-}
-
-
-/* =========================================================
-   SIGNUP DEMO
-========================================================= */
-
-function signupDemo(event){
-
-    event.preventDefault();
-
-    closeModal("signupModal");
-
-    showToast(
-        "Account demo successfully created!"
-    );
-
-}
-
-
-/* =========================================================
-   LOGIN DEMO
-========================================================= */
-
-function loginDemo(event){
-
-    event.preventDefault();
-
-    closeModal("loginModal");
-
-    showToast(
-        "Demo login successful!"
-    );
-
-}
-
-
-/* =========================================================
-   TOAST
-========================================================= */
-
-function showToast(message){
-
-    const toast =
-        document.getElementById("toast");
-
-    toast.textContent = message;
-
-    toast.classList.add("show");
-
-    setTimeout(function(){
-
-        toast.classList.remove("show");
-
-    },3000);
-
-}
-
-
-/* =========================================================
-   REFERRAL CALCULATOR
-========================================================= */
-
-function calculateCommission(amount){
-
-    return amount * APP.referralRate;
-
-}
-
-
-/* =========================================================
-   CONSOLE INFORMATION
-========================================================= */
-
-console.log(
-    APP.brand +
-    " website loaded successfully."
-);
-
-console.log(
-    "Referral rate:",
-    APP.referralRate * 100 + "%"
-);
-
-console.log(
-    "UPI:",
-    APP.upi
-);
-
-
-/* =========================================================
-   SMOOTH NAVIGATION
-========================================================= */
-
-document.querySelectorAll('a[href^="#"]').forEach(function(link){
-
-    link.addEventListener("click",function(e){
-
-        const target =
-            document.querySelector(
-                link.getAttribute("href")
-            );
-
-        if(target){
-
-            e.preventDefault();
-
-            target.scrollIntoView({
-                behavior:"smooth"
-            });
-
-        }
-
-    });
-
-});
-
-
-/* =========================================================
-   YEAR
-========================================================= */
-
-const yearElement =
-    document.querySelector(".copyright");
-
-if(yearElement){
-
-    yearElement.innerHTML =
-        "© " +
-        new Date().getFullYear() +
-        " PAPPAN RICH SKILLS. All Rights Reserved.";
-
-}
-
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
